@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://du36yurnho130"]
+
+[ext_resource type="Script" uid="uid://vug8tbv5gg7o" path="res://Prototype/field.gd" id="1_ngg8i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ngg8i"]
+albedo_color = Color(0, 0.54693973, 0.3349252, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d8mum"]
+albedo_color = Color(0.913681, 0.00021119774, 0.7924652, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xfnnq"]
+top_radius = 0.28076172
+bottom_radius = 0.28076172
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b24ox"]
+albedo_color = Color(3.85046e-06, 0.6664563, 0.9085495, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eyo31"]
+albedo_color = Color(0.5868124, 0, 0.13553995, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_xfnnq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1hpip"]
+albedo_color = Color(0.8977045, 0.27030042, 0.20612791, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_b24ox"]
+
+[node name="Field" type="Area3D" unique_id=1437293258 groups=["Field"]]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("1_ngg8i")
+mat1 = SubResource("StandardMaterial3D_ngg8i")
+mat2 = SubResource("StandardMaterial3D_d8mum")
+
+[node name="hover" type="OmniLight3D" parent="." unique_id=645157278]
+transform = Transform3D(1, 0, 0, 0, 3.3333333, 0, 0, 0, 1, 0, 2.194698, 0)
+light_energy = 16.0
+omni_range = 0.817
+
+[node name="water" type="MeshInstance3D" parent="." unique_id=1443948128]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0262084, 0)
+visible = false
+mesh = SubResource("CylinderMesh_xfnnq")
+surface_material_override/0 = SubResource("StandardMaterial3D_b24ox")
+
+[node name="fire" type="MeshInstance3D" parent="." unique_id=175036330]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0262084, 0)
+visible = false
+mesh = SubResource("CylinderMesh_xfnnq")
+surface_material_override/0 = SubResource("StandardMaterial3D_eyo31")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1804531689]
+mesh = SubResource("SphereMesh_xfnnq")
+surface_material_override/0 = SubResource("StandardMaterial3D_1hpip")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1493484730]
+shape = SubResource("SphereShape3D_b24ox")
+metadata/_edit_lock_ = true

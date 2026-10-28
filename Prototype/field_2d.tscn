@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://cd74jphyfngd"]
+
+[ext_resource type="Script" uid="uid://bd5pdr3j08865" path="res://Prototype/field_2d.gd" id="1_27kkh"]
+[ext_resource type="Texture2D" uid="uid://1d7eexj3bkmg" path="res://icon.svg" id="2_cqpl7"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0ldcw"]
+
+[sub_resource type="Gradient" id="Gradient_lsbgx"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tu4gd"]
+gradient = SubResource("Gradient_lsbgx")
+fill = 3
+fill_from = Vector2(0.535, 0.4125)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_lsbgx"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_y0gsv"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lsbgx"]
+gradient = SubResource("Gradient_y0gsv")
+width = 128
+height = 128
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfnnq"]
+size = Vector2(128, 128)
+
+[node name="Field2d" type="Area2D" unique_id=1504115936 groups=["Field"]]
+script = ExtResource("1_27kkh")
+r = 140.0
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=767514805]
+texture = ExtResource("2_cqpl7")
+
+[node name="fire" type="Sprite2D" parent="." unique_id=1842913210]
+visible = false
+modulate = Color(0.7037013, 0.0015072626, 0.85204005, 1)
+self_modulate = Color(1, 0.73922485, 0.87005466, 1)
+material = SubResource("CanvasItemMaterial_0ldcw")
+position = Vector2(-11.250042, 43.25)
+scale = Vector2(1.0390621, 0.9296874)
+texture = SubResource("GradientTexture2D_tu4gd")
+
+[node name="water" type="Sprite2D" parent="." unique_id=1039421402]
+visible = false
+modulate = Color(0.60341495, 0.42304626, 0, 1)
+self_modulate = Color(1, 0.73922485, 0.87005466, 1)
+material = SubResource("CanvasItemMaterial_0ldcw")
+position = Vector2(8.999958, -30)
+scale = Vector2(1.0390621, 0.9296874)
+texture = SubResource("GradientTexture2D_tu4gd")
+
+[node name="hover" type="Sprite2D" parent="." unique_id=1738087921]
+visible = false
+material = SubResource("CanvasItemMaterial_lsbgx")
+texture = SubResource("GradientTexture2D_lsbgx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=61962169]
+shape = SubResource("RectangleShape2D_xfnnq")

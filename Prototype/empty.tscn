@@ -1,0 +1,177 @@
+[gd_scene format=3 uid="uid://canpddc4480xf"]
+
+[ext_resource type="PackedScene" uid="uid://du36yurnho130" path="res://Prototype/field.tscn" id="1_6bvn2"]
+[ext_resource type="Script" uid="uid://bf67go8wabsda" path="res://Prototype/3d_mouse.gd" id="1_saxu0"]
+[ext_resource type="Script" uid="uid://dd7bijkku55k8" path="res://Prototype/hand.gd" id="2_7h1qs"]
+[ext_resource type="Script" uid="uid://edqox8i4u0vm" path="res://Prototype/card_node.gd" id="3_5i0r8"]
+[ext_resource type="Script" uid="uid://d0lgwgt6jkcay" path="res://Prototype/card_direction_line.gd" id="5_qkq4g"]
+[ext_resource type="Script" uid="uid://bqpv642xysmd3" path="res://Prototype/change_2d_mode.gd" id="6_tyc30"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xfnnq"]
+
+[node name="Node" type="Node" unique_id=1270944060]
+
+[node name="3dMouse" type="Node" parent="." unique_id=1984876358 node_paths=PackedStringArray("cam", "ray")]
+script = ExtResource("1_saxu0")
+cam = NodePath("../Camera3D")
+ray = NodePath("../RayCast3D")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=599832445]
+transform = Transform3D(0.59596413, -0.47851253, 0.64486635, 0, 0.80306035, 0.5958978, -0.80301106, -0.3551337, 0.47859517, 1.6025517, 3.8020236, 1.7598164)
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=213912483]
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Field" parent="." unique_id=1437293258 node_paths=PackedStringArray("near") instance=ExtResource("1_6bvn2")]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, 0, 0.6806863, 0)
+near = [NodePath("../Field2")]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Field" unique_id=822125915]
+transform = Transform3D(1, 0, 0, 0, 3.3333333, 0, 0, 0, 1, 0, -2.2689543, 0)
+mesh = SubResource("BoxMesh_xfnnq")
+
+[node name="Field5" parent="." unique_id=500139911 node_paths=PackedStringArray("near") instance=ExtResource("1_6bvn2")]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, -1.6003071, 0.6806863, -2.7554533)
+near = [NodePath("../Field6"), NodePath("../Field8"), NodePath("../Field3")]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Field5" unique_id=1148487139]
+transform = Transform3D(1, 0, 0, 0, 3.3333333, 0, 0, 0, 1, 0, -2.2689543, 0)
+mesh = SubResource("BoxMesh_xfnnq")
+
+[node name="Field6" parent="." unique_id=1590018036 node_paths=PackedStringArray("near") instance=ExtResource("1_6bvn2")]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, -0.060715556, 0.6806863, -2.7554533)
+near = [NodePath("../Field5"), NodePath("../Field7")]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Field6" unique_id=1431124551]
+transform = Transform3D(1, 0, 0, 0, 3.3333333, 0, 0, 0, 1, 0, -2.2689543, 0)
+mesh = SubResource("BoxMesh_xfnnq")
+
+[node name="Field7" parent="." unique_id=1818310981 node_paths=PackedStringArray("near") instance=ExtResource("1_6bvn2")]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, -0.060715556, 0.6806863, -4.249899)
+near = [NodePath("../Field6"), NodePath("../Field8")]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Field7" unique_id=1262504495]
+transform = Transform3D(1, 0, 0, 0, 3.3333333, 0, 0, 0, 1, 0, -2.2689543, 0)
+mesh = SubResource("BoxMesh_xfnnq")
+
+[node name="Field8" parent="." unique_id=450796552 node_paths=PackedStringArray("near") instance=ExtResource("1_6bvn2")]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, -1.6743906, 0.6806863, -4.249899)
+near = [NodePath("../Field5"), NodePath("../Field7"), NodePath("../Field9")]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Field8" unique_id=1790602410]
+transform = Transform3D(1, 0, 0, 0, 3.3333333, 0, 0, 0, 1, 0, -2.2689543, 0)
+mesh = SubResource("BoxMesh_xfnnq")
+
+[node name="Field9" parent="." unique_id=1504152380 node_paths=PackedStringArray("near") instance=ExtResource("1_6bvn2")]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, -3.3378508, 0.6806863, -4.249899)
+near = [NodePath("../Field8")]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Field9" unique_id=895827407]
+transform = Transform3D(1, 0, 0, 0, 3.3333333, 0, 0, 0, 1, 0, -2.2689543, 0)
+mesh = SubResource("BoxMesh_xfnnq")
+
+[node name="Field2" parent="." unique_id=1274638524 node_paths=PackedStringArray("near") instance=ExtResource("1_6bvn2")]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, -1.5955454, 0.6806863, 0)
+near = [NodePath("../Field"), NodePath("../Field3")]
+
+[node name="Field3" parent="." unique_id=1373937245 node_paths=PackedStringArray("near") instance=ExtResource("1_6bvn2")]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, -1.5955454, 0.6806863, -1.5145967)
+near = [NodePath("../Field5"), NodePath("../Field2"), NodePath("../Field4")]
+
+[node name="Field4" parent="." unique_id=610088219 node_paths=PackedStringArray("near") instance=ExtResource("1_6bvn2")]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, -3.1513965, 0.6806863, -1.5145967)
+near = [NodePath("../Field3")]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=556589832]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6018282, 0, 0)
+mesh = SubResource("BoxMesh_xfnnq")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1115190603]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6018282, 0, -1.5068922)
+mesh = SubResource("BoxMesh_xfnnq")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=532884469]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1672814, 0, -1.5068922)
+mesh = SubResource("BoxMesh_xfnnq")
+
+[node name="Deck" type="Control" parent="." unique_id=1597564601]
+visible = false
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -181.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Trash" type="Control" parent="." unique_id=186489648]
+visible = false
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -181.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Hand" type="Control" parent="." unique_id=1302461791 node_paths=PackedStringArray("mouse")]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -181.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("2_7h1qs")
+mouse = NodePath("../3dMouse")
+
+[node name="Card" type="ColorRect" parent="Hand" unique_id=1808652542]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 179.0
+color = Color(0.4747033, 0.11821946, 0, 1)
+script = ExtResource("3_5i0r8")
+efect = "fire"
+
+[node name="Label" type="Label" parent="Hand/Card" unique_id=1584745863]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "EFECT FIRE"
+
+[node name="Card2" type="ColorRect" parent="Hand" unique_id=103278767]
+layout_mode = 0
+offset_left = 185.0
+offset_top = -1.0
+offset_right = 313.0
+offset_bottom = 178.0
+color = Color(1, 0.507415, 0.37213543, 1)
+script = ExtResource("3_5i0r8")
+efect = "water"
+
+[node name="Label2" type="Label" parent="Hand/Card2" unique_id=1234832754]
+layout_mode = 1
+offset_right = 83.0
+offset_bottom = 23.0
+text = "EFECT WATER"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1297097495]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45160568, 2.6663063, -0.8815999)
+light_color = Color(0.60107535, 0.6119672, 0.42477685, 1)
+light_energy = 5.516
+omni_range = 7.384404
+
+[node name="CardDirectionLine" type="Line2D" parent="." unique_id=246245665]
+points = PackedVector2Array(522, 540, 707, 214)
+width = 30.0
+default_color = Color(0.89407384, 0.00029436767, 0.8112464, 1)
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource("5_qkq4g")
+
+[node name="change_2d_mode" type="Node" parent="." unique_id=403977678]
+script = ExtResource("6_tyc30")

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://du5855uh527oh"]
+
+[ext_resource type="Script" uid="uid://bgm70cypeoxym" path="res://Scripts/tile.gd" id="1_hnskq"]
+[ext_resource type="Texture2D" uid="uid://fj1qt6j3wblc" path="res://Images/empty_tile.png" id="2_1jxrc"]
+
+[node name="Tile" type="Node2D" unique_id=765153414]
+script = ExtResource("1_hnskq")
+metadata/_custom_type_script = "uid://bgm70cypeoxym"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=438567536]
+texture = ExtResource("2_1jxrc")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TileEffect" format=3 uid="uid://d3cusunphhhv2"]
+
+[ext_resource type="Script" uid="uid://vcrlmqg6daw2" path="res://Scripts/tile_effect.gd" id="1_d0ong"]
+[ext_resource type="Texture2D" uid="uid://clkhgyamwpuyw" path="res://Images/puddle.png" id="2_alxct"]
+
+[resource]
+script = ExtResource("1_d0ong")
+type = 1
+texture = ExtResource("2_alxct")
+metadata/_custom_type_script = "uid://vcrlmqg6daw2"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="FireEffect" format=3 uid="uid://bx4i73qr1662x"]
+
+[ext_resource type="Script" uid="uid://c46kxglmas8ik" path="res://Scripts/TileEffects/fire_effect.gd" id="1_ww5dt"]
+[ext_resource type="Texture2D" uid="uid://c2jaext0tyst1" path="res://Images/fire.png" id="2_rn243"]
+
+[resource]
+script = ExtResource("1_ww5dt")
+texture = ExtResource("2_rn243")
+sprite_offset = -8.0
+metadata/_custom_type_script = "uid://c46kxglmas8ik"

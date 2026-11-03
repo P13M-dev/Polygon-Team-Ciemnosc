@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://du36yurnho130"]
 
 [ext_resource type="Script" uid="uid://vug8tbv5gg7o" path="res://Prototype/field.gd" id="1_ngg8i"]
+[ext_resource type="Texture2D" uid="uid://1d7eexj3bkmg" path="res://icon.svg" id="2_d8mum"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ngg8i"]
 albedo_color = Color(0, 0.54693973, 0.3349252, 1)
@@ -33,6 +34,7 @@ mat2 = SubResource("StandardMaterial3D_d8mum")
 
 [node name="hover" type="OmniLight3D" parent="." unique_id=645157278]
 transform = Transform3D(1, 0, 0, 0, 3.3333333, 0, 0, 0, 1, 0, 2.194698, 0)
+visible = false
 light_energy = 16.0
 omni_range = 0.817
 
@@ -47,6 +49,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0262084, 0)
 visible = false
 mesh = SubResource("CylinderMesh_xfnnq")
 surface_material_override/0 = SubResource("StandardMaterial3D_eyo31")
+
+[node name="player" type="Sprite3D" parent="." unique_id=1524026946]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 0, 2.135738, 0)
+billboard = 2
+texture = ExtResource("2_d8mum")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1804531689]
 mesh = SubResource("SphereMesh_xfnnq")

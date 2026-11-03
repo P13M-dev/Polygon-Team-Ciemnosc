@@ -3,9 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://du36yurnho130" path="res://Prototype/field.tscn" id="1_6bvn2"]
 [ext_resource type="Script" uid="uid://bf67go8wabsda" path="res://Prototype/3d_mouse.gd" id="1_saxu0"]
 [ext_resource type="Script" uid="uid://dd7bijkku55k8" path="res://Prototype/hand.gd" id="2_7h1qs"]
+[ext_resource type="PackedScene" uid="uid://sos6gxpnhc2t" path="res://Prototype/lv_part/platform.tscn" id="3_2sfsn"]
 [ext_resource type="Script" uid="uid://edqox8i4u0vm" path="res://Prototype/card_node.gd" id="3_5i0r8"]
+[ext_resource type="Script" uid="uid://csyx7xn6oqwtp" path="res://Prototype/game_manager.gd" id="4_ow5dh"]
+[ext_resource type="Script" uid="uid://bscxdkgobr5ba" path="res://Prototype/mana.gd" id="4_q7x7u"]
 [ext_resource type="Script" uid="uid://d0lgwgt6jkcay" path="res://Prototype/card_direction_line.gd" id="5_qkq4g"]
+[ext_resource type="Resource" uid="uid://cm0gmftxee73v" path="res://Prototype/cards/collecion/fire1.tres" id="6_itwnc"]
 [ext_resource type="Script" uid="uid://bqpv642xysmd3" path="res://Prototype/change_2d_mode.gd" id="6_tyc30"]
+[ext_resource type="Resource" uid="uid://cmpmfjuyiipa8" path="res://Prototype/cards/collecion/player.tres" id="9_uwaiv"]
+[ext_resource type="Resource" uid="uid://doc0fgnvs7jds" path="res://Prototype/cards/collecion/water2.tres" id="10_3j8sx"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xfnnq"]
 
@@ -17,7 +23,7 @@ cam = NodePath("../Camera3D")
 ray = NodePath("../RayCast3D")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=599832445]
-transform = Transform3D(0.59596413, -0.47851253, 0.64486635, 0, 0.80306035, 0.5958978, -0.80301106, -0.3551337, 0.47859517, 1.6025517, 3.8020236, 1.7598164)
+transform = Transform3D(1, 0, 0, 0, 0.66726893, 0.7448169, 0, -0.7448169, 0.66726893, -1.3632195, 9.070576, 3.2339709)
 
 [node name="RayCast3D" type="RayCast3D" parent="." unique_id=213912483]
 collide_with_areas = true
@@ -57,11 +63,36 @@ mesh = SubResource("BoxMesh_xfnnq")
 
 [node name="Field8" parent="." unique_id=450796552 node_paths=PackedStringArray("near") instance=ExtResource("1_6bvn2")]
 transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, -1.6743906, 0.6806863, -4.249899)
-near = [NodePath("../Field5"), NodePath("../Field7"), NodePath("../Field9")]
+near = [NodePath("../Field5"), NodePath("../Field7"), NodePath("../Field10"), NodePath("../Field9")]
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Field8" unique_id=1790602410]
 transform = Transform3D(1, 0, 0, 0, 3.3333333, 0, 0, 0, 1, 0, -2.2689543, 0)
 mesh = SubResource("BoxMesh_xfnnq")
+
+[node name="platform" parent="." unique_id=2100489103 instance=ExtResource("3_2sfsn")]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, -1.6743906, 3.6641057, -6.9335127)
+
+[node name="platform2" parent="." unique_id=661797743 instance=ExtResource("3_2sfsn")]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, -5.550622, 3.6641057, -6.9335127)
+
+[node name="platform3" parent="." unique_id=1897665326 instance=ExtResource("3_2sfsn")]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, -4.2787213, 3.6641057, -9.462639)
+
+[node name="Field10" parent="." unique_id=230658779 node_paths=PackedStringArray("near") instance=ExtResource("1_6bvn2")]
+transform = Transform3D(1, 0, 0, 0, 0.15390968, -0.85836935, 0, 0.2575108, 0.51303226, -1.6743906, 1.2403257, -5.234271)
+near = [NodePath("../Field8"), NodePath("../Field11")]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Field10" unique_id=1862871006]
+transform = Transform3D(1, 0, 0, 0, 3.3330002, 0, 0, 2.9802322e-08, 3.815, 0, -2.5409813, -0.048775196)
+mesh = SubResource("BoxMesh_xfnnq")
+
+[node name="Field11" parent="." unique_id=1290833791 node_paths=PackedStringArray("near") instance=ExtResource("1_6bvn2")]
+transform = Transform3D(1, 0, 0, 0, 0.15390968, -0.85836935, 0, 0.2575108, 0.51303226, -1.6743906, 2.0808513, -5.913845)
+near = [NodePath("../Field10"), NodePath("../Field12")]
+
+[node name="Field12" parent="." unique_id=1075842716 node_paths=PackedStringArray("near") instance=ExtResource("1_6bvn2")]
+transform = Transform3D(1, 0, 0, 0, -0.0117658675, -0.9992306, 0, 0.29976922, -0.039219588, -1.6743906, 3.1198177, -6.3767385)
+near = [NodePath("../platform/Field13"), NodePath("../platform/Field14"), NodePath("../Field11")]
 
 [node name="Field9" parent="." unique_id=1504152380 node_paths=PackedStringArray("near") instance=ExtResource("1_6bvn2")]
 transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, -3.3378508, 0.6806863, -4.249899)
@@ -95,6 +126,47 @@ mesh = SubResource("BoxMesh_xfnnq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1672814, 0, -1.5068922)
 mesh = SubResource("BoxMesh_xfnnq")
 
+[node name="GameManager" type="Node" parent="." unique_id=618277452]
+script = ExtResource("4_ow5dh")
+
+[node name="END_TURN_Button" type="Button" parent="GameManager" unique_id=1019875404]
+offset_right = 90.0
+offset_bottom = 31.0
+text = "END TURN"
+
+[node name="ColorRect" type="ColorRect" parent="GameManager" unique_id=923826309]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -227.0
+offset_right = 105.0
+offset_bottom = -187.0
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="StateLabel" type="Label" parent="GameManager/ColorRect" unique_id=2120348493]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "HANd"
+
+[node name="POPUP" type="ColorRect" parent="GameManager" unique_id=104144197]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(0, 0, 0, 1)
+
 [node name="Deck" type="Control" parent="." unique_id=1597564601]
 visible = false
 layout_mode = 3
@@ -105,6 +177,70 @@ anchor_bottom = 1.0
 offset_top = -181.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="Card3" type="ColorRect" parent="Deck" unique_id=1476793128]
+layout_mode = 0
+offset_left = 353.0
+offset_right = 481.0
+offset_bottom = 179.0
+color = Color(0.4171379, 0.0003833133, 0.49155366, 1)
+script = ExtResource("3_5i0r8")
+efect = "fire"
+card = ExtResource("6_itwnc")
+
+[node name="Label" type="Label" parent="Deck/Card3" unique_id=1907577413]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "EFECT FIRE"
+
+[node name="Card4" type="ColorRect" parent="Deck" unique_id=1785708689]
+layout_mode = 0
+offset_left = 554.0
+offset_right = 682.0
+offset_bottom = 179.0
+color = Color(0.14198026, 0.13843235, 0.68734396, 1)
+script = ExtResource("3_5i0r8")
+efect = "fire"
+card = ExtResource("6_itwnc")
+
+[node name="Label" type="Label" parent="Deck/Card4" unique_id=882507932]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "EFECT FIRE"
+
+[node name="Card5" type="ColorRect" parent="Deck" unique_id=856418462]
+layout_mode = 0
+offset_left = 743.0
+offset_right = 871.0
+offset_bottom = 179.0
+color = Color(0.4171379, 0.0003833133, 0.49155366, 1)
+script = ExtResource("3_5i0r8")
+efect = "fire"
+card = ExtResource("6_itwnc")
+
+[node name="Label" type="Label" parent="Deck/Card5" unique_id=87729789]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "EFECT FIRE"
+
+[node name="Card6" type="ColorRect" parent="Deck" unique_id=341015303]
+layout_mode = 0
+offset_left = 944.0
+offset_right = 1072.0
+offset_bottom = 179.0
+color = Color(0.14198026, 0.13843235, 0.68734396, 1)
+script = ExtResource("3_5i0r8")
+efect = "fire"
+card = ExtResource("6_itwnc")
+
+[node name="Label" type="Label" parent="Deck/Card6" unique_id=1837735843]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "EFECT FIRE"
 
 [node name="Trash" type="Control" parent="." unique_id=186489648]
 visible = false
@@ -117,7 +253,8 @@ offset_top = -181.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Hand" type="Control" parent="." unique_id=1302461791 node_paths=PackedStringArray("mouse")]
+[node name="Exile" type="Control" parent="." unique_id=1624681534]
+visible = false
 layout_mode = 3
 anchors_preset = 12
 anchor_top = 1.0
@@ -126,6 +263,42 @@ anchor_bottom = 1.0
 offset_top = -181.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="Mana" type="ColorRect" parent="." unique_id=1396403362]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_bottom = 100.0
+grow_horizontal = 0
+color = Color(0.3488402, 0.007394857, 0.486462, 1)
+script = ExtResource("4_q7x7u")
+
+[node name="Label" type="Label" parent="Mana" unique_id=719306840]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "3/3"
+
+[node name="Hand" type="ColorRect" parent="." unique_id=1472656940 node_paths=PackedStringArray("mouse")]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -181.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.21374327, 0.21374327, 0.21374324, 1)
 script = ExtResource("2_7h1qs")
 mouse = NodePath("../3dMouse")
 
@@ -135,7 +308,8 @@ offset_right = 128.0
 offset_bottom = 179.0
 color = Color(0.4747033, 0.11821946, 0, 1)
 script = ExtResource("3_5i0r8")
-efect = "fire"
+efect = "pl"
+card = ExtResource("9_uwaiv")
 
 [node name="Label" type="Label" parent="Hand/Card" unique_id=1584745863]
 layout_mode = 0
@@ -152,8 +326,9 @@ offset_bottom = 178.0
 color = Color(1, 0.507415, 0.37213543, 1)
 script = ExtResource("3_5i0r8")
 efect = "water"
+card = ExtResource("10_3j8sx")
 
-[node name="Label2" type="Label" parent="Hand/Card2" unique_id=1234832754]
+[node name="Label" type="Label" parent="Hand/Card2" unique_id=1234832754]
 layout_mode = 1
 offset_right = 83.0
 offset_bottom = 23.0
@@ -162,6 +337,18 @@ text = "EFECT WATER"
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1297097495]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45160568, 2.6663063, -0.8815999)
 light_color = Color(0.60107535, 0.6119672, 0.42477685, 1)
+light_energy = 5.516
+omni_range = 7.384404
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1489197501]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45160568, 7.0494328, -8.200863)
+light_color = Color(0.343807, 0.65952677, 0.61946064, 1)
+light_energy = 5.516
+omni_range = 7.384404
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=2104879356]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.268634, 7.0494328, -8.200863)
+light_color = Color(0.343807, 0.65952677, 0.61946064, 1)
 light_energy = 5.516
 omni_range = 7.384404
 
@@ -175,3 +362,5 @@ script = ExtResource("5_qkq4g")
 
 [node name="change_2d_mode" type="Node" parent="." unique_id=403977678]
 script = ExtResource("6_tyc30")
+
+[connection signal="pressed" from="GameManager/END_TURN_Button" to="GameManager" method="_on_end_turn_button_pressed"]

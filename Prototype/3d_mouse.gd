@@ -33,3 +33,5 @@ func _process(delta: float) -> void:
 			if collider is Field:
 				collider.is_hover=true
 				current_field=collider
+		else:
+			current_field=null

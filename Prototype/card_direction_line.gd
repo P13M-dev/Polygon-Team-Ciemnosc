@@ -2,7 +2,7 @@ extends Line2D
 
 func _process(delta: float) -> void:
 	var has_card=$"../Hand".active_card!=null
-	if has_card:
+	if has_card and $"../Mana".mana>0:
 		self.visible=true
 		var p1=$"../Hand".active_card.global_position
 		var p2=get_viewport().get_mouse_position()

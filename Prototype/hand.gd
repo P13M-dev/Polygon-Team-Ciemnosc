@@ -16,15 +16,14 @@ func _process(delta: float) -> void:
 				active_card=c
 				print(c.efect)
 		if active_card==null:
-			if last_active_card!=null:
-				if mouse.current_field!=null:
-					if last_active_card.efect=="fire":
-						mouse.current_field.state=Field.FieldState.FIRE
-						for f in mouse.current_field.near:
-							f.state=Field.FieldState.FIRE
-					if last_active_card.efect=="water":
-						mouse.current_field.state=Field.FieldState.WATER
-						for f in mouse.current_field.near:
-							f.state=Field.FieldState.WATER
-					last_active_card.queue_free()
-					
+			if $"../Mana".mana>0:
+				if last_active_card!=null:
+					if mouse.current_field!=null:
+						print("USE")
+						if last_active_card.card!=null:
+							last_active_card.card.cast_on(mouse.current_field)
+						if not last_active_card.card.exile:
+							last_active_card.reparent($"../Trash")
+						else:
+							last_active_card.reparent($"../Exile")
+						$"../Mana".mana-=1

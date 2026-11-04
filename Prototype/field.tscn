@@ -52,7 +52,14 @@ surface_material_override/0 = SubResource("StandardMaterial3D_eyo31")
 
 [node name="player" type="Sprite3D" parent="." unique_id=1524026946]
 transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 0, 2.135738, 0)
+visible = false
 billboard = 2
+texture = ExtResource("2_d8mum")
+
+[node name="player2" type="Sprite3D" parent="." unique_id=2091979085]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 0, 2.135738, 0)
+visible = false
+billboard = 1
 texture = ExtResource("2_d8mum")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1804531689]

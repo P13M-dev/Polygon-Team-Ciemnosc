@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Ciemnosc"
-run/main_scene="uid://cohnxcklatxu3"
+run/main_scene="uid://dfxcy2x554w3c"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/image="uid://8l8cw5b0sxad"
 config/icon="uid://8l8cw5b0sxad"

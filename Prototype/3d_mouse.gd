@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 		var no=cam.project_ray_normal(get_viewport().get_mouse_position())
 		
 		ray.global_transform=Transform3D.IDENTITY.translated(ogr)
-		ray.target_position=no*100.0
+		ray.target_position=no*10000.0
 		ray.force_raycast_update()
 		if current_field!=null:
 			current_field.is_hover=false

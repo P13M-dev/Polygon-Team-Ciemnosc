@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://c6sic01twvfrv"]
+
+[ext_resource type="Script" uid="uid://bf67go8wabsda" path="res://Prototype/3d_mouse.gd" id="1_20t21"]
+[ext_resource type="PackedScene" uid="uid://cd74jphyfngd" path="res://Prototype/field_2d.tscn" id="2_20t21"]
+[ext_resource type="Script" uid="uid://dd7bijkku55k8" path="res://Prototype/hand.gd" id="3_y0gsv"]
+[ext_resource type="Script" uid="uid://edqox8i4u0vm" path="res://Prototype/card_node.gd" id="4_ueesp"]
+[ext_resource type="Script" uid="uid://d0lgwgt6jkcay" path="res://Prototype/card_direction_line.gd" id="5_0ldcw"]
+[ext_resource type="Script" uid="uid://bqpv642xysmd3" path="res://Prototype/change_2d_mode.gd" id="6_lsbgx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xfnnq"]
+
+[node name="Node" type="Node" unique_id=1270944060]
+
+[node name="3dMouse" type="Node" parent="." unique_id=1984876358 node_paths=PackedStringArray("cam2d")]
+script = ExtResource("1_20t21")
+cam2d = NodePath("Camera2D")
+is_2D = true
+
+[node name="ColisonPoint" type="Area2D" parent="3dMouse" unique_id=517453443]
+position = Vector2(1069, 30.00001)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3dMouse/ColisonPoint" unique_id=423660324]
+shape = SubResource("CircleShape2D_xfnnq")
+
+[node name="Camera2D" type="Camera2D" parent="3dMouse" unique_id=1740095413]
+position = Vector2(1032, 0)
+rotation = 0.94767267
+
+[node name="Field2d" parent="3dMouse" unique_id=1504115936 node_paths=PackedStringArray("near") instance=ExtResource("2_20t21")]
+position = Vector2(564, 16)
+near = [NodePath("../Field2d2")]
+
+[node name="Field2d2" parent="3dMouse" unique_id=1935669410 node_paths=PackedStringArray("near") instance=ExtResource("2_20t21")]
+position = Vector2(697, 13)
+near = [NodePath("../Field2d"), NodePath("../Field2d3")]
+
+[node name="Field2d3" parent="3dMouse" unique_id=788328271 node_paths=PackedStringArray("near") instance=ExtResource("2_20t21")]
+position = Vector2(694, -124)
+near = [NodePath("../Field2d2"), NodePath("../Field2d4")]
+
+[node name="Field2d4" parent="3dMouse" unique_id=1179846849 node_paths=PackedStringArray("near") instance=ExtResource("2_20t21")]
+position = Vector2(827, -127)
+near = [NodePath("../Field2d3")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1322453315]
+
+[node name="Deck" type="Control" parent="CanvasLayer" unique_id=1597564601]
+visible = false
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -181.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Trash" type="Control" parent="CanvasLayer" unique_id=186489648]
+visible = false
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -181.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Hand" type="Control" parent="CanvasLayer" unique_id=1302461791 node_paths=PackedStringArray("mouse")]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -181.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("3_y0gsv")
+mouse = NodePath("../../3dMouse")
+
+[node name="Card" type="ColorRect" parent="CanvasLayer/Hand" unique_id=1808652542]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 179.0
+color = Color(0.4747033, 0.11821946, 0, 1)
+script = ExtResource("4_ueesp")
+efect = "fire"
+
+[node name="Label" type="Label" parent="CanvasLayer/Hand/Card" unique_id=1584745863]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "EFECT FIRE"
+
+[node name="Card2" type="ColorRect" parent="CanvasLayer/Hand" unique_id=103278767]
+layout_mode = 0
+offset_left = 185.0
+offset_top = -1.0
+offset_right = 313.0
+offset_bottom = 178.0
+color = Color(1, 0.507415, 0.37213543, 1)
+script = ExtResource("4_ueesp")
+efect = "water"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Hand/Card2" unique_id=1234832754]
+layout_mode = 1
+offset_right = 83.0
+offset_bottom = 23.0
+text = "EFECT WATER"
+
+[node name="CardDirectionLine" type="Line2D" parent="CanvasLayer" unique_id=246245665]
+points = PackedVector2Array(522, 540, 707, 214)
+width = 30.0
+default_color = Color(0.89407384, 0.00029436767, 0.8112464, 1)
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource("5_0ldcw")
+
+[node name="change_2d_mode" type="Node" parent="." unique_id=719517513]
+script = ExtResource("6_lsbgx")

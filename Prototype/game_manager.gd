@@ -62,13 +62,12 @@ func _process(delta: float) -> void:
 				pos_y+=c.size.y
 		if Input.is_key_pressed(KEY_R):
 			end_shop()
-			new_turn()
 
 func end_shop():
 			is_shop=false
 			for i in range($"../Shop".get_child_count()):
 				$"../Shop".get_child(0).reparent($"../Deck")
-			
+			new_turn()
 
 var turn_num=0
 func new_turn():

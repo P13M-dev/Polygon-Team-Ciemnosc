@@ -12,7 +12,8 @@ func _process(delta: float) -> void:
 		active_card=null
 		for c:CardNode in self.get_children():
 			print(c.global_position," ",pos)
-			if c.global_position.distance_to(pos)<100.0:
+			#if c.global_position.distance_to(pos)<100.0:
+			if c.get_global_rect().has_point(c.get_global_mouse_position()):
 				active_card=c
 				print(c.efect)
 		if active_card==null:

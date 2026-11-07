@@ -2,7 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dlhtqremb2urf" path="res://Scripts/board_manager.gd" id="1_dplj4"]
 
-[node name="BoardManager" type="Node2D" unique_id=1491069919]
-position = Vector2(542, 348)
+[node name="BoardManager" type="Node" unique_id=1516694294]
 script = ExtResource("1_dplj4")
-metadata/_custom_type_script = "uid://dlhtqremb2urf"
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1714451905]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 901.21185, 1.4072397, 504.74512)
+projection = 1
+size = 1000.0

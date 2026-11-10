@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SpawnCard" format=3 uid="uid://cm0gmftxee73v"]
+
+[ext_resource type="Script" uid="uid://sa0offqnfmtg" path="res://Prototype/cards/spawn_card.gd" id="1_s5cfi"]
+
+[resource]
+script = ExtResource("1_s5cfi")
+spawn = 1
+r = 1
+name = "Iskra"
+metadata/_custom_type_script = "uid://sa0offqnfmtg"

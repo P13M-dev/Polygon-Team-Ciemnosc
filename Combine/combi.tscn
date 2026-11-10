@@ -1,0 +1,307 @@
+[gd_scene format=3 uid="uid://dfxcy2x554w3c"]
+
+[ext_resource type="Script" uid="uid://bf67go8wabsda" path="res://Prototype/3d_mouse.gd" id="1_uh22f"]
+[ext_resource type="Script" uid="uid://dlhtqremb2urf" path="res://Scripts/board_manager.gd" id="2_cl47s"]
+[ext_resource type="Script" uid="uid://csyx7xn6oqwtp" path="res://Prototype/game_manager.gd" id="4_4hsrg"]
+[ext_resource type="PackedScene" uid="uid://b52werdtbj7jy" path="res://Prototype/cards/card_empty.tscn" id="5_5y4kp"]
+[ext_resource type="Script" uid="uid://fpmeilx3p5c6" path="res://Prototype/cards/card_resource.gd" id="6_w7p1i"]
+[ext_resource type="Script" uid="uid://sa0offqnfmtg" path="res://Prototype/cards/spawn_card.gd" id="7_q23u0"]
+[ext_resource type="Script" uid="uid://dpc4k6lmu238h" path="res://Prototype/cards/UpgradeCardCollection/UpgradeCardCollection.gd" id="8_mk5in"]
+[ext_resource type="Script" uid="uid://edqox8i4u0vm" path="res://Prototype/card_node.gd" id="9_72665"]
+[ext_resource type="Resource" uid="uid://cm0gmftxee73v" path="res://Prototype/cards/collecion/fire1.tres" id="10_bqkb8"]
+[ext_resource type="Script" uid="uid://dogxj228jwij8" path="res://Prototype/shop_2.gd" id="11_1fi7u"]
+[ext_resource type="Script" uid="uid://bscxdkgobr5ba" path="res://Prototype/mana.gd" id="12_iqet2"]
+[ext_resource type="Script" uid="uid://dd7bijkku55k8" path="res://Prototype/hand.gd" id="13_gudgl"]
+[ext_resource type="Resource" uid="uid://cmpmfjuyiipa8" path="res://Prototype/cards/collecion/player.tres" id="14_d416e"]
+[ext_resource type="Resource" uid="uid://doc0fgnvs7jds" path="res://Prototype/cards/collecion/water2.tres" id="15_5oow1"]
+[ext_resource type="Script" uid="uid://d0lgwgt6jkcay" path="res://Prototype/card_direction_line.gd" id="16_s2vuw"]
+[ext_resource type="Script" uid="uid://bqpv642xysmd3" path="res://Prototype/change_2d_mode.gd" id="17_avgfu"]
+
+[sub_resource type="Resource" id="Resource_ankqp"]
+script = ExtResource("7_q23u0")
+spawn = 1
+r = 2
+name = "NEW FIRE"
+metadata/_custom_type_script = "uid://sa0offqnfmtg"
+
+[sub_resource type="Resource" id="Resource_k0yb7"]
+script = ExtResource("7_q23u0")
+spawn = 2
+r = 2
+name = "NEW WATER"
+metadata/_custom_type_script = "uid://sa0offqnfmtg"
+
+[sub_resource type="Resource" id="Resource_5p37r"]
+script = ExtResource("8_mk5in")
+posibilities = Array[ExtResource("6_w7p1i")]([SubResource("Resource_ankqp"), SubResource("Resource_k0yb7")])
+count = 1
+metadata/_custom_type_script = "uid://dpc4k6lmu238h"
+
+[node name="Node" type="Node" unique_id=1270944060]
+
+[node name="3dMouse" type="Node" parent="." unique_id=1984876358 node_paths=PackedStringArray("cam", "ray")]
+script = ExtResource("1_uh22f")
+cam = NodePath("../BoardManager/Camera3D")
+ray = NodePath("../BoardManager/RayCast3D")
+
+[node name="BoardManager" type="Node" parent="." unique_id=1516694294]
+script = ExtResource("2_cl47s")
+
+[node name="Camera3D" type="Camera3D" parent="BoardManager" unique_id=1714451905]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 901.212, 100, 504.745)
+projection = 1
+size = 1000.0
+
+[node name="RayCast3D" type="RayCast3D" parent="BoardManager" unique_id=213912483]
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="GameManager" type="Node" parent="." unique_id=618277452]
+script = ExtResource("4_4hsrg")
+empty_card = ExtResource("5_5y4kp")
+upgrade = SubResource("Resource_5p37r")
+
+[node name="END_TURN_Button" type="Button" parent="GameManager" unique_id=1019875404]
+offset_right = 90.0
+offset_bottom = 31.0
+text = "END TURN"
+
+[node name="ColorRect" type="ColorRect" parent="GameManager" unique_id=923826309]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -227.0
+offset_right = 105.0
+offset_bottom = -187.0
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="StateLabel" type="Label" parent="GameManager/ColorRect" unique_id=2120348493]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "HANd"
+
+[node name="POPUP" type="ColorRect" parent="GameManager" unique_id=104144197]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(0, 0, 0, 1)
+
+[node name="Deck" type="Control" parent="." unique_id=1597564601]
+visible = false
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -181.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Card3" type="ColorRect" parent="Deck" unique_id=1476793128]
+layout_mode = 0
+offset_left = 353.0
+offset_right = 481.0
+offset_bottom = 179.0
+color = Color(0.4171379, 0.0003833133, 0.49155366, 1)
+script = ExtResource("9_72665")
+efect = "fire"
+card = ExtResource("10_bqkb8")
+
+[node name="Label" type="Label" parent="Deck/Card3" unique_id=1907577413]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "EFECT FIRE"
+
+[node name="Card4" type="ColorRect" parent="Deck" unique_id=1785708689]
+layout_mode = 0
+offset_left = 554.0
+offset_right = 682.0
+offset_bottom = 179.0
+color = Color(0.14198026, 0.13843235, 0.68734396, 1)
+script = ExtResource("9_72665")
+efect = "fire"
+card = ExtResource("10_bqkb8")
+
+[node name="Label" type="Label" parent="Deck/Card4" unique_id=882507932]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "EFECT FIRE"
+
+[node name="Card5" type="ColorRect" parent="Deck" unique_id=856418462]
+layout_mode = 0
+offset_left = 743.0
+offset_right = 871.0
+offset_bottom = 179.0
+color = Color(0.4171379, 0.0003833133, 0.49155366, 1)
+script = ExtResource("9_72665")
+efect = "fire"
+card = ExtResource("10_bqkb8")
+
+[node name="Label" type="Label" parent="Deck/Card5" unique_id=87729789]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "EFECT FIRE"
+
+[node name="Card6" type="ColorRect" parent="Deck" unique_id=341015303]
+layout_mode = 0
+offset_left = 944.0
+offset_right = 1072.0
+offset_bottom = 179.0
+color = Color(0.14198026, 0.13843235, 0.68734396, 1)
+script = ExtResource("9_72665")
+efect = "fire"
+card = ExtResource("10_bqkb8")
+
+[node name="Label" type="Label" parent="Deck/Card6" unique_id=1837735843]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "EFECT FIRE"
+
+[node name="Trash" type="Control" parent="." unique_id=186489648]
+visible = false
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -181.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Exile" type="Control" parent="." unique_id=1624681534]
+visible = false
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -181.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Shop" type="Control" parent="." unique_id=2003898895]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -430.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Shop2" type="Control" parent="." unique_id=1361502752]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 319.0
+offset_top = -643.0
+offset_right = -364.0
+offset_bottom = -467.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("11_1fi7u")
+
+[node name="Mana" type="ColorRect" parent="." unique_id=1396403362]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_bottom = 100.0
+grow_horizontal = 0
+color = Color(0.3488402, 0.007394857, 0.486462, 1)
+script = ExtResource("12_iqet2")
+
+[node name="Label" type="Label" parent="Mana" unique_id=719306840]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "3/3"
+
+[node name="Hand" type="ColorRect" parent="." unique_id=1472656940 node_paths=PackedStringArray("mouse")]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -181.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.21374327, 0.21374327, 0.21374324, 1)
+script = ExtResource("13_gudgl")
+mouse = NodePath("../3dMouse")
+
+[node name="Card" type="ColorRect" parent="Hand" unique_id=1808652542]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 179.0
+color = Color(0.4747033, 0.11821946, 0, 1)
+script = ExtResource("9_72665")
+efect = "pl"
+card = ExtResource("14_d416e")
+
+[node name="Label" type="Label" parent="Hand/Card" unique_id=1584745863]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "EFECT FIRE"
+
+[node name="Card2" type="ColorRect" parent="Hand" unique_id=103278767]
+layout_mode = 0
+offset_left = 185.0
+offset_top = -1.0
+offset_right = 313.0
+offset_bottom = 178.0
+color = Color(1, 0.507415, 0.37213543, 1)
+script = ExtResource("9_72665")
+efect = "water"
+card = ExtResource("15_5oow1")
+
+[node name="Label" type="Label" parent="Hand/Card2" unique_id=1234832754]
+layout_mode = 1
+offset_right = 83.0
+offset_bottom = 23.0
+text = "EFECT WATER"
+
+[node name="CardDirectionLine" type="Line2D" parent="." unique_id=246245665]
+points = PackedVector2Array(522, 540, 707, 214)
+width = 30.0
+default_color = Color(0.89407384, 0.00029436767, 0.8112464, 1)
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource("16_s2vuw")
+
+[node name="change_2d_mode" type="Node" parent="." unique_id=403977678]
+script = ExtResource("17_avgfu")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1251738768]
+transform = Transform3D(1, 0, 0, 0, 0.48040482, 0.8770469, 0, -0.8770469, 0.48040482, 0, 0, 0)
+
+[connection signal="pressed" from="GameManager/END_TURN_Button" to="GameManager" method="_on_end_turn_button_pressed"]

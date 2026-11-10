@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://sos6gxpnhc2t"]
+
+[ext_resource type="PackedScene" uid="uid://du36yurnho130" path="res://Prototype/field.tscn" id="1_3rhui"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xfnnq"]
+
+[node name="platform" type="Node3D" unique_id=2100489103]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Field13" parent="." unique_id=1437293258 node_paths=PackedStringArray("near") instance=ExtResource("1_3rhui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+near = [NodePath("../Field14"), NodePath("../Field16"), NodePath("")]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Field13" unique_id=311672506]
+transform = Transform3D(1, 0, 0, 0, 3.3333333, 0, 0, 0, 1, 0, -2.2689543, 0)
+mesh = SubResource("BoxMesh_xfnnq")
+
+[node name="Field14" parent="." unique_id=1262273781 node_paths=PackedStringArray("near") instance=ExtResource("1_3rhui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3082762, 0, 0)
+near = [NodePath("../Field13"), NodePath("../Field15"), NodePath("../Field17"), NodePath("")]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Field14" unique_id=208186964]
+transform = Transform3D(1, 0, 0, 0, 3.3333333, 0, 0, 0, 1, 0, -2.2689543, 0)
+mesh = SubResource("BoxMesh_xfnnq")
+
+[node name="Field15" parent="." unique_id=137916089 node_paths=PackedStringArray("near") instance=ExtResource("1_3rhui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.658941, 0, 0)
+near = [NodePath("../Field14"), NodePath("../Field18")]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Field15" unique_id=1641723795]
+transform = Transform3D(1, 0, 0, 0, 3.3333333, 0, 0, 0, 1, 0, -2.2689543, 0)
+mesh = SubResource("BoxMesh_xfnnq")
+
+[node name="Field16" parent="." unique_id=809683457 node_paths=PackedStringArray("near") instance=ExtResource("1_3rhui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2288084)
+near = [NodePath("../Field13"), NodePath("../Field17")]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Field16" unique_id=1205879687]
+transform = Transform3D(1, 0, 0, 0, 3.3333333, 0, 0, 0, 1, 0, -2.2689543, 0)
+mesh = SubResource("BoxMesh_xfnnq")
+
+[node name="Field17" parent="." unique_id=633527441 node_paths=PackedStringArray("near") instance=ExtResource("1_3rhui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3082762, 0, -1.2288084)
+near = [NodePath("../Field14"), NodePath("../Field16"), NodePath("../Field18")]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Field17" unique_id=248853933]
+transform = Transform3D(1, 0, 0, 0, 3.3333333, 0, 0, 0, 1, 0, -2.2689543, 0)
+mesh = SubResource("BoxMesh_xfnnq")
+
+[node name="Field18" parent="." unique_id=1559187344 node_paths=PackedStringArray("near") instance=ExtResource("1_3rhui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.658941, 0, -1.2288084)
+near = [NodePath("../Field15"), NodePath("../Field17")]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Field18" unique_id=1102340013]
+transform = Transform3D(1, 0, 0, 0, 3.3333333, 0, 0, 0, 1, 0, -2.2689543, 0)
+mesh = SubResource("BoxMesh_xfnnq")

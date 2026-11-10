@@ -2,10 +2,16 @@
 
 [ext_resource type="Script" uid="uid://bgm70cypeoxym" path="res://Scripts/tile.gd" id="1_hnskq"]
 [ext_resource type="Texture2D" uid="uid://fj1qt6j3wblc" path="res://Images/empty_tile.png" id="2_1jxrc"]
+[ext_resource type="PackedScene" uid="uid://du36yurnho130" path="res://Prototype/field.tscn" id="3_1jxrc"]
 
-[node name="Tile" type="Node2D" unique_id=765153414]
+[node name="Tile" type="Node3D" unique_id=505120259]
 script = ExtResource("1_hnskq")
-metadata/_custom_type_script = "uid://bgm70cypeoxym"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=438567536]
+[node name="Sprite2D" type="Sprite3D" parent="." unique_id=770089784]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+pixel_size = 1.0
 texture = ExtResource("2_1jxrc")
+
+[node name="Field" parent="." unique_id=1437293258 instance=ExtResource("3_1jxrc")]
+transform = Transform3D(25, 0, 0, 0, 7.5, 0, 0, 0, 25, 1.5875034, -1.1288757, 2.387885)
+r = 76.0

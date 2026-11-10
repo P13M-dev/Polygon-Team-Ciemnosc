@@ -1,4 +1,4 @@
-extends Node2D
+extends Node3D
 class_name Tile
 
 var effects: Array[TileEffect]
@@ -14,8 +14,10 @@ func add_effect(effect: TileEffect) -> void:
 		effect.tile.effects.erase(effect)
 	effect.tile = self
 	effects.append(effect)
-	if effect.sprite2D==null:#tutaj pomyślałem, że może jednak Effect powinien być Nodem...
-		effect.sprite2D = Sprite2D.new()
-		effect.sprite2D.texture = effect.texture
-	add_child(effect.sprite2D)
-	effect.sprite2D.position = Vector2(0,effect.sprite_offset)
+	if effect.sprite3D==null:#tutaj pomyślałem, że może jednak Effect powinien być Nodem...
+		effect.sprite3D = Sprite3D.new()
+		effect.sprite3D.texture = effect.texture
+	add_child(effect.sprite3D)
+	effect.sprite3D.position = Vector3(0,0.1,effect.sprite_offset)
+	effect.sprite3D.rotate_x(-PI/2)
+	effect.sprite3D.pixel_size=1.0

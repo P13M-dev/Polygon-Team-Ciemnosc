@@ -9,22 +9,22 @@ var current_field=null
 func  _ready() -> void:
 	Game.mouse3d=self
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if is_2D:
-		var gc=cam2d.get_screen_center_position()
-		var mouse=get_viewport().get_mouse_position()-get_viewport().size*0.5
+		var gc:Vector2=cam2d.get_screen_center_position()
+		var mouse:Vector2=get_viewport().get_mouse_position()-get_viewport().size*0.5
 		$ColisonPoint.global_position=gc+mouse
 		if current_field!=null:
 			current_field.is_hover=false
 		if $ColisonPoint.has_overlapping_areas():
-			var collider=$ColisonPoint.get_overlapping_areas()[0]
+			var collider:Field2D=$ColisonPoint.get_overlapping_areas()[0]
 			if collider is Field2D:
 				print(collider.name)
 				collider.is_hover=true
 				current_field=collider
 	else:
-		var ogr=cam.project_ray_origin(get_viewport().get_mouse_position())
-		var no=cam.project_ray_normal(get_viewport().get_mouse_position())
+		var ogr:Vector3=cam.project_ray_origin(get_viewport().get_mouse_position())
+		var no:Vector3=cam.project_ray_normal(get_viewport().get_mouse_position())
 		
 		ray.global_transform=Transform3D.IDENTITY.translated(ogr)
 		ray.target_position=no*10000.0

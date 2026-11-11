@@ -5,11 +5,11 @@ class_name Field2D
 
 @export var near:Array[Node]
 @export var r:float=1.7
-@export var refresh=false
+@export var refresh:bool=false
 var state:Field.FieldState=Field.FieldState.NONE
-var is_hover=false
+var is_hover:bool=false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		if true:
 			refresh=true

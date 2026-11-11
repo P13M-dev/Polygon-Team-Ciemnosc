@@ -5,10 +5,10 @@ class_name  Hand
 var active_card:CardNode=null
 @export var mouse:Mouse3D
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("mouse_click"):
-		var pos=get_viewport().get_mouse_position()
-		var last_active_card=active_card
+		var pos:Vector2=get_viewport().get_mouse_position()
+		var last_active_card:CardNode=active_card
 		active_card=null
 		for c:CardNode in self.get_children():
 			print(c.global_position," ",pos)

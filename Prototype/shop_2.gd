@@ -1,8 +1,8 @@
 extends Control
 
-func spawn(emp:PackedScene,up:UpgradeCardCollection):
+func spawn(emp:PackedScene,up:UpgradeCardCollection) -> void:
 	print("SPAWNING.....")
-	var pos_x=0.0
+	var pos_x:float=0.0
 	for card:CardBase in up.posibilities:
 		print("$$$")
 		var card_instance:CardNode=emp.instantiate()
@@ -11,7 +11,7 @@ func spawn(emp:PackedScene,up:UpgradeCardCollection):
 		card_instance.position.x=pos_x
 		pos_x+=card_instance.size.x+50
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	for card in self.get_children():
 		if card.get_global_rect().has_point(card.get_global_mouse_position()):
 			card.color=Color.YELLOW

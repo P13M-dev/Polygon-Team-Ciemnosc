@@ -10,7 +10,6 @@ config_version=5
 
 [application]
 
-
 config/name="Ciemnosc"
 run/main_scene="uid://dfxcy2x554w3c"
 config/features=PackedStringArray("4.7", "GL Compatibility")
@@ -24,6 +23,7 @@ Game="*uid://br0gru32ugqqq"
 [debug]
 
 gdscript/warnings/untyped_declaration=1
+
 [display]
 
 window/stretch/mode="canvas_items"

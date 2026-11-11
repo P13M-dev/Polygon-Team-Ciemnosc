@@ -15,6 +15,9 @@ func _init() -> void:
 			tiles.append([])
 			for y in range(0,board_width):
 				var tile: Tile = preload("res://Scenes/empty_tile.tscn").instantiate()
+				tile.board_position_x = x
+				tile.board_position_y = y
+				tile.unit = null
 				tiles[x].append(tile)
 				add_child(tile)
 				var tile_position: Vector2 = Vector2(x*tile_size-board_width*tile_size/2,y*tile_size-board_width*tile_size/2)
@@ -26,3 +29,6 @@ func _init() -> void:
 					tile.add_effect(preload("res://Resources/TileEffects/rock_effect.tres").duplicate())
 				elif randi()%10==0:
 					tile.add_effect(preload("res://Resources/TileEffects/puddle_effect.tres").duplicate())
+				elif randi()%10==0:
+					tile.add_unit(preload("res://Resources/Units/flame_unit.tres").duplicate())
+					tile.pop_unit()

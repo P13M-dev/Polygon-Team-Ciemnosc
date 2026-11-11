@@ -6,6 +6,9 @@ const tile_size: float = 68
 const vertical_scale_factor: float = 0.5
 var tiles: Array[Array] #powinno być Array[Array[Tile]], ale GDscript nie pozwala :P
 
+func _enter_tree() -> void:
+	Game.bm=self
+
 func _init() -> void:
 	if tiles.is_empty():
 		for x in range(0,board_width):

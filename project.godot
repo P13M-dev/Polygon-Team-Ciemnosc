@@ -17,6 +17,10 @@ config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/image="uid://8l8cw5b0sxad"
 config/icon="uid://8l8cw5b0sxad"
 
+[autoload]
+
+Game="*uid://br0gru32ugqqq"
+
 [debug]
 
 gdscript/warnings/untyped_declaration=1

@@ -6,6 +6,9 @@ class_name Mouse3D
 @export var is_2D:bool=false
 var current_field=null
 
+func  _ready() -> void:
+	Game.mouse3d=self
+
 func _process(delta: float) -> void:
 	if is_2D:
 		var gc=cam2d.get_screen_center_position()

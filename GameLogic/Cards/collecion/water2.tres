@@ -1,10 +1,13 @@
 [gd_resource type="Resource" script_class="SpawnCard" format=3 uid="uid://doc0fgnvs7jds"]
 
+[ext_resource type="Texture2D" uid="uid://clkhgyamwpuyw" path="res://Assets/Images/puddle.png" id="1_36qec"]
 [ext_resource type="Script" uid="uid://sa0offqnfmtg" path="res://GameLogic/Cards/spawn_card.gd" id="1_d6hli"]
 
 [resource]
 script = ExtResource("1_d6hli")
 spawn = 2
 r = 2
+image = ExtResource("1_36qec")
 name = "kałuża"
+description = "spawn water in radius 2"
 metadata/_custom_type_script = "uid://sa0offqnfmtg"

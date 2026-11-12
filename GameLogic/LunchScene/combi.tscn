@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://fpmeilx3p5c6" path="res://GameLogic/Cards/card_resource.gd" id="5_4n2ge"]
 [ext_resource type="Script" uid="uid://sa0offqnfmtg" path="res://GameLogic/Cards/spawn_card.gd" id="6_1chki"]
 [ext_resource type="Script" uid="uid://dpc4k6lmu238h" path="res://GameLogic/Cards/UpgradeCardCollection/UpgradeCardCollection.gd" id="7_xh3py"]
-[ext_resource type="Script" uid="uid://edqox8i4u0vm" path="res://GameLogic/Board/Prototype/card_node.gd" id="8_riajs"]
 [ext_resource type="Resource" uid="uid://cm0gmftxee73v" path="res://GameLogic/Cards/collecion/fire1.tres" id="9_i7l3v"]
 [ext_resource type="Script" uid="uid://dogxj228jwij8" path="res://GameLogic/Board/Prototype/shop_2.gd" id="10_q5ci2"]
 [ext_resource type="Script" uid="uid://bscxdkgobr5ba" path="res://GameLogic/Board/Prototype/mana.gd" id="11_qrdam"]
@@ -110,69 +109,29 @@ offset_top = -181.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Card3" type="ColorRect" parent="Deck" unique_id=1476793128]
+[node name="Card10" parent="Deck" unique_id=678997030 instance=ExtResource("4_2f3ga")]
 layout_mode = 0
-offset_left = 353.0
-offset_right = 481.0
-offset_bottom = 179.0
-color = Color(0.4171379, 0.0003833133, 0.49155366, 1)
-script = ExtResource("8_riajs")
-efect = "fire"
+offset_left = 564.0
+offset_top = 4.0
+offset_right = 692.0
+offset_bottom = 183.0
 card = ExtResource("9_i7l3v")
 
-[node name="Label" type="Label" parent="Deck/Card3" unique_id=1907577413]
+[node name="Card11" parent="Deck" unique_id=125340033 instance=ExtResource("4_2f3ga")]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "EFECT FIRE"
-
-[node name="Card4" type="ColorRect" parent="Deck" unique_id=1785708689]
-layout_mode = 0
-offset_left = 554.0
-offset_right = 682.0
-offset_bottom = 179.0
-color = Color(0.14198026, 0.13843235, 0.68734396, 1)
-script = ExtResource("8_riajs")
-efect = "fire"
+offset_left = 564.0
+offset_top = 4.0
+offset_right = 692.0
+offset_bottom = 183.0
 card = ExtResource("9_i7l3v")
 
-[node name="Label" type="Label" parent="Deck/Card4" unique_id=882507932]
+[node name="Card12" parent="Deck" unique_id=614744983 instance=ExtResource("4_2f3ga")]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "EFECT FIRE"
-
-[node name="Card5" type="ColorRect" parent="Deck" unique_id=856418462]
-layout_mode = 0
-offset_left = 743.0
-offset_right = 871.0
-offset_bottom = 179.0
-color = Color(0.4171379, 0.0003833133, 0.49155366, 1)
-script = ExtResource("8_riajs")
-efect = "fire"
+offset_left = 564.0
+offset_top = 4.0
+offset_right = 692.0
+offset_bottom = 183.0
 card = ExtResource("9_i7l3v")
-
-[node name="Label" type="Label" parent="Deck/Card5" unique_id=87729789]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "EFECT FIRE"
-
-[node name="Card6" type="ColorRect" parent="Deck" unique_id=341015303]
-layout_mode = 0
-offset_left = 944.0
-offset_right = 1072.0
-offset_bottom = 179.0
-color = Color(0.14198026, 0.13843235, 0.68734396, 1)
-script = ExtResource("8_riajs")
-efect = "fire"
-card = ExtResource("9_i7l3v")
-
-[node name="Label" type="Label" parent="Deck/Card6" unique_id=1837735843]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "EFECT FIRE"
 
 [node name="Trash" type="Control" parent="." unique_id=186489648]
 visible = false
@@ -258,37 +217,21 @@ color = Color(0.21374327, 0.21374327, 0.21374324, 1)
 script = ExtResource("12_ef3u2")
 mouse = NodePath("../3dMouse")
 
-[node name="Card" type="ColorRect" parent="Hand" unique_id=1808652542]
+[node name="Card7" parent="Hand" unique_id=1267865024 instance=ExtResource("4_2f3ga")]
 layout_mode = 0
-offset_right = 128.0
-offset_bottom = 179.0
-color = Color(0.4747033, 0.11821946, 0, 1)
-script = ExtResource("8_riajs")
-efect = "pl"
+offset_left = 564.0
+offset_top = 4.0
+offset_right = 692.0
+offset_bottom = 183.0
 card = ExtResource("13_6vmdf")
 
-[node name="Label" type="Label" parent="Hand/Card" unique_id=1584745863]
+[node name="Card8" parent="Hand" unique_id=2009033625 instance=ExtResource("4_2f3ga")]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "EFECT FIRE"
-
-[node name="Card2" type="ColorRect" parent="Hand" unique_id=103278767]
-layout_mode = 0
-offset_left = 185.0
-offset_top = -1.0
-offset_right = 313.0
-offset_bottom = 178.0
-color = Color(1, 0.507415, 0.37213543, 1)
-script = ExtResource("8_riajs")
-efect = "water"
+offset_left = 564.0
+offset_top = 4.0
+offset_right = 692.0
+offset_bottom = 183.0
 card = ExtResource("14_kjjx7")
-
-[node name="Label" type="Label" parent="Hand/Card2" unique_id=1234832754]
-layout_mode = 1
-offset_right = 83.0
-offset_bottom = 23.0
-text = "EFECT WATER"
 
 [node name="CardDirectionLine" type="Line2D" parent="." unique_id=246245665]
 points = PackedVector2Array(522, 540, 707, 214)

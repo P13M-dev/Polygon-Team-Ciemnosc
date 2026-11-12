@@ -1,10 +1,14 @@
 [gd_resource type="Resource" script_class="SpawnCard" format=3 uid="uid://dmftnqsq52ps0"]
 
 [ext_resource type="Script" uid="uid://sa0offqnfmtg" path="res://GameLogic/Cards/spawn_card.gd" id="1_nrrk5"]
+[ext_resource type="Texture2D" uid="uid://clkhgyamwpuyw" path="res://Assets/Images/puddle.png" id="1_ofge4"]
 
 [resource]
 script = ExtResource("1_nrrk5")
 spawn = 2
 r = 1
+image = ExtResource("1_ofge4")
 name = "kropla"
+exile = true
+description = "Spawn 1 water"
 metadata/_custom_type_script = "uid://sa0offqnfmtg"

@@ -10,3 +10,7 @@ class_name CardNode
 
 func _ready() -> void:
 	$Label.text=card.name
+	if $TextureRect2!=null:
+		$TextureRect2.texture=card.image
+	if  $Label2!=null:
+		$Label2.text=card.description

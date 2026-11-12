@@ -1,10 +1,13 @@
 [gd_resource type="Resource" script_class="SpawnCard" format=3 uid="uid://cm0gmftxee73v"]
 
 [ext_resource type="Script" uid="uid://sa0offqnfmtg" path="res://GameLogic/Cards/spawn_card.gd" id="1_s5cfi"]
+[ext_resource type="Texture2D" uid="uid://c2jaext0tyst1" path="res://Assets/Images/fire.png" id="1_wvbm0"]
 
 [resource]
 script = ExtResource("1_s5cfi")
 spawn = 1
 r = 1
+image = ExtResource("1_wvbm0")
 name = "Iskra"
+description = "Spawn 1 fire"
 metadata/_custom_type_script = "uid://sa0offqnfmtg"

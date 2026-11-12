@@ -2,6 +2,7 @@ extends CardBase
 class_name SpawnCard
 @export var spawn:FieldCollider.FieldState
 @export var r:int
+@export var image:Texture2D
 
 func cast_on(f:FieldCollider):
 	assert(r<3)

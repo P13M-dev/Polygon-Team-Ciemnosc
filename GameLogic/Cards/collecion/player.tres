@@ -1,11 +1,14 @@
 [gd_resource type="Resource" script_class="SpawnCard" format=3 uid="uid://cmpmfjuyiipa8"]
 
+[ext_resource type="Texture2D" uid="uid://1d7eexj3bkmg" path="res://icon.svg" id="1_3f007"]
 [ext_resource type="Script" uid="uid://sa0offqnfmtg" path="res://GameLogic/Cards/spawn_card.gd" id="1_qeev0"]
 
 [resource]
 script = ExtResource("1_qeev0")
 spawn = 3
 r = 1
-name = "GRACZ(ONE TIME)"
+image = ExtResource("1_3f007")
+name = "GRACZ"
 exile = true
+description = "Spawn player on squere. then excile this card"
 metadata/_custom_type_script = "uid://sa0offqnfmtg"

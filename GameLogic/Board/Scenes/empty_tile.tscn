@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://og2jj3tbwidk"]
+
+[ext_resource type="Script" uid="uid://bgm70cypeoxym" path="res://GameLogic/Board/Scripts/tile.gd" id="1_ra5hk"]
+[ext_resource type="Texture2D" uid="uid://fj1qt6j3wblc" path="res://Assets/Images/empty_tile.png" id="2_oqpka"]
+[ext_resource type="PackedScene" uid="uid://du36yurnho130" path="res://GameLogic/Board/Prototype/field.tscn" id="3_57p7g"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xfnnq"]
+
+[node name="Tile" type="Node3D" unique_id=505120259]
+script = ExtResource("1_ra5hk")
+
+[node name="Sprite2D" type="Sprite3D" parent="." unique_id=770089784]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+pixel_size = 1.0
+texture = ExtResource("2_oqpka")
+
+[node name="Field" parent="." unique_id=1437293258 instance=ExtResource("3_57p7g")]
+transform = Transform3D(25, 0, 0, 0, 7.5, 0, 0, 0, 25, 1.5875034, -1.1288757, 2.387885)
+r = 76.0
+
+[node name="Node3D" type="Node3D" parent="." unique_id=288571677]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.75577927, 0, -24.508375, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D" unique_id=2072168791]
+transform = Transform3D(14.120097, 0, 14.164141, 0, 1, 0, -14.164141, 0, 14.120097, 0, 24.185434, 1.6742783)
+mesh = SubResource("PlaneMesh_xfnnq")

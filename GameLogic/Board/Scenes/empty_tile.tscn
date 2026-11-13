@@ -37,7 +37,6 @@ material_override = SubResource("StandardMaterial3D_57p7g")
 mesh = SubResource("PlaneMesh_xfnnq")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=654193343]
-transform = Transform3D(1, 0, 0, 0, 0.59362924, 0.80473864, 0, -0.80473864, 0.59362924, 0.11455917, 53.601692, -9.240982)
+transform = Transform3D(1, 0, 0, 0, 0.59362924, 0.80473864, 0, -0.80473864, 0.59362924, 12.358351, 41.766632, -40.042107)
 pixel_size = 0.06
-billboard = 1
 texture = ExtResource("5_57p7g")

@@ -6,4 +6,4 @@ class_name TileEffect
 @export var sprite_offset: float = 0
 var tile: Tile
 var sprite3D: Sprite3D
-var change_into:Type
+var change_into:  Elemental.Type

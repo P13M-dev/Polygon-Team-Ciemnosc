@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UnitCard" format=3 uid="uid://dttawl042dwba"]
+
+[ext_resource type="Texture2D" uid="uid://dludd2wwu0kg1" path="res://Assets/Images/TEST_wojownik.png" id="1_f1g1r"]
+[ext_resource type="Script" uid="uid://eu62ag8wf7cd" path="res://GameLogic/Cards/unit_card.gd" id="1_yv533"]
+[ext_resource type="Resource" uid="uid://dmjw0ox80ir7n" path="res://Resources/Units/flame_unit.tres" id="3_ye7e0"]
+
+[resource]
+script = ExtResource("1_yv533")
+unit = ExtResource("3_ye7e0")
+image = ExtResource("1_f1g1r")
+metadata/_custom_type_script = "uid://eu62ag8wf7cd"

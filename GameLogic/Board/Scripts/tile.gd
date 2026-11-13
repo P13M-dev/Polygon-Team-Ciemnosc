@@ -3,7 +3,7 @@ class_name Tile
 
 
 var effects: Array[TileEffect]
-var unit: Unit
+var unit: Unit = null
 var board_position_x: int
 var board_position_y: int
 
@@ -47,3 +47,10 @@ func pop_unit() -> Unit:
 # niedokończona funkcja alert vvv
 func is_treverisble()-> bool:
 	return true
+
+func _process(delta: float) -> void:
+	if unit!=null:
+		$Sprite3D.texture=unit.texture
+		$Sprite3D.visible=true
+	else:
+		$Sprite3D.visible=false

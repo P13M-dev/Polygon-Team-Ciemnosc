@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bf67go8wabsda" path="res://GameLogic/Board/Prototype/3d_mouse.gd" id="1_2f3ga"]
 [ext_resource type="Script" uid="uid://dlhtqremb2urf" path="res://GameLogic/Board/Scripts/board_manager.gd" id="2_4n2ge"]
 [ext_resource type="Script" uid="uid://csyx7xn6oqwtp" path="res://GameLogic/Board/Prototype/game_manager.gd" id="3_1chki"]
+[ext_resource type="Script" uid="uid://xf48ky0w06ho" path="res://GameLogic/LunchScene/tmp/cam_move.gd" id="3_2f3ga"]
 [ext_resource type="PackedScene" uid="uid://b52werdtbj7jy" path="res://GameLogic/Cards/card_empty.tscn" id="4_2f3ga"]
 [ext_resource type="Script" uid="uid://fpmeilx3p5c6" path="res://GameLogic/Cards/card_resource.gd" id="5_4n2ge"]
 [ext_resource type="Script" uid="uid://sa0offqnfmtg" path="res://GameLogic/Cards/spawn_card.gd" id="6_1chki"]
@@ -11,7 +12,7 @@
 [ext_resource type="Script" uid="uid://dogxj228jwij8" path="res://GameLogic/Board/Prototype/shop_2.gd" id="10_q5ci2"]
 [ext_resource type="Script" uid="uid://bscxdkgobr5ba" path="res://GameLogic/Board/Prototype/mana.gd" id="11_qrdam"]
 [ext_resource type="Script" uid="uid://dd7bijkku55k8" path="res://GameLogic/Board/Prototype/hand.gd" id="12_ef3u2"]
-[ext_resource type="Resource" uid="uid://cmpmfjuyiipa8" path="res://GameLogic/Cards/collecion/player.tres" id="13_6vmdf"]
+[ext_resource type="Resource" uid="uid://dttawl042dwba" path="res://GameLogic/Cards/collecion/new_player.tres" id="12_n1wg3"]
 [ext_resource type="Resource" uid="uid://doc0fgnvs7jds" path="res://GameLogic/Cards/collecion/water2.tres" id="14_kjjx7"]
 [ext_resource type="Script" uid="uid://d0lgwgt6jkcay" path="res://GameLogic/Board/Prototype/card_direction_line.gd" id="15_sqilg"]
 [ext_resource type="Script" uid="uid://bqpv642xysmd3" path="res://GameLogic/Board/Prototype/change_2d_mode.gd" id="16_ag71y"]
@@ -50,6 +51,7 @@ script = ExtResource("2_4n2ge")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 901.212, 100, 504.745)
 projection = 1
 size = 1000.0
+script = ExtResource("3_2f3ga")
 
 [node name="RayCast3D" type="RayCast3D" parent="BoardManager" unique_id=213912483]
 collide_with_areas = true
@@ -223,7 +225,7 @@ offset_left = 564.0
 offset_top = 4.0
 offset_right = 692.0
 offset_bottom = 183.0
-card = ExtResource("13_6vmdf")
+card = ExtResource("12_n1wg3")
 
 [node name="Card8" parent="Hand" unique_id=2009033625 instance=ExtResource("4_2f3ga")]
 layout_mode = 0

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://fj1qt6j3wblc" path="res://Assets/Images/empty_tile.png" id="2_oqpka"]
 [ext_resource type="PackedScene" uid="uid://du36yurnho130" path="res://GameLogic/Board/Prototype/field.tscn" id="3_57p7g"]
 [ext_resource type="Texture2D" uid="uid://gtxw11kir7xt" path="res://Assets/Images/tmp/sqr.png" id="4_oqpka"]
+[ext_resource type="Texture2D" uid="uid://dludd2wwu0kg1" path="res://Assets/Images/TEST_wojownik.png" id="5_57p7g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_57p7g"]
 albedo_texture = ExtResource("4_oqpka")
@@ -34,3 +35,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.6, 0, -30, 0)
 transform = Transform3D(20.506096, 0, 20.506096, 0, 1, 0, -20.506096, 0, 20.506096, 0, 28.648651, 0)
 material_override = SubResource("StandardMaterial3D_57p7g")
 mesh = SubResource("PlaneMesh_xfnnq")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=654193343]
+transform = Transform3D(1, 0, 0, 0, 0.59362924, 0.80473864, 0, -0.80473864, 0.59362924, 0.11455917, 53.601692, -9.240982)
+pixel_size = 0.06
+billboard = 1
+texture = ExtResource("5_57p7g")

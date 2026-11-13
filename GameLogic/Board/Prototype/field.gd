@@ -13,6 +13,10 @@ enum FieldState{NONE,FIRE,WATER,PLAYER}
 var state:FieldState=FieldState.NONE
 var is_hover:bool=false
 
+func get_tile()->Tile:
+	var res:Tile=get_parent()
+	return res
+
 func make_near() -> void:
 	near=[]
 	for n:FieldCollider in get_tree().get_nodes_in_group("Field"):

@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://bgm70cypeoxym" path="res://GameLogic/Board/Scripts/tile.gd" id="1_ra5hk"]
 [ext_resource type="Texture2D" uid="uid://fj1qt6j3wblc" path="res://Assets/Images/empty_tile.png" id="2_oqpka"]
 [ext_resource type="PackedScene" uid="uid://du36yurnho130" path="res://GameLogic/Board/Prototype/field.tscn" id="3_57p7g"]
+[ext_resource type="Texture2D" uid="uid://gtxw11kir7xt" path="res://Assets/Images/tmp/sqr.png" id="4_oqpka"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_57p7g"]
+albedo_texture = ExtResource("4_oqpka")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_xfnnq"]
 
@@ -11,16 +15,22 @@ script = ExtResource("1_ra5hk")
 
 [node name="Sprite2D" type="Sprite3D" parent="." unique_id=770089784]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+visible = false
 pixel_size = 1.0
 texture = ExtResource("2_oqpka")
 
 [node name="Field" parent="." unique_id=1437293258 instance=ExtResource("3_57p7g")]
-transform = Transform3D(25, 0, 0, 0, 7.5, 0, 0, 0, 25, 1.5875034, -1.1288757, 2.387885)
+transform = Transform3D(25, 0, 0, 0, 7.5, 0, 0, 0, 25, 1.5875034, -2.8996658, 2.387885)
 r = 76.0
 
+[node name="CollisionPolygon3D2" type="CollisionPolygon3D" parent="Field" unique_id=916418423]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.063500136, 0.38662213, -0.0955154)
+polygon = PackedVector2Array(1.6, 0, 0, 1, -1.6, 0, 0, -1)
+
 [node name="Node3D" type="Node3D" parent="." unique_id=288571677]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.75577927, 0, -24.508375, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.6, 0, -30, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D" unique_id=2072168791]
-transform = Transform3D(14.120097, 0, 14.164141, 0, 1, 0, -14.164141, 0, 14.120097, 0, 24.185434, 1.6742783)
+transform = Transform3D(20.506096, 0, 20.506096, 0, 1, 0, -20.506096, 0, 20.506096, 0, 28.648651, 0)
+material_override = SubResource("StandardMaterial3D_57p7g")
 mesh = SubResource("PlaneMesh_xfnnq")

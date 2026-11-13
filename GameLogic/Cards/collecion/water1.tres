@@ -2,12 +2,14 @@
 
 [ext_resource type="Script" uid="uid://sa0offqnfmtg" path="res://GameLogic/Cards/spawn_card.gd" id="1_nrrk5"]
 [ext_resource type="Texture2D" uid="uid://clkhgyamwpuyw" path="res://Assets/Images/puddle.png" id="1_ofge4"]
+[ext_resource type="Resource" uid="uid://d3cusunphhhv2" path="res://GameLogic/Board/Resources/TileEffects/puddle_effect.tres" id="3_4khbe"]
 
 [resource]
 script = ExtResource("1_nrrk5")
 spawn = 2
 r = 1
 image = ExtResource("1_ofge4")
+tile = ExtResource("3_4khbe")
 name = "kropla"
 exile = true
 description = "Spawn 1 water"

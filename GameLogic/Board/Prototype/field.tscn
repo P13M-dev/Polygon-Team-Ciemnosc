@@ -24,7 +24,7 @@ albedo_color = Color(0.5868124, 0, 0.13553995, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1hpip"]
 albedo_color = Color(0.8977045, 0.27030042, 0.20612791, 1)
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_b24ox"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_l8pba"]
 
 [node name="Field" type="Area3D" unique_id=1437293258 groups=["Field"]]
 transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, 0, 0, 0)
@@ -63,10 +63,15 @@ billboard = 1
 texture = ExtResource("2_d8mum")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1804531689]
+visible = false
 mesh = SubResource("SphereMesh_xfnnq")
 surface_material_override/0 = SubResource("StandardMaterial3D_1hpip")
 metadata/_edit_lock_ = true
 
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="." unique_id=1140364216]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+polygon = PackedVector2Array(1, 0, 0, 1, -1, 0, 0, -1)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1493484730]
-shape = SubResource("SphereShape3D_b24ox")
+shape = SubResource("BoxShape3D_l8pba")
 metadata/_edit_lock_ = true

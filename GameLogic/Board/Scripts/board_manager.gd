@@ -9,7 +9,15 @@ var tiles: Array[Array] #powinno być Array[Array[Tile]], ale GDscript nie pozwa
 func _enter_tree() -> void:
 	Game.bm=self
 
-
+func update_board()->void:
+	#this is random placeholder effect 
+	#TODO replace with fire spread
+	for x in range(0,board_width):
+		for y in range(0,board_width):
+			if randi()%50==0:
+				tiles[x][y].add_effect(preload("res://GameLogic/Board/Resources/TileEffects/rock_effect.tres").duplicate())
+	#end placeholder 
+	
 func _init() -> void:
 	if tiles.is_empty():
 		for x in range(0,board_width):

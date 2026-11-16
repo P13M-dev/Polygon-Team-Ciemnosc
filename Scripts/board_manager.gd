@@ -31,4 +31,3 @@ func _init() -> void:
 					tile.add_effect(preload("res://Resources/TileEffects/puddle_effect.tres").duplicate())
 				elif randi()%10==0:
 					tile.add_unit(preload("res://Resources/Units/flame_unit.tres").duplicate())
-					tile.pop_unit()

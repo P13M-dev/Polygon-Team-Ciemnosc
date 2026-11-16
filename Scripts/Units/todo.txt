@@ -1,0 +1,5 @@
+Do zrobienia:
+	tracepath,
+	ordering ruchów unitów tak żeby nie konflikowały
+	popraw to tak żeby unity miały serię nodeów, a nie serię ruchów
+	zintegruj to z obecnym systemem turowym

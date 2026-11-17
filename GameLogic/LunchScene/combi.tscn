@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dfxcy2x554w3c"]
+[gd_scene format=3 uid="uid://dfxcy2x554w3c"]
 
 [ext_resource type="Script" uid="uid://bf67go8wabsda" path="res://GameLogic/Board/Prototype/3d_mouse.gd" id="1_2f3ga"]
 [ext_resource type="Script" uid="uid://c3gwxs3egci3b" path="res://GameLogic/Board/Prototype/ruch_manager.gd" id="1_4n2ge"]
@@ -38,37 +38,37 @@ posibilities = Array[ExtResource("5_4n2ge")]([SubResource("Resource_ankqp"), Sub
 count = 1
 metadata/_custom_type_script = "uid://dpc4k6lmu238h"
 
-[node name="Node" type="Node"]
+[node name="Node" type="Node" unique_id=821997562]
 script = ExtResource("1_4n2ge")
 
-[node name="3dMouse" type="Node" parent="." node_paths=PackedStringArray("cam", "ray")]
+[node name="3dMouse" type="Node" parent="." unique_id=918564431 node_paths=PackedStringArray("cam", "ray")]
 script = ExtResource("1_2f3ga")
 cam = NodePath("../BoardManager/Camera3D")
 ray = NodePath("../BoardManager/RayCast3D")
 
-[node name="BoardManager" type="Node" parent="."]
+[node name="BoardManager" type="Node" parent="." unique_id=509023308]
 script = ExtResource("2_4n2ge")
 
-[node name="Camera3D" type="Camera3D" parent="BoardManager"]
+[node name="Camera3D" type="Camera3D" parent="BoardManager" unique_id=834769570]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 901.212, 100, 504.745)
 projection = 1
 size = 1000.0
 
-[node name="RayCast3D" type="RayCast3D" parent="BoardManager"]
+[node name="RayCast3D" type="RayCast3D" parent="BoardManager" unique_id=962276653]
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="GameManager" type="Node" parent="."]
+[node name="GameManager" type="Node" parent="." unique_id=479715155]
 script = ExtResource("3_1chki")
 empty_card = ExtResource("4_2f3ga")
 upgrade = SubResource("Resource_5p37r")
 
-[node name="END_TURN_Button" type="Button" parent="GameManager"]
+[node name="END_TURN_Button" type="Button" parent="GameManager" unique_id=2005774893]
 offset_right = 90.0
 offset_bottom = 31.0
 text = "END TURN"
 
-[node name="ColorRect" type="ColorRect" parent="GameManager"]
+[node name="ColorRect" type="ColorRect" parent="GameManager" unique_id=1735968517]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -79,13 +79,13 @@ offset_bottom = -187.0
 grow_vertical = 0
 color = Color(0, 0, 0, 1)
 
-[node name="StateLabel" type="Label" parent="GameManager/ColorRect"]
+[node name="StateLabel" type="Label" parent="GameManager/ColorRect" unique_id=1048890524]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "HANd"
 
-[node name="POPUP" type="ColorRect" parent="GameManager"]
+[node name="POPUP" type="ColorRect" parent="GameManager" unique_id=1210652005]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -101,7 +101,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 color = Color(0, 0, 0, 1)
 
-[node name="Deck" type="Control" parent="."]
+[node name="Deck" type="Control" parent="." unique_id=50269503]
 visible = false
 layout_mode = 3
 anchors_preset = 12
@@ -112,7 +112,7 @@ offset_top = -181.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Card10" parent="Deck" instance=ExtResource("4_2f3ga")]
+[node name="Card10" parent="Deck" unique_id=1730327266 instance=ExtResource("4_2f3ga")]
 layout_mode = 0
 offset_left = 564.0
 offset_top = 4.0
@@ -120,7 +120,7 @@ offset_right = 692.0
 offset_bottom = 183.0
 card = ExtResource("9_i7l3v")
 
-[node name="Card11" parent="Deck" instance=ExtResource("4_2f3ga")]
+[node name="Card11" parent="Deck" unique_id=815609818 instance=ExtResource("4_2f3ga")]
 layout_mode = 0
 offset_left = 564.0
 offset_top = 4.0
@@ -128,7 +128,7 @@ offset_right = 692.0
 offset_bottom = 183.0
 card = ExtResource("9_i7l3v")
 
-[node name="Card12" parent="Deck" instance=ExtResource("4_2f3ga")]
+[node name="Card12" parent="Deck" unique_id=1858502226 instance=ExtResource("4_2f3ga")]
 layout_mode = 0
 offset_left = 564.0
 offset_top = 4.0
@@ -136,7 +136,7 @@ offset_right = 692.0
 offset_bottom = 183.0
 card = ExtResource("9_i7l3v")
 
-[node name="Trash" type="Control" parent="."]
+[node name="Trash" type="Control" parent="." unique_id=2045185331]
 visible = false
 layout_mode = 3
 anchors_preset = 12
@@ -147,7 +147,7 @@ offset_top = -181.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Exile" type="Control" parent="."]
+[node name="Exile" type="Control" parent="." unique_id=1643632760]
 visible = false
 layout_mode = 3
 anchors_preset = 12
@@ -158,7 +158,7 @@ offset_top = -181.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Shop" type="Control" parent="."]
+[node name="Shop" type="Control" parent="." unique_id=963022482]
 layout_mode = 3
 anchors_preset = 12
 anchor_top = 1.0
@@ -168,7 +168,7 @@ offset_top = -430.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Shop2" type="Control" parent="."]
+[node name="Shop2" type="Control" parent="." unique_id=452814455]
 layout_mode = 3
 anchors_preset = 12
 anchor_top = 1.0
@@ -182,7 +182,7 @@ grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("10_q5ci2")
 
-[node name="Mana" type="ColorRect" parent="."]
+[node name="Mana" type="ColorRect" parent="." unique_id=302796996]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -192,7 +192,7 @@ grow_horizontal = 0
 color = Color(0.3488402, 0.007394857, 0.486462, 1)
 script = ExtResource("11_qrdam")
 
-[node name="Label" type="Label" parent="Mana"]
+[node name="Label" type="Label" parent="Mana" unique_id=685761061]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -208,7 +208,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "3/3"
 
-[node name="Hand" type="ColorRect" parent="." node_paths=PackedStringArray("mouse")]
+[node name="Hand" type="ColorRect" parent="." unique_id=1311184949 node_paths=PackedStringArray("mouse")]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -220,7 +220,7 @@ color = Color(0.21374327, 0.21374327, 0.21374324, 1)
 script = ExtResource("12_ef3u2")
 mouse = NodePath("../3dMouse")
 
-[node name="Card7" parent="Hand" instance=ExtResource("4_2f3ga")]
+[node name="Card7" parent="Hand" unique_id=121515870 instance=ExtResource("4_2f3ga")]
 layout_mode = 0
 offset_left = 564.0
 offset_top = 4.0
@@ -228,7 +228,7 @@ offset_right = 692.0
 offset_bottom = 183.0
 card = ExtResource("13_6vmdf")
 
-[node name="Card8" parent="Hand" instance=ExtResource("4_2f3ga")]
+[node name="Card8" parent="Hand" unique_id=1468065326 instance=ExtResource("4_2f3ga")]
 layout_mode = 0
 offset_left = 564.0
 offset_top = 4.0
@@ -236,7 +236,7 @@ offset_right = 692.0
 offset_bottom = 183.0
 card = ExtResource("14_kjjx7")
 
-[node name="Card9" parent="Hand" instance=ExtResource("4_2f3ga")]
+[node name="Card9" parent="Hand" unique_id=1346380893 instance=ExtResource("4_2f3ga")]
 layout_mode = 0
 offset_left = 1008.0
 offset_top = 14.0
@@ -244,7 +244,7 @@ offset_right = 1136.0
 offset_bottom = 193.0
 card = ExtResource("14_2f3ga")
 
-[node name="CardDirectionLine" type="Line2D" parent="."]
+[node name="CardDirectionLine" type="Line2D" parent="." unique_id=2134548128]
 points = PackedVector2Array(522, 540, 707, 214)
 width = 30.0
 default_color = Color(0.89407384, 0.00029436767, 0.8112464, 1)
@@ -252,13 +252,13 @@ begin_cap_mode = 2
 end_cap_mode = 2
 script = ExtResource("15_sqilg")
 
-[node name="change_2d_mode" type="Node" parent="."]
+[node name="change_2d_mode" type="Node" parent="." unique_id=943692253]
 script = ExtResource("16_ag71y")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1791236250]
 transform = Transform3D(1, 0, 0, 0, 0.48040482, 0.8770469, 0, -0.8770469, 0.48040482, 0, 0, 0)
 
-[node name="RuchManager" type="Node" parent="."]
+[node name="RuchManager" type="Node" parent="." unique_id=1689583071]
 script = ExtResource("1_4n2ge")
 
 [connection signal="pressed" from="GameManager/END_TURN_Button" to="GameManager" method="_on_end_turn_button_pressed"]

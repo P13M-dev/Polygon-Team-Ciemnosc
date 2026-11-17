@@ -8,11 +8,15 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Ciemnosc"
 run/main_scene="uid://dfxcy2x554w3c"
-config/features=PackedStringArray("4.5", "GL Compatibility")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/image="uid://8l8cw5b0sxad"
 config/icon="uid://8l8cw5b0sxad"
 

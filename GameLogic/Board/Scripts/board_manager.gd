@@ -16,6 +16,9 @@ func _init() -> void:
 			tiles.append([])
 			for y in range(0,board_width):
 				var tile: Tile = preload("res://GameLogic/Board/Scenes/empty_tile.tscn").instantiate()
+				tile.board_position_x = x
+				tile.board_position_y = y
+				tile.unit = null
 				tiles[x].append(tile)
 				add_child(tile)
 				var tile_position: Vector2 = Vector2(x*tile_size-board_width*tile_size/2,y*tile_size-board_width*tile_size/2)
@@ -23,7 +26,10 @@ func _init() -> void:
 				tile_position.y*=vertical_scale_factor
 				tile_position=tile_position+Vector2(542.0,348.0)
 				tile.position = Vector3(tile_position.x,0,tile_position.y)
-				if randi()%10==0:#to jest głównie do testowania czy, i demonstacji jak działa dodawanie efektów do planszy
+				if randi()%10==0:
+					#to jest głównie do testowania czy, i demonstacji jak działa dodawanie efektów do planszy
 					tile.add_effect(preload("res://GameLogic/Board/Resources/TileEffects/rock_effect.tres").duplicate())
 				elif randi()%10==0:#tutaj są dawane tylko efekty, ale nie ma zmiany stanu pola na cokolwiek
 					tile.add_effect(preload("res://GameLogic/Board/Resources/TileEffects/puddle_effect.tres").duplicate())
+				elif randi()%10==0:
+					tile.add_unit(preload("res://Resources/Units/flame_unit.tres").duplicate())

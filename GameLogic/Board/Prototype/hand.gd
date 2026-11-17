@@ -12,7 +12,6 @@ func _ready() -> void:
 func _czy_ruch(success: bool) -> void:#karta ruchu przesuwa gracza, to co jest do zrobienia z kartą zostawiam
 	if success == true:
 		print("udalo sie")
-
 	else:
 		print("nie udalo sie")
 

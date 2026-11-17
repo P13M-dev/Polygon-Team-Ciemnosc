@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Unit" format=3 uid="uid://dmjw0ox80ir7n"]
+
+[ext_resource type="Script" uid="uid://c6hqalv7yegrg" path="res://Scripts/Units/unit.gd" id="1_va5v1"]
+[ext_resource type="Texture2D" uid="uid://dludd2wwu0kg1" path="res://Images/TEST_wojownik.png" id="2_mg7uv"]
+
+[resource]
+script = ExtResource("1_va5v1")
+type = 0
+texture = ExtResource("2_mg7uv")

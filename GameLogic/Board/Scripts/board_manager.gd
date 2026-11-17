@@ -6,10 +6,29 @@ const tile_size: float = 68
 const vertical_scale_factor: float = 0.5
 var tiles: Array[Array] #powinno być Array[Array[Tile]], ale GDscript nie pozwala :P
 
+func get_tile(postion:Vector2i)->Tile:
+	if postion.x<0:
+		return null
+	if postion.x>tiles.size():
+		return null
+	if postion.y<0:
+		return null
+	if postion.y>tiles[postion.x].size():
+		return null
+	return tiles[postion.x][postion.y]
+
 func _enter_tree() -> void:
 	Game.bm=self
 
-
+func update_board()->void:
+	#this is random placeholder effect 
+	#TODO replace with fire spread
+	for x in range(0,board_width):
+		for y in range(0,board_width):
+			if randi()%50==0:
+				tiles[x][y].add_effect(preload("res://GameLogic/Board/Resources/TileEffects/rock_effect.tres").duplicate())
+	#end placeholder 
+	
 func _init() -> void:
 	if tiles.is_empty():
 		for x in range(0,board_width):

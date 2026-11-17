@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://bqpv642xysmd3" path="res://GameLogic/Board/Prototype/change_2d_mode.gd" id="6_tyc30"]
 [ext_resource type="Script" uid="uid://sa0offqnfmtg" path="res://GameLogic/Cards/spawn_card.gd" id="7_82a6a"]
 [ext_resource type="Script" uid="uid://dpc4k6lmu238h" path="res://GameLogic/Cards/UpgradeCardCollection/UpgradeCardCollection.gd" id="8_bec0g"]
-[ext_resource type="Resource" uid="uid://cmpmfjuyiipa8" path="res://GameLogic/Cards/collecion/player.tres" id="9_uwaiv"]
+[ext_resource type="Resource" uid="uid://cmpmfjuyiipa8" path="res://GameLogic/Cards/collecion/old_player.tres" id="9_uwaiv"]
 [ext_resource type="Resource" uid="uid://doc0fgnvs7jds" path="res://GameLogic/Cards/collecion/water2.tres" id="10_3j8sx"]
 [ext_resource type="Script" uid="uid://dogxj228jwij8" path="res://GameLogic/Board/Prototype/shop_2.gd" id="11_82a6a"]
 

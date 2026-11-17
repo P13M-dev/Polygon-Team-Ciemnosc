@@ -72,6 +72,9 @@ func end_shop() -> void:
 var turn_num:int=0
 func new_turn() -> void:
 	if not is_shop:
+		Game.get_board().update_board()
+		
+		
 		turn_num+=1
 		$"../Mana".mana=$"../Mana".max_mana
 		var numer_draw:int=3

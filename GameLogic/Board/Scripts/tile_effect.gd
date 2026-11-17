@@ -1,7 +1,6 @@
 extends Resource
 class_name TileEffect
 
-
 @export var type: Elemental.Type
 @export var texture: Texture2D
 @export var sprite_offset: float = 0

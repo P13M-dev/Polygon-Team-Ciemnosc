@@ -80,3 +80,7 @@ func find_nearest_unit(tiles:Array[Array],origin_x:int,origin_y:int,unit_team:bo
 				nearest_coordinate = Vector2(x,y)
 				nearest_distance = distance
 	return nearest_coordinate
+func move(tiles:Array[Array]) -> void: #Array[Array[Tile]]
+	for x in tiles.size():
+		pass
+	pass

@@ -73,6 +73,7 @@ var turn_num:int=0
 func new_turn() -> void:
 	if not is_shop:
 		turn_num+=1
+		
 		$"../Mana".mana=$"../Mana".max_mana
 		var numer_draw:int=3
 		if turn_num==2:

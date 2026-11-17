@@ -1,5 +1,5 @@
 extends Node
-class_name SeachCell
+class_name SearchCell
 var cost:float
 var x_parent:int
 var y_parent:int

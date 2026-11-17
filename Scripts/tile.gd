@@ -33,9 +33,9 @@ func add_unit(newUnit: Unit) -> void:
 		unit.sprite3D = Sprite3D.new()
 		unit.sprite3D.texture = unit.texture
 	add_child(unit.sprite3D)
-	unit.sprite3D.position = Vector3(0,2,0)
+	unit.sprite3D.position = Vector3(0,3,-40)
 	unit.sprite3D.rotate_x(-PI/2)
-	unit.sprite3D.pixel_size=0.02
+	unit.sprite3D.pixel_size=0.06
 	
 
 func pop_unit() -> Unit:
@@ -45,5 +45,9 @@ func pop_unit() -> Unit:
 	return u;
 
 # niedokończona funkcja alert vvv
-func is_treverisble()-> bool:
-	return true
+func is_treversible(ignore_enemy_units:bool)-> bool:
+	var treversible:bool = true;
+	if unit!=null:
+		treversible = ignore_enemy_units if unit.enemy else false
+	# inne efekty które mogły by coś zmienić
+	return treversible

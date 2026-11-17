@@ -31,14 +31,17 @@ position = Vector2(564, 16)
 near = [NodePath("../Field2d2")]
 
 [node name="Field2d2" parent="3dMouse" unique_id=1935669410 node_paths=PackedStringArray("near") instance=ExtResource("2_20t21")]
+visible = false
 position = Vector2(697, 13)
 near = [NodePath("../Field2d"), NodePath("../Field2d3")]
 
 [node name="Field2d3" parent="3dMouse" unique_id=788328271 node_paths=PackedStringArray("near") instance=ExtResource("2_20t21")]
+visible = false
 position = Vector2(694, -124)
 near = [NodePath("../Field2d2"), NodePath("../Field2d4")]
 
 [node name="Field2d4" parent="3dMouse" unique_id=1179846849 node_paths=PackedStringArray("near") instance=ExtResource("2_20t21")]
+visible = false
 position = Vector2(827, -127)
 near = [NodePath("../Field2d3")]
 

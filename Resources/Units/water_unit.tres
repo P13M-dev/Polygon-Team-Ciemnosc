@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Unit" format=3 uid="uid://ce2kb031a3p5c"]
+
+[ext_resource type="Script" uid="uid://c6hqalv7yegrg" path="res://Scripts/Units/unit.gd" id="1_va5v1"]
+[ext_resource type="Texture2D" uid="uid://bq37ewug68sgi" path="res://Images/TEST_wojownik_blue.png" id="2_edd6g"]
+
+[resource]
+script = ExtResource("1_va5v1")
+type = 1
+texture = ExtResource("2_edd6g")
+moves_per_turn = 1
+attack_range = 1

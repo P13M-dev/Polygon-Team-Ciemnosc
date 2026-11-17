@@ -32,14 +32,14 @@ func add_unit(newUnit: Unit) -> void:
 	if unit.sprite3D==null:
 		unit.sprite3D = Sprite3D.new()
 		unit.sprite3D.texture = unit.texture
-	add_child(unit.sprite3D)
+	#add_child(unit.sprite3D)
 	unit.sprite3D.position = Vector3(0,2,0)
 	unit.sprite3D.rotate_x(-PI/2)
 	unit.sprite3D.pixel_size=0.02
 	
 
 func pop_unit() -> Unit:
-	remove_child(unit.sprite3D);
+	#remove_child(unit.sprite3D);
 	var u:Unit = unit
 	unit = null;
 	return u;
@@ -51,6 +51,7 @@ func is_treverisble()-> bool:
 func _process(delta: float) -> void:
 	if unit!=null:
 		$Sprite3D.texture=unit.texture
+		$Sprite3D.modulate=unit.modulate
 		$Sprite3D.visible=true
 	else:
 		$Sprite3D.visible=false

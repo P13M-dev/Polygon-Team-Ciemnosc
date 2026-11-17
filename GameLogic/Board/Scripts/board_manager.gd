@@ -6,6 +6,17 @@ const tile_size: float = 68
 const vertical_scale_factor: float = 0.5
 var tiles: Array[Array] #powinno być Array[Array[Tile]], ale GDscript nie pozwala :P
 
+func get_tile(postion:Vector2i)->Tile:
+	if postion.x<0:
+		return null
+	if postion.x>tiles.size():
+		return null
+	if postion.y<0:
+		return null
+	if postion.y>tiles[postion.x].size():
+		return null
+	return tiles[postion.x][postion.y]
+
 func _enter_tree() -> void:
 	Game.bm=self
 

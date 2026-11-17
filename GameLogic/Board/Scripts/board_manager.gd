@@ -25,5 +25,5 @@ func _init() -> void:
 				tile.position = Vector3(tile_position.x,0,tile_position.y)
 				if randi()%10==0:#to jest głównie do testowania czy, i demonstacji jak działa dodawanie efektów do planszy
 					tile.add_effect(preload("res://GameLogic/Board/Resources/TileEffects/rock_effect.tres").duplicate())
-				elif randi()%10==0:
+				elif randi()%10==0:#tutaj są dawane tylko efekty, ale nie ma zmiany stanu pola na cokolwiek
 					tile.add_effect(preload("res://GameLogic/Board/Resources/TileEffects/puddle_effect.tres").duplicate())

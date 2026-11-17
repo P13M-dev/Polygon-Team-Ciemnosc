@@ -5,6 +5,18 @@ class_name  Hand
 var active_card:CardNode=null
 @export var mouse:Mouse3D
 
+func _ready() -> void:
+	var ruch_manager: RuchManager = get_parent().get_node("RuchManager")
+	ruch_manager.wykonano_ruch.connect(_czy_ruch)
+
+func _czy_ruch(success: bool) -> void:#karta ruchu przesuwa gracza, to co jest do zrobienia z kartą zostawiam
+	if success == true:
+		print("udalo sie")
+
+	else:
+		print("nie udalo sie")
+
+
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("mouse_click"):
 		var pos:Vector2=get_viewport().get_mouse_position()
@@ -15,6 +27,10 @@ func _process(_delta: float) -> void:
 			#if c.global_position.distance_to(pos)<100.0:
 			if c.get_global_rect().has_point(c.get_global_mouse_position()):
 				active_card=c
+				if active_card.card is MovementCard:#dodałem to
+					var ruch_manager: RuchManager = get_parent().get_node("RuchManager")
+					ruch_manager.activate()
+					active_card = null
 				print(c.efect)
 		if active_card==null:
 			if $"../Mana".mana>0:

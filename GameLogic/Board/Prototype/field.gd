@@ -9,7 +9,7 @@ class_name FieldCollider
 @export var mat1:BaseMaterial3D
 @export var mat2:BaseMaterial3D
 
-enum FieldState{NONE,FIRE,WATER,PLAYER}
+enum FieldState{NONE,FIRE,WATER,PLAYER}#brakuje stanu dla skał
 var state:FieldState=FieldState.NONE
 var is_hover:bool=false
 

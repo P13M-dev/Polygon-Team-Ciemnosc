@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TileEntityResource" format=3 uid="uid://ctcm8wb53verh"]
+
+[ext_resource type="Script" uid="uid://d3kydm7wblmmv" path="res://GameLogic/Board/Scripts/tile_entity_resource.gd" id="1_r2gox"]
+[ext_resource type="Texture2D" uid="uid://c2jaext0tyst1" path="res://Assets/Images/fire.png" id="2_4rfsd"]
+
+[resource]
+script = ExtResource("1_r2gox")
+texture = ExtResource("2_4rfsd")
+sprite_offset = 32.0
+metadata/_custom_type_script = "uid://d3kydm7wblmmv"

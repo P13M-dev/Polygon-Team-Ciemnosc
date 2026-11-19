@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TileEntityResource" format=3 uid="uid://cx5tlke8n8rgv"]
+
+[ext_resource type="Script" uid="uid://d3kydm7wblmmv" path="res://GameLogic/Board/Scripts/tile_entity_resource.gd" id="1_44e5y"]
+[ext_resource type="Texture2D" uid="uid://clkhgyamwpuyw" path="res://Assets/Images/puddle.png" id="2_pq7gt"]
+
+[resource]
+script = ExtResource("1_44e5y")
+type = 1
+texture = ExtResource("2_pq7gt")
+sprite_offset = 32.0
+metadata/_custom_type_script = "uid://d3kydm7wblmmv"

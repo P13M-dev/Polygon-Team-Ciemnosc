@@ -5,6 +5,12 @@ class_name SpawnCard
 @export var image:Texture2D
 @export var tile:TileEntityResource
 
+
+func get_widget() -> CastWidget:
+	var w:=CardBase.SecelectFieldWidget.new()
+	return w
+
+
 func cast_on(f:FieldCollider)->void:
 	assert(r<3)
 	if r==0:

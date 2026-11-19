@@ -2,14 +2,21 @@
 
 [ext_resource type="Texture2D" uid="uid://clkhgyamwpuyw" path="res://Assets/Images/puddle.png" id="1_36qec"]
 [ext_resource type="Script" uid="uid://sa0offqnfmtg" path="res://GameLogic/Cards/spawn_card.gd" id="1_d6hli"]
-[ext_resource type="Resource" uid="uid://d3cusunphhhv2" path="res://GameLogic/Board/Resources/TileEffects/puddle_effect.tres" id="3_li3v1"]
+[ext_resource type="Script" uid="uid://d3kydm7wblmmv" path="res://GameLogic/Board/Scripts/tile_entity_resource.gd" id="3_li3v1"]
+
+[sub_resource type="Resource" id="Resource_6d2lv"]
+script = ExtResource("3_li3v1")
+type = 1
+texture = ExtResource("1_36qec")
+sprite_offset = 32.0
+metadata/_custom_type_script = "uid://d3kydm7wblmmv"
 
 [resource]
 script = ExtResource("1_d6hli")
 spawn = 2
 r = 2
 image = ExtResource("1_36qec")
-tile = ExtResource("3_li3v1")
+tile = SubResource("Resource_6d2lv")
 name = "kałuża"
 description = "spawn water in radius 2"
 metadata/_custom_type_script = "uid://sa0offqnfmtg"

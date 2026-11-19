@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpawnCard" format=3 uid="uid://cc5mspxbmpgle"]
+
+[ext_resource type="Texture2D" uid="uid://c2jaext0tyst1" path="res://Assets/Images/fire.png" id="1_gojap"]
+[ext_resource type="Script" uid="uid://sa0offqnfmtg" path="res://GameLogic/Cards/spawn_card.gd" id="2_cwo6a"]
+[ext_resource type="Resource" uid="uid://ctcm8wb53verh" path="res://GameLogic/Board/Resources/TileEntities/fire_entity_resource.tres" id="3_g86jx"]
+
+[resource]
+script = ExtResource("2_cwo6a")
+spawn = 1
+r = 2
+image = ExtResource("1_gojap")
+tile = ExtResource("3_g86jx")
+name = "Ognisko"
+description = "Spawn  fire in radus 2"
+metadata/_custom_type_script = "uid://sa0offqnfmtg"

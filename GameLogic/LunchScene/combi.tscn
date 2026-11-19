@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b52werdtbj7jy" path="res://GameLogic/Cards/card_empty.tscn" id="4_2f3ga"]
 [ext_resource type="Script" uid="uid://fpmeilx3p5c6" path="res://GameLogic/Cards/card_resource.gd" id="5_4n2ge"]
 [ext_resource type="Script" uid="uid://dpc4k6lmu238h" path="res://GameLogic/Cards/UpgradeCardCollection/UpgradeCardCollection.gd" id="7_xh3py"]
+[ext_resource type="Resource" uid="uid://cc5mspxbmpgle" path="res://GameLogic/Cards/collecion/fire2.tres" id="8_4n2ge"]
 [ext_resource type="Resource" uid="uid://cm0gmftxee73v" path="res://GameLogic/Cards/collecion/fire1.tres" id="9_i7l3v"]
 [ext_resource type="Script" uid="uid://dogxj228jwij8" path="res://GameLogic/Board/Prototype/shop_2.gd" id="10_q5ci2"]
 [ext_resource type="Script" uid="uid://bscxdkgobr5ba" path="res://GameLogic/Board/Prototype/mana.gd" id="11_qrdam"]
@@ -19,7 +20,8 @@
 
 [sub_resource type="Resource" id="Resource_5p37r"]
 script = ExtResource("7_xh3py")
-count = 1
+posibilities = Array[ExtResource("5_4n2ge")]([ExtResource("14_kjjx7"), ExtResource("8_4n2ge")])
+count = 2
 metadata/_custom_type_script = "uid://dpc4k6lmu238h"
 
 [node name="Node" type="Node" unique_id=2010123915]
@@ -70,6 +72,49 @@ offset_bottom = 23.0
 text = "HANd"
 
 [node name="POPUP" type="ColorRect" parent="GameManager" unique_id=778388453]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(0, 0, 0, 1)
+
+[node name="GameManager2" type="Node" parent="." unique_id=220022659]
+script = ExtResource("3_1chki")
+empty_card = ExtResource("4_2f3ga")
+upgrade = SubResource("Resource_5p37r")
+
+[node name="END_TURN_Button" type="Button" parent="GameManager2" unique_id=960519907]
+offset_right = 90.0
+offset_bottom = 31.0
+text = "END TURN"
+
+[node name="ColorRect" type="ColorRect" parent="GameManager2" unique_id=1779819473]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -227.0
+offset_right = 105.0
+offset_bottom = -187.0
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="StateLabel" type="Label" parent="GameManager2/ColorRect" unique_id=74119698]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "HANd"
+
+[node name="POPUP" type="ColorRect" parent="GameManager2" unique_id=614707517]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -246,3 +291,4 @@ transform = Transform3D(1, 0, 0, 0, 0.48040482, 0.8770469, 0, -0.8770469, 0.4804
 script = ExtResource("1_4n2ge")
 
 [connection signal="pressed" from="GameManager/END_TURN_Button" to="GameManager" method="_on_end_turn_button_pressed"]
+[connection signal="pressed" from="GameManager2/END_TURN_Button" to="GameManager2" method="_on_end_turn_button_pressed"]

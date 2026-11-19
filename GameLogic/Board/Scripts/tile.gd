@@ -28,6 +28,7 @@ func add_entity(entity: TileEntity) -> void:
 	entity.tile = self
 	entity.position=Vector3.ZERO
 	entities.append(entity)
+	self.add_child(entity)
 
 func make_entity(resource: TileEntityResource) -> void:
 	var entity: TileEntity = TileEntity.new()

@@ -8,4 +8,5 @@ script = ExtResource("1_2trwl")
 type = 2
 texture = ExtResource("2_k8vnr")
 sprite_offset = 32.0
+blocked_by = Array[int]([2])
 metadata/_custom_type_script = "uid://d3kydm7wblmmv"

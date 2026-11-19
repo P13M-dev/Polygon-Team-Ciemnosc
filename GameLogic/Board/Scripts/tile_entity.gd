@@ -12,7 +12,15 @@ var resource: TileEntityResource:
 		add_child(sprite3D)
 		sprite3D.position = Vector3(0,0.1,resource.sprite_offset)
 		sprite3D.rotate_x(-PI/2)
-		sprite3D.pixel_size=1.0
-var state: TileEntityResource.TileEntityState
+		sprite3D.pixel_size = 1.0
+var state: TileEntityResource.TileEntityState:
+	set(value):
+		state = value
+		value.entity = self
 var tile: Tile
 var sprite3D: Sprite3D
+
+func die() -> void:
+	if tile!=null:
+		tile.entities.erase(self)
+	queue_free()

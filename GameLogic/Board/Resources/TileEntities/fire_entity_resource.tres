@@ -1,10 +1,13 @@
-[gd_resource type="Resource" script_class="TileEntityResource" format=3 uid="uid://ctcm8wb53verh"]
+[gd_resource type="Resource" script_class="FireEntityResource" format=3 uid="uid://ctcm8wb53verh"]
 
-[ext_resource type="Script" uid="uid://d3kydm7wblmmv" path="res://GameLogic/Board/Scripts/tile_entity_resource.gd" id="1_r2gox"]
+[ext_resource type="Script" uid="uid://dnb3gcpbro82o" path="res://GameLogic/Board/Scripts/TileEntityResources/fire_entity_resource.gd" id="1_4rfsd"]
 [ext_resource type="Texture2D" uid="uid://c2jaext0tyst1" path="res://Assets/Images/fire.png" id="2_4rfsd"]
 
 [resource]
-script = ExtResource("1_r2gox")
+script = ExtResource("1_4rfsd")
+burn_time = 3
 texture = ExtResource("2_4rfsd")
 sprite_offset = 32.0
+blocked_by = Array[int]([0, 1, 2])
+kills = Array[int]([3])
 metadata/_custom_type_script = "uid://d3kydm7wblmmv"

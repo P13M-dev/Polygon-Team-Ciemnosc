@@ -2,6 +2,12 @@ extends Node3D
 class_name Tile
 
 var entities: Array[TileEntity]
+var board_position_x:int=-1
+var board_position_y:int=-1
+var unit:Unit
+
+func add_unit(u:Unit)->void:
+	self.unit=u
 
 func has_entity(type: TileEntity.Type) -> bool:
 	for i: TileEntity in entities:
@@ -34,3 +40,12 @@ func make_entity(resource: TileEntityResource) -> void:
 	var entity: TileEntity = TileEntity.new()
 	entity.resource = resource
 	add_entity(entity)
+
+
+func _process(_delta: float) -> void:
+	if unit==null:
+		$Sprite3D2.visible=false
+	else:
+		print("uu")
+		$Sprite3D2.visible=true
+		#$Sprite3D2.texture=unit.texture

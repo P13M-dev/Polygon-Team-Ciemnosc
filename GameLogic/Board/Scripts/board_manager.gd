@@ -5,7 +5,7 @@ const board_width: int = 10
 const tile_size: float = 68
 const vertical_scale_factor: float = 0.5
 var tiles: Array[Array] #powinno być Array[Array[Tile]], ale GDscript nie pozwala :P
-
+@export var rock:TileEntityResource
 func get_tile(postion:Vector2i)->Tile:
 	if postion.x<0:
 		return null
@@ -26,7 +26,9 @@ func update_board()->void:
 	for x in range(0,board_width):
 		for y in range(0,board_width):
 			if randi()%50==0:
-				tiles[x][y].add_effect(preload("res://GameLogic/Board/Resources/TileEffects/rock_effect.tres").duplicate())
+				tiles[x][y].make_entity(rock)
+
+				#tiles[x][y].add_effect(preload("res://GameLogic/Board/Resources/TileEffects/rock_effect.tres").duplicate())
 	#end placeholder 
 	
 func _init() -> void:
@@ -60,3 +62,5 @@ func _init() -> void:
 					tile.make_entity(preload("res://GameLogic/Board/Resources/TileEntities/rock_entity_resource.tres").duplicate())
 				elif randi()%10==0:#tutaj są dawane tylko efekty, ale nie ma zmiany stanu pola na cokolwiek
 					tile.make_entity(preload("res://GameLogic/Board/Resources/TileEntities/puddle_entity_resource.tres").duplicate())
+				elif randi()%10==0:
+					tile.add_unit(preload("res://Resources/Units/flame_unit.tres").duplicate())

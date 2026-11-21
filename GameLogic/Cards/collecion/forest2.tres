@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpawnCard" format=3 uid="uid://dbeos8fpsus03"]
+
+[ext_resource type="Texture2D" uid="uid://b8pj2257iea54" path="res://Assets/Images/cards/frames/card_nature_v1.PNG" id="1_jdc2h"]
+[ext_resource type="Texture2D" uid="uid://fj1qt6j3wblc" path="res://Assets/Images/squares/square nature/empty_tile.png" id="2_u3xuh"]
+[ext_resource type="Script" uid="uid://sa0offqnfmtg" path="res://GameLogic/Cards/spawn_card.gd" id="3_j10jj"]
+[ext_resource type="Resource" uid="uid://bulscwktoy7kr" path="res://GameLogic/Board/Resources/TileEntities/nature_entity_resource.tres" id="4_j10jj"]
+
+[resource]
+script = ExtResource("3_j10jj")
+r = 2
+image = ExtResource("2_u3xuh")
+tile = ExtResource("4_j10jj")
+name = "laas"
+description = "spawn nautre in radius 2"
+card_image = ExtResource("1_jdc2h")
+font_color = Color(1, 1, 1, 1)
+metadata/_custom_type_script = "uid://sa0offqnfmtg"

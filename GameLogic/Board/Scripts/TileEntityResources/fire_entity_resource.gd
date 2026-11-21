@@ -1,12 +1,15 @@
-extends TileEntityResource
+extends TileEffectResource
 class_name FireEntityResource
 @export var burn_time: int
 
 func is_unit()->bool:
 	return false
 
+func create_state()->TileEntityResource.TileEntityState:
+	return TileEntityState.new()
+
 class TileEntityState:
-	extends TileEntityResource.TileEntityState
+	extends TileEffectResource.EffectState
 	var turns_left: int = 0
 	
 	func placed_on(tile: Tile)->void:

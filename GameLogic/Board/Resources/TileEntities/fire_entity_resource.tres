@@ -1,11 +1,13 @@
 [gd_resource type="Resource" script_class="FireEntityResource" format=3 uid="uid://ctcm8wb53verh"]
 
 [ext_resource type="Script" uid="uid://dnb3gcpbro82o" path="res://GameLogic/Board/Scripts/TileEntityResources/fire_entity_resource.gd" id="1_4rfsd"]
-[ext_resource type="Texture2D" uid="uid://c2jaext0tyst1" path="res://Assets/Images/sprites/sprites elemental/fire.png" id="2_4rfsd"]
+[ext_resource type="Texture2D" uid="uid://b66nfa0bj5jgp" path="res://Assets/Images/sprites/sprites elemental/sprite fire/sprite_fire_v2.png" id="2_4rfsd"]
+[ext_resource type="Texture2D" uid="uid://cy4g3pim8bq65" path="res://Assets/Images/squares/square fire/square_fire_v1.png" id="2_h0yuh"]
 
 [resource]
 script = ExtResource("1_4rfsd")
 burn_time = 3
+squere_texture = ExtResource("2_h0yuh")
 texture = ExtResource("2_4rfsd")
 sprite_offset = 32.0
 blocked_by = Array[int]([0, 1, 2])

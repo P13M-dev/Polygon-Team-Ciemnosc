@@ -1,10 +1,13 @@
-[gd_resource type="Resource" script_class="MovementCard" load_steps=3 format=3 uid="uid://cl8vtpmiqdwul"]
+[gd_resource type="Resource" script_class="MovementCard" format=3 uid="uid://cl8vtpmiqdwul"]
 
-[ext_resource type="Texture2D" uid="uid://biej4bs2ewtpn" path="res://Assets/Images/move.png" id="1_5knxg"]
+[ext_resource type="Texture2D" uid="uid://biej4bs2ewtpn" path="res://Assets/Images/cards/illustrations/move.png" id="1_5knxg"]
 [ext_resource type="Script" uid="uid://cl1ugffoii0wl" path="res://GameLogic/Cards/ruch.gd" id="1_movement"]
+[ext_resource type="Texture2D" uid="uid://cbhx1qx002jev" path="res://Assets/Images/cards/frames/card_empty_v1.PNG" id="1_ob4uy"]
 
 [resource]
 script = ExtResource("1_movement")
 image = ExtResource("1_5knxg")
 name = "Ruch"
 description = "move player to a different field."
+card_image = ExtResource("1_ob4uy")
+font_color = Color(1, 1, 1, 1)

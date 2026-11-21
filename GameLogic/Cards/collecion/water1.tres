@@ -3,14 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://bweitgrjprp7n" path="res://Assets/Images/cards/frames/card_water_v1.PNG" id="1_hyrj6"]
 [ext_resource type="Script" uid="uid://sa0offqnfmtg" path="res://GameLogic/Cards/spawn_card.gd" id="1_nrrk5"]
 [ext_resource type="Texture2D" uid="uid://clkhgyamwpuyw" path="res://Assets/Images/squares/square water/puddle.png" id="1_ofge4"]
-[ext_resource type="Resource" uid="uid://cx5tlke8n8rgv" path="res://GameLogic/Board/Resources/TileEntities/puddle_entity_resource.tres" id="3_4khbe"]
+[ext_resource type="Resource" uid="uid://bptwia0u1f0ut" path="res://GameLogic/Board/Resources/TileEntities/water_entity_resource.tres" id="4_hyrj6"]
 
 [resource]
 script = ExtResource("1_nrrk5")
 spawn = 2
 r = 1
 image = ExtResource("1_ofge4")
-tile = ExtResource("3_4khbe")
+tile = ExtResource("4_hyrj6")
 name = "kropla"
 exile = true
 description = "Spawn 1 water"

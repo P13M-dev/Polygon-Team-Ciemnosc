@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="TileEffectResource" format=3 uid="uid://bptwia0u1f0ut"]
+
+[ext_resource type="Script" uid="uid://cihoydslg0gps" path="res://GameLogic/Board/Scripts/tile_effect_resource.gd" id="1_rg1cp"]
+[ext_resource type="Texture2D" uid="uid://herrm17ahjmm" path="res://Assets/Images/squares/square water/square_water_v2.png" id="2_a8wfc"]
+[ext_resource type="Texture2D" uid="uid://clkhgyamwpuyw" path="res://Assets/Images/squares/square water/puddle.png" id="3_unmjc"]
+
+[resource]
+script = ExtResource("1_rg1cp")
+squere_texture = ExtResource("2_a8wfc")
+type = 1
+texture = ExtResource("3_unmjc")
+blocked_by = Array[int]([3])
+kills = Array[int]([0])
+metadata/_custom_type_script = "uid://cihoydslg0gps"

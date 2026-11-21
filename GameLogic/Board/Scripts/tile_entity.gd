@@ -6,7 +6,7 @@ enum Type{FIRE,PUDDLE,ROCK,FOREST,WIND,ICE,NONE}#potem ich będzie więcej
 var resource: TileEntityResource:
 	set(value):
 		resource=value
-		state=value.TileEntityState.new()
+		state=value.create_state()
 		if sprite3D==null:
 			sprite3D = Sprite3D.new()
 			sprite3D.texture = resource.texture
@@ -23,6 +23,7 @@ var tile: Tile
 var sprite3D: Sprite3D
 
 func die() -> void:
+	print("DIE")
 	if tile!=null:
 		tile.entities.erase(self)
 	queue_free()

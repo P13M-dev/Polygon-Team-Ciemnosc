@@ -61,6 +61,6 @@ func _init() -> void:
 				if randi()%10==0:#to jest głównie do testowania czy, i demonstacji jak działa dodawanie efektów do planszy
 					tile.make_entity(preload("res://GameLogic/Board/Resources/TileEntities/rock_entity_resource.tres").duplicate())
 				elif randi()%10==0:#tutaj są dawane tylko efekty, ale nie ma zmiany stanu pola na cokolwiek
-					tile.make_entity(preload("res://GameLogic/Board/Resources/TileEntities/puddle_entity_resource.tres").duplicate())
+					tile.make_entity(preload("res://GameLogic/Board/Resources/TileEntities/water_entity_resource.tres").duplicate())
 				elif randi()%10==0:
 					tile.add_unit(preload("res://Resources/Units/flame_unit.tres").duplicate())

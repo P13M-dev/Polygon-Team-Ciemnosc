@@ -7,5 +7,5 @@
 script = ExtResource("1_va5v1")
 type = 0
 texture = ExtResource("2_mg7uv")
-modulate = Color(0.5198314, 0.5702491, 0.52377146, 1)
+modulate = Color(1, 1, 1, 1)
 modulate2 = Color(1, 0.3900456, 0.84166056, 1)

@@ -2,14 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://c1it2n1dia2jo" path="res://Assets/Images/cards/frames/card_fire_v1.PNG" id="1_l0dbg"]
 [ext_resource type="Script" uid="uid://sa0offqnfmtg" path="res://GameLogic/Cards/spawn_card.gd" id="1_s5cfi"]
-[ext_resource type="Texture2D" uid="uid://c2jaext0tyst1" path="res://Assets/Images/sprites/sprites elemental/fire.png" id="1_wvbm0"]
+[ext_resource type="Texture2D" uid="uid://b66nfa0bj5jgp" path="res://Assets/Images/sprites/sprites elemental/sprite fire/sprite_fire_v2.png" id="2_l0dbg"]
 [ext_resource type="Resource" uid="uid://ctcm8wb53verh" path="res://GameLogic/Board/Resources/TileEntities/fire_entity_resource.tres" id="3_1ey6j"]
 
 [resource]
 script = ExtResource("1_s5cfi")
 spawn = 1
 r = 1
-image = ExtResource("1_wvbm0")
+image = ExtResource("2_l0dbg")
 tile = ExtResource("3_1ey6j")
 name = "Iskra"
 description = "Spawn 1 fire"

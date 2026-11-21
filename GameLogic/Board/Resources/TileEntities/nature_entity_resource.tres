@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="TileEffectResource" format=3 uid="uid://bulscwktoy7kr"]
+
+[ext_resource type="Script" uid="uid://cihoydslg0gps" path="res://GameLogic/Board/Scripts/tile_effect_resource.gd" id="1_4a5p0"]
+[ext_resource type="Texture2D" uid="uid://0noixuwv7q3j" path="res://Assets/Images/squares/square nature/square_nature_v2.png" id="2_4a5p0"]
+[ext_resource type="Texture2D" uid="uid://fj1qt6j3wblc" path="res://Assets/Images/squares/square nature/empty_tile.png" id="3_4a5p0"]
+
+[resource]
+script = ExtResource("1_4a5p0")
+squere_texture = ExtResource("2_4a5p0")
+type = 3
+texture = ExtResource("3_4a5p0")
+blocked_by = Array[int]([0, 2])
+kills = Array[int]([1])
+metadata/_custom_type_script = "uid://cihoydslg0gps"

@@ -2,6 +2,7 @@ extends Node
 
 var bm:BoardManager
 var mouse3d:Mouse3D
+var ruch:RuchManager
 
 func get_board()->BoardManager:
 	assert(bm!=null)

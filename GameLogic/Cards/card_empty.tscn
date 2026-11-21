@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b52werdtbj7jy"]
 
 [ext_resource type="Script" uid="uid://edqox8i4u0vm" path="res://GameLogic/Board/Prototype/card_node.gd" id="1_xtq5p"]
-[ext_resource type="Texture2D" uid="uid://dq8f2sbrkus7f" path="res://Assets/Images/tmp/kart.png" id="2_1gall"]
+[ext_resource type="Texture2D" uid="uid://dq8f2sbrkus7f" path="res://Assets/Images/cards/frames/kart.png" id="2_1gall"]
 
 [node name="Card7" type="ColorRect" unique_id=283247813]
 offset_left = 944.0

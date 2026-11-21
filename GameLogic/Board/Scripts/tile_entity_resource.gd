@@ -7,8 +7,12 @@ class_name TileEntityResource#meant to be inherited from
 @export var blocked_by: Array[TileEntity.Type]
 @export var kills: Array[TileEntity.Type]
 
+func is_unit()->bool:
+	return false
+
 class TileEntityState:
 	var entity:TileEntity
+	var board_position:Vector2i
 	
 	func placed_on(tile: Tile)->void:
 		for i: TileEntity.Type in entity.resource.blocked_by:
@@ -19,6 +23,7 @@ class TileEntityState:
 			for j: TileEntity in tile.get_entities(i):
 				on_kill(j)
 				j.die()
+		self.board_position=Vector2i(tile.board_position_x,tile.board_position_y)
 	
 	func on_kill(killed: TileEntity) -> void:
 		pass

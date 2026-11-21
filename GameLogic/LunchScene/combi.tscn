@@ -26,7 +26,6 @@ count = 2
 metadata/_custom_type_script = "uid://dpc4k6lmu238h"
 
 [node name="Node" type="Node" unique_id=2010123915]
-script = ExtResource("1_4n2ge")
 
 [node name="3dMouse" type="Node" parent="." unique_id=818053327 node_paths=PackedStringArray("cam", "ray")]
 script = ExtResource("1_2f3ga")

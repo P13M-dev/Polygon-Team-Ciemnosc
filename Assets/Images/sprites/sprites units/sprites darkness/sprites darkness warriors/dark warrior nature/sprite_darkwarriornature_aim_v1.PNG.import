@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh4elgw6j2ewf"
-path="res://.godot/imported/TEST_wojownik.png-babb8140c93f555682cdf5583a59b268.ctex"
+uid="uid://dsmmn52el6gn8"
+path="res://.godot/imported/sprite_darkwarriornature_aim_v1.PNG-bd6fcc939dcaf10aba9843e818f27b54.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/TEST_wojownik.png"
-dest_files=["res://.godot/imported/TEST_wojownik.png-babb8140c93f555682cdf5583a59b268.ctex"]
+source_file="res://Assets/Images/sprites/sprites units/sprites darkness/sprites darkness warriors/dark warrior nature/sprite_darkwarriornature_aim_v1.PNG"
+dest_files=["res://.godot/imported/sprite_darkwarriornature_aim_v1.PNG-bd6fcc939dcaf10aba9843e818f27b54.ctex"]
 
 [params]
 

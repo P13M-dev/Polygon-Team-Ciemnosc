@@ -5,6 +5,9 @@ class_name CardBase
 @export var name:String
 @export var exile:bool=false
 @export var description:String
+@export var card_image:Texture2D
+@export var font_color:Color
+
 
 class WidetResult:
 	pass

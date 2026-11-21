@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://gtxw11kir7xt"
-path.s3tc="res://.godot/imported/sqr.png-2677e247eb3191d2a74dda7ab11c8f2f.s3tc.ctex"
+path.s3tc="res://.godot/imported/sqr.png-87f3636dc4e81fcde907c66bbe24466b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Images/tmp/sqr.png"
-dest_files=["res://.godot/imported/sqr.png-2677e247eb3191d2a74dda7ab11c8f2f.s3tc.ctex"]
+source_file="res://Assets/Images/squares/square empty/sqr.png"
+dest_files=["res://.godot/imported/sqr.png-87f3636dc4e81fcde907c66bbe24466b.s3tc.ctex"]
 
 [params]
 

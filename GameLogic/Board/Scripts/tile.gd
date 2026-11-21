@@ -4,10 +4,14 @@ class_name Tile
 var entities: Array[TileEntity]
 var board_position_x:int=-1
 var board_position_y:int=-1
+#var unit:UnitEntityResource.UnitState
 var unit:Unit
 
+#func add_unit(u:UnitEntityResource)->void:
+#	self.unit=u.UnitState.new()
 func add_unit(u:Unit)->void:
 	self.unit=u
+	
 
 func has_entity(type: TileEntity.Type) -> bool:
 	for i: TileEntity in entities:
@@ -46,6 +50,8 @@ func _process(_delta: float) -> void:
 	if unit==null:
 		$Sprite3D2.visible=false
 	else:
-		print("uu")
+		#print("uu")
 		$Sprite3D2.visible=true
+		$Sprite3D2.texture=unit.texture
+		$Sprite3D2.modulate=unit.modulate2 if unit==Game.ruch.player_unit else unit.modulate
 		#$Sprite3D2.texture=unit.texture

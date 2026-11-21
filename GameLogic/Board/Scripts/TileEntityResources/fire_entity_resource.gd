@@ -2,6 +2,9 @@ extends TileEntityResource
 class_name FireEntityResource
 @export var burn_time: int
 
+func is_unit()->bool:
+	return false
+
 class TileEntityState:
 	extends TileEntityResource.TileEntityState
 	var turns_left: int = 0

@@ -2,6 +2,7 @@ extends Node3D
 class_name TileEntity
 
 enum Type{FIRE,PUDDLE,ROCK,FOREST,WIND,ICE,NONE}#potem ich będzie więcej
+
 var resource: TileEntityResource:
 	set(value):
 		resource=value

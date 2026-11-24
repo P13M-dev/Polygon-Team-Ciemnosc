@@ -1,10 +1,13 @@
 extends Node
 class_name BoardManager
 
+signal update_board_signal()
+
 const board_width: int = 10
 const tile_size: float = 68
 const vertical_scale_factor: float = 0.5
 var tiles: Array[Array] #powinno być Array[Array[Tile]], ale GDscript nie pozwala :P
+var path_find_grid:AStarGrid2D # pathowanie a* 
 @export var rock:TileEntityResource
 func get_tile(postion:Vector2i)->Tile:
 	if postion.x<0:
@@ -23,15 +26,92 @@ func _enter_tree() -> void:
 func update_board()->void:
 	#this is random placeholder effect 
 	#TODO replace with fire spread
-	for x in range(0,board_width):
-		for y in range(0,board_width):
-			if randi()%50==0:
-				tiles[x][y].make_entity(rock)
-
+	#for x in range(0,board_width):
+	#	for y in range(0,board_width):
+	#		if randi()%50==0:
+	#			tiles[x][y].make_entity(rock)
+	
 				#tiles[x][y].add_effect(preload("res://GameLogic/Board/Resources/TileEffects/rock_effect.tres").duplicate())
 	#end placeholder 
+	update_unit_pathing()
+	move_enemy_units()
+
+func update_unit_pathing() -> void:
+	for x in board_width:
+		for y in board_width:
+			var treversible:bool = tiles[x][y].is_treversible(true)
+			if treversible:
+				path_find_grid.set_point_solid(Vector2i(x, y),false)
+				path_find_grid.set_point_weight_scale(Vector2i(x, y), 2.0)
+				# dodaj funkcje aby znajdować pola trudniejsze do przejścia
+			else:
+				path_find_grid.set_point_solid(Vector2i(x, y),true)
+
+
+
+
+
+const MAX_TARGETS_TO_TRY: int = 3 
+
+func move_enemy_units() -> void:
+	var enemies: Array[Vector2i] = []
+	var occupied: Dictionary = {}
+	for x: int in tiles.size():
+		for y: int in tiles[x].size():
+			var unit: Unit = tiles[x][y].unit
+			if unit == null:
+				continue
+			occupied[Vector2i(x, y)] = true
+			if unit.enemy:
+				enemies.append(Vector2i(x, y))
+	var priority: Dictionary = {}
+	for pos: Vector2i in enemies:
+		var targets: Array[Vector2i] = find_nearest_units(pos.x, pos.y, false)
+		priority[pos] = distance(pos, targets[0]) if not targets.is_empty() else 9999
+	enemies.sort_custom(func(a: Vector2i, b: Vector2i) -> bool: return priority[a] < priority[b])
+
+	for pos: Vector2i in enemies:
+		var unit: Unit = tiles[pos.x][pos.y].unit
+		var destination: Vector2i = find_destination(pos, unit, occupied)
+		if destination == pos: continue
+		occupied.erase(pos)
+		occupied[destination] = true
+		var moved: Unit = tiles[pos.x][pos.y].pop_unit()
+		tiles[destination.x][destination.y].add_unit(moved)
+
+func find_destination(from: Vector2i, unit: Unit, occupied: Dictionary) -> Vector2i:
+	var targets: Array[Vector2i] = find_nearest_units(from.x, from.y, false)
+	for i: int in mini(targets.size(), MAX_TARGETS_TO_TRY):
+		var path: PackedVector2Array = path_find_grid.get_point_path(from, targets[i])
+		var furthest: int = mini(unit.moves_per_turn, path.size() - 2)
+		for step: int in range(furthest, 0, -1):
+			var candidate := Vector2i(path[step])
+			if not occupied.has(candidate):
+				return candidate
+	return from
+
+func find_nearest_units(origin_x: int, origin_y: int, unit_team: bool) -> Array[Vector2i]:
+	var origin := Vector2i(origin_x, origin_y)
+	var result: Array[Vector2i] = []
+	for x: int in tiles.size():
+		for y: int in tiles[x].size():
+			var unit: Unit = tiles[x][y].unit
+			if unit != null and unit.enemy == unit_team:
+				result.append(Vector2i(x, y))
+	result.sort_custom(func(a: Vector2i, b: Vector2i) -> bool:
+		return distance(origin, a) < distance(origin, b))
+	return result
+
+
+func distance(a: Vector2i, b: Vector2i) -> int:
+	return absi(a.x - b.x) + absi(a.y - b.y)
 	
 func _init() -> void:
+	path_find_grid = AStarGrid2D.new()
+	path_find_grid.region = Rect2i(0, 0, board_width, board_width)
+	path_find_grid.cell_size = Vector2(1, 1)
+	path_find_grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
+	path_find_grid.update()
 	if tiles.is_empty():
 		for x in range(0,board_width):
 			tiles.append([])
@@ -64,3 +144,7 @@ func _init() -> void:
 					tile.make_entity(preload("res://GameLogic/Board/Resources/TileEntities/water_entity_resource.tres").duplicate())
 				elif randi()%10==0:
 					tile.add_unit(preload("res://Resources/Units/flame_unit.tres").duplicate())
+					tile.unit.enemy = true
+				
+		tiles[8][8].add_unit(preload("res://Resources/Units/flame_unit.tres").duplicate())
+		tiles[8][8].unit.enemy = false

@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://og2jj3tbwidk"]
 
 [ext_resource type="Script" uid="uid://bgm70cypeoxym" path="res://GameLogic/Board/Scripts/tile.gd" id="1_ra5hk"]
-[ext_resource type="Texture2D" uid="uid://fj1qt6j3wblc" path="res://Assets/Images/empty_tile.png" id="2_oqpka"]
+[ext_resource type="Texture2D" uid="uid://fj1qt6j3wblc" path="res://Assets/Images/squares/square nature/empty_tile.png" id="2_oqpka"]
 [ext_resource type="PackedScene" uid="uid://du36yurnho130" path="res://GameLogic/Board/Prototype/field.tscn" id="3_57p7g"]
-[ext_resource type="Texture2D" uid="uid://gtxw11kir7xt" path="res://Assets/Images/tmp/sqr.png" id="4_oqpka"]
-[ext_resource type="Texture2D" uid="uid://c2jaext0tyst1" path="res://Assets/Images/fire.png" id="5_57p7g"]
-[ext_resource type="Texture2D" uid="uid://cuqicm43cjh13" path="res://Assets/Images/TEST_wojownik.png" id="6_l8pba"]
+[ext_resource type="Texture2D" uid="uid://gtxw11kir7xt" path="res://Assets/Images/squares/square empty/sqr.png" id="4_oqpka"]
+[ext_resource type="Texture2D" uid="uid://c2jaext0tyst1" path="res://Assets/Images/sprites/sprites elemental/fire.png" id="5_57p7g"]
+[ext_resource type="Texture2D" uid="uid://cuqicm43cjh13" path="res://Assets/Images/sprites/sprites units/TEST_wojownik.png" id="6_l8pba"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_57p7g"]
 albedo_texture = ExtResource("4_oqpka")

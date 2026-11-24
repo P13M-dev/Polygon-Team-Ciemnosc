@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Unit" format=3 uid="uid://blg636lrn7p7r"]
 
-[ext_resource type="Script" uid="uid://c6hqalv7yegrg" path="res://GameLogic/Board/Scripts/Units/unit.gd" id="1_bfs8f"]
+[ext_resource type="Script" uid="uid://c6hqalv7yegrg" path="res://GameLogic/Board/Scripts/unit.gd" id="1_bfs8f"]
 [ext_resource type="Texture2D" uid="uid://ben7vbxxpa8ji" path="res://Assets/Images/sprites/sprites units/sprites darkness/sprites darkness warriors/dark warrior empty/sprite_darkwarriorempty_default_v1.PNG" id="2_bfs8f"]
 
 [resource]

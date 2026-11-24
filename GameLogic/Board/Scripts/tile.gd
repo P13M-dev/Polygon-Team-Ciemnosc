@@ -11,7 +11,10 @@ var unit:Unit
 #	self.unit=u.UnitState.new()
 func add_unit(u:Unit)->void:
 	self.unit=u
-	
+func pop_unit()->Unit:
+	var u:Unit = unit
+	unit = null
+	return u
 
 func has_entity(type: TileEntity.Type) -> bool:
 	for i: TileEntity in entities:
@@ -47,6 +50,9 @@ func make_entity(resource: TileEntityResource) -> void:
 	entity.resource = resource
 	add_entity(entity)
 
+func is_treversible(ignore_enemy_units:bool)->bool:
+	
+	return not has_entity(TileEntity.Type.ROCK)
 
 func _process(_delta: float) -> void:
 	if unit==null:

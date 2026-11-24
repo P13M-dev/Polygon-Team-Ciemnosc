@@ -7,7 +7,6 @@ enum MovementState {
 	select_field,
 }
 
-
 var state: MovementState = MovementState.nieaktywny
 var player: FieldCollider = null
 var player_unit: Unit = null

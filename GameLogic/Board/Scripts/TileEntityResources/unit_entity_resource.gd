@@ -10,12 +10,13 @@ var enemy:bool # potem możemy zrobić jakiś enum jak chcemy neutral team
 var sprite3D: Sprite3D
 var selected:bool=false
 
-
+func create_state()->TileEntityResource.TileEntityState:
+	return UnitState.new()
 
 func is_unit()->bool:
 	return false
 
-class TileEntityState:
+class UnitState:
 	extends TileEntityResource.TileEntityState
 	var turns_left: int = 0
 	

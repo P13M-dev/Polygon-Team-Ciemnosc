@@ -9,25 +9,51 @@ var tiles: Array[Array] #powinno być Array[Array[Tile]], ale GDscript nie pozwa
 func get_tile(postion:Vector2i)->Tile:
 	if postion.x<0:
 		return null
-	if postion.x>tiles.size():
+	if postion.x>=tiles.size():
 		return null
 	if postion.y<0:
 		return null
-	if postion.y>tiles[postion.x].size():
+	if postion.y>=tiles[postion.x].size():
 		return null
 	return tiles[postion.x][postion.y]
 
 func _enter_tree() -> void:
 	Game.bm=self
-
+@export var fire:TileEntityResource
 func update_board()->void:
 	#this is random placeholder effect 
 	#TODO replace with fire spread
+	#for x in range(0,board_width):
+	#	for y in range(0,board_width):
+	#		if randi()%50==0:
+	#			tiles[x][y].make_entity(rock)
 	for x in range(0,board_width):
 		for y in range(0,board_width):
-			if randi()%50==0:
-				tiles[x][y].make_entity(rock)
-
+			var pos=Vector2i(x,y)
+			var t:Tile=get_tile(pos)
+			for e in t.entities:
+				e.state.on_tick(e)
+	var ar:Array[Vector2i]=[]
+	for x in range(0,board_width):
+		for y in range(0,board_width):
+			var pos=Vector2i(x,y)
+			var t:Tile=get_tile(pos)
+			if t.has_entity(TileEntity.Type.FIRE):
+				for n in [Vector2i(1,0),Vector2i(-1,0),Vector2i(0,-1),Vector2i(0,1)]:
+					var np:Vector2i=pos+n
+					var t2:Tile=get_tile(np)
+					if t2!=null:
+						for e:TileEntity in t2.entities:
+							if e.resource.type==TileEntity.Type.FOREST:
+								ar.append(e.state.board_position)
+								e.die()
+	for p:Vector2i in ar:
+		var t2:Tile=get_tile(p)
+		t2.make_entity(fire)
+	
+	
+	
+		
 				#tiles[x][y].add_effect(preload("res://GameLogic/Board/Resources/TileEffects/rock_effect.tres").duplicate())
 	#end placeholder 
 	

@@ -10,7 +10,12 @@ func create_state()->TileEntityResource.TileEntityState:
 
 class TileEntityState:
 	extends TileEffectResource.EffectState
-	var turns_left: int = 0
+	var turns_left: int = 3
+	
+	func on_tick(t:TileEntity):
+		turns_left-=1
+		if turns_left==0:
+			t.die()
 	
 	func placed_on(tile: Tile)->void:
 		turns_left += entity.resource.burn_time

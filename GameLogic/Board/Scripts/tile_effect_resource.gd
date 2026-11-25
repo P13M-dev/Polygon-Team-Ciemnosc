@@ -17,6 +17,9 @@ class EffectState extends TileEntityState:
 	
 	func on_kill(killed: TileEntity) -> void:
 		pass
+		
+	func on_tick(t:TileEntity):
+		pass
 
 func create_state()->TileEntityResource.TileEntityState:
 	return EffectState.new()

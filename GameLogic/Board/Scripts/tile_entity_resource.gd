@@ -7,6 +7,7 @@ class_name TileEntityResource#meant to be inherited from
 @export var sprite_offset: float = 0
 @export var blocked_by: Array[TileEntity.Type]
 @export var kills: Array[TileEntity.Type]
+@export var change_into: TileEntity.Type=TileEntity.Type.NONE
 
 @abstract
 func is_unit()->bool
@@ -22,3 +23,5 @@ class TileEntityState:
 	func placed_on(tile: Tile)->void
 	@abstract
 	func on_kill(killed: TileEntity) -> void
+	@abstract
+	func on_tick(tileEnitity: TileEntity) -> void

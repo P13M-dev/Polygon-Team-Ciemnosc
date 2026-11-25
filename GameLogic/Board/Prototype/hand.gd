@@ -6,11 +6,12 @@ var active_card:CardNode=null
 @export var mouse:Mouse3D
 @export var library:WidgetLibrary
 
+
 func _ready() -> void:
 	var ruch_manager: RuchManager = get_parent().get_node("RuchManager")
 	ruch_manager.wykonano_ruch.connect(_czy_ruch)
 	Game.hand=self
-	
+
 	
 func _czy_ruch(success: bool) -> void:#karta ruchu przesuwa gracza, to co jest do zrobienia z kartą zostawiam
 	if success == true:

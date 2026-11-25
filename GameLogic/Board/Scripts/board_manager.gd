@@ -36,6 +36,13 @@ func update_board()->void:
 			var t:Tile=get_tile(pos)
 			for e in t.entities:
 				e.state.on_tick(e)
+	for x in range(0,board_width):
+		for y in range(0,board_width):
+			var pos=Vector2i(x,y)
+			var t:Tile=get_tile(pos)
+			if t.unit!=null:
+				if t.unit.type==Elemental.Type.FIRE and t.has_entity(TileEntity.Type.PUDDLE):
+					t.unit=null
 	var ar:Array[Vector2i]=[]
 	for x in range(0,board_width):
 		for y in range(0,board_width):
@@ -138,6 +145,11 @@ func _init() -> void:
 	path_find_grid.cell_size = Vector2(1, 1)
 	path_find_grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
 	path_find_grid.update()
+
+@export var hero:Unit
+@export var enemy:Unit
+
+func _ready() -> void:
 	if tiles.is_empty():
 		for x in range(0,board_width):
 			tiles.append([])
@@ -165,12 +177,13 @@ func _init() -> void:
 
 				"""
 				if randi()%10==0:#to jest głównie do testowania czy, i demonstacji jak działa dodawanie efektów do planszy
-					tile.make_entity(preload("res://GameLogic/Board/Resources/TileEntities/rock_entity_resource.tres").duplicate())
+					if x<3 or x>7 or y<3 or y>7:
+						tile.make_entity(preload("res://GameLogic/Board/Resources/TileEntities/rock_entity_resource.tres").duplicate())
 				elif randi()%10==0:#tutaj są dawane tylko efekty, ale nie ma zmiany stanu pola na cokolwiek
 					tile.make_entity(preload("res://GameLogic/Board/Resources/TileEntities/water_entity_resource.tres").duplicate())
-				elif randi()%10==0:
-					tile.add_unit(preload("res://Resources/Units/flame_unit.tres").duplicate())
-					tile.unit.enemy = true
+				#elif randi()%10==0:
+				#	tile.add_unit(preload("res://Resources/Units/flame_unit.tres").duplicate())
+				#	tile.unit.enemy = true
 				
 		tiles[8][8].add_unit(preload("res://Resources/Units/flame_unit.tres").duplicate())
 		tiles[8][8].unit.enemy = false

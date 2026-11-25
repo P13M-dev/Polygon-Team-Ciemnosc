@@ -8,8 +8,23 @@ signal update_board_signal()
 
 @export var empty_card:PackedScene
 @export var upgrade:UpgradeCardCollection
+@export var deck:CardDeck
+@export var wave:WaveResource
 
 var is_shop:bool=false
+
+func _ready() -> void:
+	if deck!=null:
+		for n:Node in $"../Deck".get_children():
+			n.queue_free()
+		for n:Node in $"../Hand".get_children():
+			n.queue_free()
+		var c:Array[CardBase]=deck.cards
+		for i in range(c.size()):
+				var parent=$"../Hand" if i<deck.first_draw else $"../Deck"
+				var cn:CardNode=preload("res://GameLogic/Cards/card_empty.tscn").instantiate()
+				cn.card=c[i]
+				parent.add_child(cn)
 
 func _process(delta: float) -> void:
 	var map:Dictionary={

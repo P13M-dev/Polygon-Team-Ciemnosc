@@ -20,6 +20,9 @@ class UnitState:
 	extends TileEntityResource.TileEntityState
 	var turns_left: int = 0
 	
+	func on_tick(tileEnitity: TileEntity) -> void:
+		pass
+	
 	func placed_on(tile: Tile)->void:
 		turns_left += entity.resource.burn_time
 		#super(tile) #TODO CHANGE TO MOR NORMAL ENTINTY
@@ -29,5 +32,3 @@ class UnitState:
 		if killed.resource.type==TileEntity.Type.FOREST:
 			turns_left += 3#przykład tego, jak mogą działać interakcje pomiędzy TileEnitami
 	
-	func on_tick(tileEnitity: TileEntity) -> void:
-		pass

@@ -66,7 +66,13 @@ func _process(_delta: float) -> void:
 
 	if state == MovementState.select_player:
 		#if clicked_field.state != FieldCollider.FieldState.PLAYER:
+		var ok=true
 		if clicked_field.get_tile().unit==null:
+			ok=false
+		if ok:
+			if clicked_field.get_tile().unit.enemy:
+				ok=false
+		if not ok:
 			print("pole bez gracza")
 			state = MovementState.nieaktywny
 			emit_signal("wykonano_ruch",  false)
@@ -85,10 +91,15 @@ func _process(_delta: float) -> void:
 
 	if state == MovementState.select_field:
 		if clicked_field not in player.near:
-			print("nie jest obok")
-			state = MovementState.nieaktywny
-			emit_signal("wykonano_ruch",  false)
-			return
+			print("nie jest obok?")
+			print(player.get_tile().board_position_x," ",player.get_tile().board_position_y)
+			print(clicked_field.get_tile().board_position_x," ",clicked_field.get_tile().board_position_y)
+			#TODO FIX
+			if abs(player.get_tile().board_position_x-clicked_field.get_tile().board_position_x)+abs(player.get_tile().board_position_y-clicked_field.get_tile().board_position_y)>1:
+				print("nie jest obok")
+				state = MovementState.nieaktywny
+				emit_signal("wykonano_ruch",  false)
+				return
 
 		if clicked_field.state != FieldCollider.FieldState.NONE: #cos tu nie działa
 			print("skala czy cos")

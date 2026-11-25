@@ -6,7 +6,7 @@ class_name Unit
 @export var texture: Texture2D
 @export var modulate:Color
 @export var modulate2:Color
-@export var moves_per_turn:int #ile pól na ture może przejść
-var enemy:bool # potem możemy zrobić jakiś enum jak chcemy neutral team
+@export var movesPerTurn:int #ile pól na ture może przejść
+@export var enemy:bool=true # potem możemy zrobić jakiś enum jak chcemy neutral team
 var sprite3D: Sprite3D
 var selected:bool=false

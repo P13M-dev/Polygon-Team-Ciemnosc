@@ -8,3 +8,4 @@ script = ExtResource("1_bfs8f")
 type = 0
 texture = ExtResource("2_bfs8f")
 modulate = Color(1, 1, 1, 1)
+enemy = false

@@ -4,6 +4,8 @@ var is_player_turn:bool=true
 var anim_time:float=0.0
 var max_anim_time:float=1.0
 
+signal update_board_signal()
+
 @export var empty_card:PackedScene
 @export var upgrade:UpgradeCardCollection
 
@@ -73,8 +75,6 @@ var turn_num:int=0
 func new_turn() -> void:
 	if not is_shop:
 		Game.get_board().update_board()
-		
-		
 		turn_num+=1
 		$"../Mana".mana=$"../Mana".max_mana
 		var numer_draw:int=3
@@ -88,6 +88,7 @@ func new_turn() -> void:
 			assert($"../Deck".get_child_count()!=0)
 			print("DRAW")
 			$"../Deck".get_child(0).reparent($"../Hand")
+	emit_signal("update_board_signal")
 
 func show_shop() -> void:
 	is_shop=true

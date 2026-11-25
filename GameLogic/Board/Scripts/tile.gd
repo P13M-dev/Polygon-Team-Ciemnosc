@@ -12,6 +12,7 @@ var unit:Unit
 func add_unit(u:Unit)->void:
 	self.unit=u
 func pop_unit()->Unit:
+	print("POP!!!!!!!!!!!!!!!111")
 	var u:Unit = unit
 	unit = null
 	return u

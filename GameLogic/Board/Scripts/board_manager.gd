@@ -105,6 +105,7 @@ func move_enemy_units() -> void:
 
 	for pos: Vector2i in enemies:
 		var unit: Unit = tiles[pos.x][pos.y].unit
+		
 		var destination: Vector2i = find_destination(pos, unit, occupied)
 		if destination == pos: continue
 		occupied.erase(pos)
@@ -114,13 +115,17 @@ func move_enemy_units() -> void:
 
 func find_destination(from: Vector2i, unit: Unit, occupied: Dictionary) -> Vector2i:
 	var targets: Array[Vector2i] = find_nearest_units(from.x, from.y, false)
+	print("finded",targets)
 	for i: int in mini(targets.size(), MAX_TARGETS_TO_TRY):
 		var path: PackedVector2Array = path_find_grid.get_point_path(from, targets[i])
-		var furthest: int = mini(unit.moves_per_turn, path.size() - 2)
+		#var furthest: int = mini(unit.movesPerTurn, path.size() - 2)
+		var furthest: int = mini(unit.movesPerTurn, path.size() - 2)#
 		for step: int in range(furthest, 0, -1):
 			var candidate := Vector2i(path[step])
 			if not occupied.has(candidate):
 				return candidate
+		#if path.size()>0:
+		#	return path[1]
 	return from
 
 func find_nearest_units(origin_x: int, origin_y: int, unit_team: bool) -> Array[Vector2i]:
@@ -185,5 +190,16 @@ func _ready() -> void:
 				#	tile.add_unit(preload("res://Resources/Units/flame_unit.tres").duplicate())
 				#	tile.unit.enemy = true
 				
-		tiles[8][8].add_unit(preload("res://Resources/Units/flame_unit.tres").duplicate())
-		tiles[8][8].unit.enemy = false
+		
+		tiles[5][5].add_unit(hero.duplicate())
+		var ps:Array[Vector2i]=[
+			Vector2i(3,0),Vector2i(6,0),Vector2i(3,9),Vector2i(6,9),
+			Vector2i(0,3),Vector2i(0,6),Vector2i(9,3),Vector2i(9,6),
+			Vector2i(2,0),Vector2i(7,0),Vector2i(2,9),Vector2i(7,9),
+			Vector2i(0,2),Vector2i(0,7),Vector2i(9,2),Vector2i(9,7),
+			]
+		var eid=0
+		for e:Unit in $"../GameManager".wave.enemies:
+			eid+=1
+			var pi:Vector2i=ps[eid]
+			tiles[pi.x][pi.y].add_unit(e.duplicate())

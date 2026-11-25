@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Unit" format=3 uid="uid://cdnu3uu64rbnm"]
+
+[ext_resource type="Script" uid="uid://c6hqalv7yegrg" path="res://GameLogic/Board/Scripts/unit.gd" id="1_odd0g"]
+[ext_resource type="Texture2D" uid="uid://ce3ks1ec7ci5o" path="res://Assets/Images/sprites/sprites units/sprites light/sprite light warriors/light warrior nature/sprite_lightwarriornature_default_v1.PNG" id="2_odd0g"]
+
+[resource]
+script = ExtResource("1_odd0g")
+type = 3
+texture = ExtResource("2_odd0g")
+modulate = Color(1, 1, 1, 1)
+modulate2 = Color(1, 0.3900456, 0.84166056, 1)

@@ -7,6 +7,6 @@ class_name Unit
 @export var modulate:Color
 @export var modulate2:Color
 @export var movesPerTurn:int #ile pól na ture może przejść
-var enemy:bool # potem możemy zrobić jakiś enum jak chcemy neutral team
+@export var enemy:bool=true # potem możemy zrobić jakiś enum jak chcemy neutral team
 var sprite3D: Sprite3D
 var selected:bool=false

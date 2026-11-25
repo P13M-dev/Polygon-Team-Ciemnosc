@@ -8,14 +8,18 @@
 [ext_resource type="PackedScene" uid="uid://b52werdtbj7jy" path="res://GameLogic/Cards/card_empty.tscn" id="4_2f3ga"]
 [ext_resource type="Resource" uid="uid://ctcm8wb53verh" path="res://GameLogic/Board/Resources/TileEntities/fire_entity_resource.tres" id="4_gd2sq"]
 [ext_resource type="Script" uid="uid://fpmeilx3p5c6" path="res://GameLogic/Cards/card_resource.gd" id="5_4n2ge"]
+[ext_resource type="Resource" uid="uid://blg636lrn7p7r" path="res://Resources/Units/player_unit.tres" id="5_sqilg"]
+[ext_resource type="Resource" uid="uid://dmjw0ox80ir7n" path="res://Resources/Units/flame_unit.tres" id="6_ag71y"]
 [ext_resource type="Script" uid="uid://dpc4k6lmu238h" path="res://GameLogic/Cards/UpgradeCardCollection/UpgradeCardCollection.gd" id="7_xh3py"]
 [ext_resource type="Resource" uid="uid://cc5mspxbmpgle" path="res://GameLogic/Cards/collecion/fire2.tres" id="8_4n2ge"]
 [ext_resource type="Resource" uid="uid://cm0gmftxee73v" path="res://GameLogic/Cards/collecion/fire1.tres" id="9_i7l3v"]
 [ext_resource type="Script" uid="uid://dogxj228jwij8" path="res://GameLogic/Board/Prototype/shop_2.gd" id="10_q5ci2"]
 [ext_resource type="Script" uid="uid://bscxdkgobr5ba" path="res://GameLogic/Board/Prototype/mana.gd" id="11_qrdam"]
 [ext_resource type="Script" uid="uid://dd7bijkku55k8" path="res://GameLogic/Board/Prototype/hand.gd" id="12_ef3u2"]
+[ext_resource type="Resource" uid="uid://gbeicvn60mtq" path="res://Game/proto/test_dect.tres" id="13_ipprl"]
 [ext_resource type="Script" uid="uid://cbudi844eb31" path="res://GameLogic/LunchScene/widget_library.gd" id="13_q5ci2"]
 [ext_resource type="Resource" uid="uid://cl8vtpmiqdwul" path="res://GameLogic/Cards/collecion/ruch.tres" id="14_2f3ga"]
+[ext_resource type="Resource" uid="uid://dxvq02skta1qd" path="res://Game/proto/test_enemies.tres" id="14_2gey6"]
 [ext_resource type="PackedScene" uid="uid://cxnecmkd1k81o" path="res://GameLogic/Board/Prototype/CardCastWidget/MenuWidget/menu_widget_scn.tscn" id="14_ef3u2"]
 [ext_resource type="Resource" uid="uid://doc0fgnvs7jds" path="res://GameLogic/Cards/collecion/water2.tres" id="14_kjjx7"]
 [ext_resource type="Resource" uid="uid://dbeos8fpsus03" path="res://GameLogic/Cards/collecion/forest2.tres" id="15_i7l3v"]
@@ -58,6 +62,8 @@ ray = NodePath("../BoardManager/RayCast3D")
 script = ExtResource("2_4n2ge")
 rock = ExtResource("4_1chki")
 fire = ExtResource("4_gd2sq")
+hero = ExtResource("5_sqilg")
+enemy = ExtResource("6_ag71y")
 
 [node name="Camera3D" type="Camera3D" parent="BoardManager" unique_id=1279491687]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 901.212, 100, 504.745)
@@ -68,10 +74,14 @@ size = 1000.0
 collide_with_areas = true
 collide_with_bodies = false
 
+[node name="Wave" type="Node" parent="BoardManager" unique_id=1044587847]
+
 [node name="GameManager" type="Node" parent="." unique_id=753281393]
 script = ExtResource("3_1chki")
 empty_card = ExtResource("4_2f3ga")
 upgrade = SubResource("Resource_5p37r")
+deck = ExtResource("13_ipprl")
+wave = ExtResource("14_2gey6")
 
 [node name="END_TURN_Button" type="Button" parent="GameManager" unique_id=209057982]
 offset_right = 90.0
@@ -365,5 +375,31 @@ theme_override_font_sizes/font_size = 32
 text = "GAME OVER
 (NO PLAYER UNIT )
 REMEMBER TO CAST PLAYER CARD"
+
+[node name="GameWIN" type="ColorRect" parent="." unique_id=1825580356]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="GameWIN" unique_id=1586751219]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.5
+offset_top = -37.5
+offset_right = 132.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "WIN
+(NO EMENIES)"
 
 [connection signal="pressed" from="GameManager/END_TURN_Button" to="GameManager" method="_on_end_turn_button_pressed"]

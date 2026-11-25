@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WaveResource" format=3 uid="uid://dxvq02skta1qd"]
+
+[ext_resource type="Script" uid="uid://csl7rmm56578r" path="res://GameLogic/Board/WaveResource.gd" id="1_c12j1"]
+[ext_resource type="Script" uid="uid://c6hqalv7yegrg" path="res://GameLogic/Board/Scripts/Units/unit.gd" id="1_liyn3"]
+[ext_resource type="Resource" uid="uid://dmjw0ox80ir7n" path="res://Resources/Units/flame_unit.tres" id="2_u8idp"]
+[ext_resource type="Resource" uid="uid://ce2kb031a3p5c" path="res://Resources/Units/water_unit.tres" id="3_64v5i"]
+
+[resource]
+script = ExtResource("1_c12j1")
+enemies = Array[ExtResource("1_liyn3")]([ExtResource("2_u8idp"), ExtResource("3_64v5i"), ExtResource("2_u8idp"), ExtResource("3_64v5i"), ExtResource("2_u8idp"), ExtResource("3_64v5i"), ExtResource("2_u8idp"), ExtResource("3_64v5i")])
+metadata/_custom_type_script = "uid://csl7rmm56578r"

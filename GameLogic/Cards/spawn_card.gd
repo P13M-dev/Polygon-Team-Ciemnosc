@@ -29,11 +29,18 @@ func cast_on2(f:FieldCollider)->void:
 		#f.get_parent().make_entity(preload("res://GameLogic/Board/Resources/TileEntities/rock_entity.tres").duplicate())
 		if tile!=null:
 			f.get_tile().make_entity(tile)
+			var place:Tile=f.get_tile()
 			print(tile.resource_path)
-		for nf:FieldCollider in f.near:
-			nf.state=spawn
-			if tile!=null:
-				nf.get_tile().make_entity(tile)
+			var bp:=Vector2i(place.board_position_x,place.board_position_y)
+			for vec in [Vector2i(1,0),Vector2i(-1,0),Vector2i(0,1),Vector2i(0,-1),Vector2i(1,1),Vector2i(-1,-1),Vector2i(1,-1),Vector2i(-1,1)]:
+				var np:Vector2i=bp+vec
+				var t:Tile=Game.bm.get_tile(np)
+				if t!=null:
+					t.make_entity(tile)
+		#for nf:FieldCollider in f.near:
+		#	nf.state=spawn
+		#	if tile!=null:
+		#		nf.get_tile().make_entity(tile)
 
 func cast(f:Array[CardCastWidget.WidgetResult]) -> void:
 	var v:CastWidget.WidgetField=f[0]

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CardDeck" format=3 uid="uid://gbeicvn60mtq"]
+
+[ext_resource type="Script" uid="uid://fpmeilx3p5c6" path="res://GameLogic/Cards/card_resource.gd" id="1_tnk20"]
+[ext_resource type="Script" uid="uid://dyrl5iijndsgk" path="res://GameLogic/Cards/card_deck.gd" id="2_s2elc"]
+[ext_resource type="Resource" uid="uid://cl8vtpmiqdwul" path="res://GameLogic/Cards/collecion/ruch.tres" id="2_sff85"]
+[ext_resource type="Script" uid="uid://dpc4k6lmu238h" path="res://GameLogic/Cards/UpgradeCardCollection/UpgradeCardCollection.gd" id="3_u2wwy"]
+[ext_resource type="Resource" uid="uid://cm0gmftxee73v" path="res://GameLogic/Cards/collecion/fire1.tres" id="3_uo7km"]
+[ext_resource type="Resource" uid="uid://dbeos8fpsus03" path="res://GameLogic/Cards/collecion/forest2.tres" id="4_0g5pe"]
+[ext_resource type="Resource" uid="uid://doc0fgnvs7jds" path="res://GameLogic/Cards/collecion/water2.tres" id="5_ifwl8"]
+[ext_resource type="Texture2D" uid="uid://dgfap685hh3j6" path="res://Assets/Images/sprites/sprites elemental/sprite sacrum/sprite_sacrum_v1.png" id="6_086dd"]
+[ext_resource type="Resource" uid="uid://cc5mspxbmpgle" path="res://GameLogic/Cards/collecion/fire2.tres" id="9_owym2"]
+
+[sub_resource type="Resource" id="Resource_macs0"]
+script = ExtResource("3_u2wwy")
+posibilities = Array[ExtResource("1_tnk20")]([ExtResource("4_0g5pe"), ExtResource("9_owym2"), ExtResource("5_ifwl8")])
+metadata/_custom_type_script = "uid://dpc4k6lmu238h"
+
+[resource]
+script = ExtResource("2_s2elc")
+deck_name = "Test"
+cards = Array[ExtResource("1_tnk20")]([ExtResource("2_sff85"), ExtResource("3_uo7km"), ExtResource("4_0g5pe"), ExtResource("5_ifwl8"), ExtResource("3_uo7km"), ExtResource("2_sff85")])
+deck_ico = ExtResource("6_086dd")
+upgrades = Array[ExtResource("3_u2wwy")]([SubResource("Resource_macs0")])
+metadata/_custom_type_script = "uid://dyrl5iijndsgk"

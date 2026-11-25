@@ -6,12 +6,16 @@ class_name SpawnCard
 @export var tile:TileEntityResource
 
 
-func get_widget() -> CastWidget:
-	var w:=CardBase.SecelectFieldWidget.new()
+func get_widget(library:WidgetLibrary) -> Array[CardCastWidget]:
+	var filed_cast:CastWidget=library.cast.instantiate()
+	Game.bm.get_parent().add_child(filed_cast)
+	var w:Array[CardCastWidget]=[filed_cast]#CardBase.SecelectFieldWidget.new()
 	return w
-
-
+	
 func cast_on(f:FieldCollider)->void:
+	pass
+
+func cast_on2(f:FieldCollider)->void:
 	assert(r<3)
 	if r==0:
 		pass
@@ -30,4 +34,8 @@ func cast_on(f:FieldCollider)->void:
 			nf.state=spawn
 			if tile!=null:
 				nf.get_tile().make_entity(tile)
-	
+
+func cast(f:Array[CardCastWidget.WidgetResult]) -> void:
+	var v:CastWidget.WidgetField=f[0]
+	#var t:Tile=v.t
+	cast_on2(v.f)

@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://cxnecmkd1k81o"]
+
+[ext_resource type="Script" uid="uid://c4kcghnci55s6" path="res://GameLogic/Board/Prototype/CardCastWidget/MenuWidget/menu_widget.gd" id="1_4og0i"]
+
+[node name="MenuWidgetScn" type="CanvasLayer" unique_id=1135907193 node_paths=PackedStringArray("option_b", "ok_button", "cancel_button")]
+script = ExtResource("1_4og0i")
+option = Array[String](["Ziemia", "Woda", "Natura"])
+option_b = [NodePath("ColorRect/Button"), NodePath("ColorRect/Button2"), NodePath("ColorRect/Button3")]
+ok_button = NodePath("ColorRect/Buttonok")
+cancel_button = NodePath("ColorRect/Buttonccc")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=466362400]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -150.0
+offset_right = 100.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.097971626, 0.3348947, 0.1478495, 1)
+
+[node name="Button" type="Button" parent="ColorRect" unique_id=707476694]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 24.0
+offset_right = 166.0
+offset_bottom = 71.0
+text = "aaa"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="ColorRect" unique_id=1491517982]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 89.0
+offset_right = 166.0
+offset_bottom = 136.0
+text = "aaa"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button3" type="Button" parent="ColorRect" unique_id=643140953]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 154.0
+offset_right = 167.0
+offset_bottom = 201.0
+text = "aaa"
+metadata/_edit_use_anchors_ = true
+
+[node name="Buttonccc" type="Button" parent="ColorRect" unique_id=1889454031]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 234.0
+offset_right = 78.0
+offset_bottom = 283.0
+text = "cancel"
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=619707926]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.000015
+offset_top = -23.0
+offset_right = 20.000015
+grow_horizontal = 2
+grow_vertical = 0
+text = "aaa"
+
+[node name="Buttonok" type="Button" parent="ColorRect" unique_id=379132709]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 241.0
+offset_right = 189.0
+offset_bottom = 290.0
+text = "ok"

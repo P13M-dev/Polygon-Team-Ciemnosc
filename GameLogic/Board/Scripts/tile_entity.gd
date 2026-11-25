@@ -14,7 +14,7 @@ var resource: TileEntityResource:
 		sprite3D.rotate_x(-PI/2)
 		sprite3D.position = Vector3(0,0.1,resource.sprite_offset*0.0)
 		
-		sprite3D.pixel_size = 1.0
+		sprite3D.pixel_size = 64.0/sprite3D.texture.get_height()
 var state: TileEntityResource.TileEntityState:
 	set(value):
 		state = value

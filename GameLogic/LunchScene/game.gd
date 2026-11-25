@@ -3,6 +3,7 @@ extends Node
 var bm:BoardManager
 var mouse3d:Mouse3D
 var ruch:RuchManager
+var hand:Hand
 
 func get_board()->BoardManager:
 	assert(bm!=null)

@@ -13,6 +13,7 @@ func is_unit()->bool
 
 @abstract
 func create_state()->TileEntityResource.TileEntityState
+
 @abstract
 class TileEntityState:
 	var entity:TileEntity

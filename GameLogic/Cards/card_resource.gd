@@ -15,22 +15,25 @@ class WidetResult:
 class CastResult extends WidetResult:
 	var ok:bool
 
-class CastWidget:
-	var callback:Callable
-	var mouse:Mouse3D
-	var debug_line:Line2D
-	func _ready()->void:
-		pass
+#class CardCastWidget:
+#	var callback:Callable
+#	var mouse:Mouse3D
+#	var debug_line:Line2D
+#	func _ready()->void:
+#		pass
 		
-	func _process(_delta: float) -> void:
-		pass
+#	func _process(_delta: float) -> void:
+#		pass
 		
-class SecelectFieldWidget extends  CastWidget:
-	func _process(_delta: float) -> void:
-		pass
+#class SecelectFieldWidget extends  CardCastWidget:
+#	func _process(_delta: float) -> void:
+#		pass
 
 @abstract
-func get_widget() -> CastWidget
+func get_widget(library:WidgetLibrary) -> Array[CardCastWidget]
 
 @abstract
 func cast_on(f:FieldCollider) -> void
+
+@abstract
+func cast(f:Array[CardCastWidget.WidgetResult]) -> void

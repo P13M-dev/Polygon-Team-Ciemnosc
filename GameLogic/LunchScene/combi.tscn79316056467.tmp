@@ -1,0 +1,304 @@
+[gd_scene format=3 uid="uid://dfxcy2x554w3c"]
+
+[ext_resource type="Script" uid="uid://bf67go8wabsda" path="res://GameLogic/Board/Prototype/3d_mouse.gd" id="1_2f3ga"]
+[ext_resource type="Script" uid="uid://c3gwxs3egci3b" path="res://GameLogic/Board/Prototype/ruch_manager.gd" id="1_4n2ge"]
+[ext_resource type="Script" uid="uid://dlhtqremb2urf" path="res://GameLogic/Board/Scripts/board_manager.gd" id="2_4n2ge"]
+[ext_resource type="Script" uid="uid://csyx7xn6oqwtp" path="res://GameLogic/Board/Prototype/game_manager.gd" id="3_1chki"]
+[ext_resource type="Resource" uid="uid://br065hkuxn23m" path="res://GameLogic/Board/Resources/TileEntities/rock_entity_resource.tres" id="4_1chki"]
+[ext_resource type="PackedScene" uid="uid://b52werdtbj7jy" path="res://GameLogic/Cards/card_empty.tscn" id="4_2f3ga"]
+[ext_resource type="Script" uid="uid://fpmeilx3p5c6" path="res://GameLogic/Cards/card_resource.gd" id="5_4n2ge"]
+[ext_resource type="Script" uid="uid://dpc4k6lmu238h" path="res://GameLogic/Cards/UpgradeCardCollection/UpgradeCardCollection.gd" id="7_xh3py"]
+[ext_resource type="Resource" uid="uid://cc5mspxbmpgle" path="res://GameLogic/Cards/collecion/fire2.tres" id="8_4n2ge"]
+[ext_resource type="Resource" uid="uid://cm0gmftxee73v" path="res://GameLogic/Cards/collecion/fire1.tres" id="9_i7l3v"]
+[ext_resource type="Script" uid="uid://dogxj228jwij8" path="res://GameLogic/Board/Prototype/shop_2.gd" id="10_q5ci2"]
+[ext_resource type="Script" uid="uid://bscxdkgobr5ba" path="res://GameLogic/Board/Prototype/mana.gd" id="11_qrdam"]
+[ext_resource type="Script" uid="uid://dd7bijkku55k8" path="res://GameLogic/Board/Prototype/hand.gd" id="12_ef3u2"]
+[ext_resource type="Script" uid="uid://cbudi844eb31" path="res://GameLogic/LunchScene/widget_library.gd" id="13_q5ci2"]
+[ext_resource type="Resource" uid="uid://cl8vtpmiqdwul" path="res://GameLogic/Cards/collecion/ruch.tres" id="14_2f3ga"]
+[ext_resource type="PackedScene" uid="uid://cxnecmkd1k81o" path="res://GameLogic/Board/Prototype/CardCastWidget/MenuWidget/menu_widget_scn.tscn" id="14_ef3u2"]
+[ext_resource type="Resource" uid="uid://doc0fgnvs7jds" path="res://GameLogic/Cards/collecion/water2.tres" id="14_kjjx7"]
+[ext_resource type="Resource" uid="uid://dbeos8fpsus03" path="res://GameLogic/Cards/collecion/forest2.tres" id="15_i7l3v"]
+[ext_resource type="PackedScene" uid="uid://c7djsft6h15bt" path="res://GameLogic/Board/Prototype/CardCastWidget/CastWidget/cast_widget_scn.tscn" id="15_ooyk5"]
+[ext_resource type="Texture2D" uid="uid://cbhx1qx002jev" path="res://Assets/Images/cards/frames/card_empty_v1.PNG" id="15_riajs"]
+[ext_resource type="Script" uid="uid://d0lgwgt6jkcay" path="res://GameLogic/Board/Prototype/card_direction_line.gd" id="15_sqilg"]
+[ext_resource type="Resource" uid="uid://dttawl042dwba" path="res://GameLogic/Cards/collecion/new_player.tres" id="15_xh3py"]
+[ext_resource type="Script" uid="uid://bqpv642xysmd3" path="res://GameLogic/Board/Prototype/change_2d_mode.gd" id="16_ag71y"]
+[ext_resource type="Texture2D" uid="uid://ben7vbxxpa8ji" path="res://Assets/Images/sprites/sprites units/sprites darkness/sprites darkness warriors/dark warrior empty/sprite_darkwarriorempty_default_v1.PNG" id="16_fxdx4"]
+[ext_resource type="Script" uid="uid://eu62ag8wf7cd" path="res://GameLogic/Cards/unit_card.gd" id="17_q5ci2"]
+[ext_resource type="Resource" uid="uid://c71ye3fnaeh6i" path="res://Resources/Units/flame_unit2.tres" id="18_qrdam"]
+[ext_resource type="Resource" uid="uid://3t5efwg65khi" path="res://GameLogic/Cards/collecion/select_card.tres" id="21_fxdx4"]
+
+[sub_resource type="Resource" id="Resource_5p37r"]
+script = ExtResource("7_xh3py")
+posibilities = Array[ExtResource("5_4n2ge")]([ExtResource("14_kjjx7"), ExtResource("8_4n2ge")])
+count = 2
+metadata/_custom_type_script = "uid://dpc4k6lmu238h"
+
+[sub_resource type="Resource" id="Resource_ef3u2"]
+script = ExtResource("17_q5ci2")
+unit = ExtResource("18_qrdam")
+image = ExtResource("16_fxdx4")
+name = "SPAWN ssd"
+exile = true
+description = "musiz miec gracza po każdzej turze żeby przerzyć"
+card_image = ExtResource("15_riajs")
+font_color = Color(1, 1, 1, 1)
+metadata/_custom_type_script = "uid://eu62ag8wf7cd"
+
+[node name="Node" type="Node" unique_id=2010123915]
+
+[node name="3dMouse" type="Node" parent="." unique_id=818053327 node_paths=PackedStringArray("cam", "ray")]
+script = ExtResource("1_2f3ga")
+cam = NodePath("../BoardManager/Camera3D")
+ray = NodePath("../BoardManager/RayCast3D")
+
+[node name="BoardManager" type="Node" parent="." unique_id=1875096060]
+script = ExtResource("2_4n2ge")
+rock = ExtResource("4_1chki")
+
+[node name="Camera3D" type="Camera3D" parent="BoardManager" unique_id=1279491687]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 901.212, 100, 504.745)
+projection = 1
+size = 1000.0
+
+[node name="RayCast3D" type="RayCast3D" parent="BoardManager" unique_id=392256088]
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="GameManager" type="Node" parent="." unique_id=753281393]
+script = ExtResource("3_1chki")
+empty_card = ExtResource("4_2f3ga")
+upgrade = SubResource("Resource_5p37r")
+
+[node name="END_TURN_Button" type="Button" parent="GameManager" unique_id=209057982]
+offset_right = 90.0
+offset_bottom = 31.0
+text = "END TURN"
+
+[node name="ColorRect" type="ColorRect" parent="GameManager" unique_id=87703707]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -227.0
+offset_right = 105.0
+offset_bottom = -187.0
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="StateLabel" type="Label" parent="GameManager/ColorRect" unique_id=1853955052]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "HANd"
+
+[node name="POPUP" type="ColorRect" parent="GameManager" unique_id=778388453]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(0, 0, 0, 1)
+
+[node name="Deck" type="Control" parent="." unique_id=1893861018]
+visible = false
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -181.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Card10" parent="Deck" unique_id=1931992014 instance=ExtResource("4_2f3ga")]
+layout_mode = 0
+offset_left = 564.0
+offset_top = 4.0
+offset_right = 692.0
+offset_bottom = 183.0
+card = ExtResource("9_i7l3v")
+
+[node name="Card11" parent="Deck" unique_id=2077058919 instance=ExtResource("4_2f3ga")]
+layout_mode = 0
+offset_left = 564.0
+offset_top = 4.0
+offset_right = 692.0
+offset_bottom = 183.0
+card = ExtResource("9_i7l3v")
+
+[node name="Card12" parent="Deck" unique_id=1231069899 instance=ExtResource("4_2f3ga")]
+layout_mode = 0
+offset_left = 564.0
+offset_top = 4.0
+offset_right = 692.0
+offset_bottom = 183.0
+card = ExtResource("9_i7l3v")
+
+[node name="Trash" type="Control" parent="." unique_id=749869203]
+visible = false
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -181.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Exile" type="Control" parent="." unique_id=765077524]
+visible = false
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -181.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Shop" type="Control" parent="." unique_id=1784927468]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -430.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Shop2" type="Control" parent="." unique_id=325152106]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 319.0
+offset_top = -643.0
+offset_right = -364.0
+offset_bottom = -467.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("10_q5ci2")
+
+[node name="Mana" type="ColorRect" parent="." unique_id=1877188092]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_bottom = 100.0
+grow_horizontal = 0
+color = Color(0.3488402, 0.007394857, 0.486462, 1)
+script = ExtResource("11_qrdam")
+
+[node name="Label" type="Label" parent="Mana" unique_id=2041316917]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "3/3"
+
+[node name="WidgetLibrary" type="Node" parent="." unique_id=960192735]
+script = ExtResource("13_q5ci2")
+menu = ExtResource("14_ef3u2")
+cast = ExtResource("15_ooyk5")
+
+[node name="Hand" type="ColorRect" parent="." unique_id=955355169 node_paths=PackedStringArray("mouse", "library", "rm")]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -181.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.21374327, 0.21374327, 0.21374324, 1)
+script = ExtResource("12_ef3u2")
+mouse = NodePath("../3dMouse")
+library = NodePath("../WidgetLibrary")
+rm = NodePath("../RuchManager")
+
+[node name="Card10" parent="Hand" unique_id=283247813 instance=ExtResource("4_2f3ga")]
+layout_mode = 0
+offset_left = 564.0
+offset_top = 4.0
+offset_right = 692.0
+offset_bottom = 183.0
+card = ExtResource("15_xh3py")
+
+[node name="Card11" parent="Hand" unique_id=988044632 instance=ExtResource("4_2f3ga")]
+layout_mode = 0
+offset_left = 564.0
+offset_top = 4.0
+offset_right = 692.0
+offset_bottom = 183.0
+efect = "XXssss"
+card = SubResource("Resource_ef3u2")
+
+[node name="Card12" parent="Hand" unique_id=1433904777 instance=ExtResource("4_2f3ga")]
+layout_mode = 0
+offset_left = 564.0
+offset_top = 4.0
+offset_right = 692.0
+offset_bottom = 183.0
+card = ExtResource("15_i7l3v")
+
+[node name="Card8" parent="Hand" unique_id=198697568 instance=ExtResource("4_2f3ga")]
+layout_mode = 0
+offset_left = 564.0
+offset_top = 4.0
+offset_right = 692.0
+offset_bottom = 183.0
+card = ExtResource("14_kjjx7")
+
+[node name="Card9" parent="Hand" unique_id=1793095788 instance=ExtResource("4_2f3ga")]
+layout_mode = 0
+offset_left = 1008.0
+offset_top = 14.0
+offset_right = 1136.0
+offset_bottom = 193.0
+card = ExtResource("14_2f3ga")
+
+[node name="Card13" parent="Hand" unique_id=111259352 instance=ExtResource("4_2f3ga")]
+layout_mode = 0
+offset_left = 564.0
+offset_top = 4.0
+offset_right = 692.0
+offset_bottom = 183.0
+card = ExtResource("21_fxdx4")
+
+[node name="CardDirectionLine" type="Line2D" parent="." unique_id=1052478512]
+visible = false
+points = PackedVector2Array(522, 540, 707, 214)
+width = 30.0
+default_color = Color(0.89407384, 0.00029436767, 0.8112464, 1)
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource("15_sqilg")
+
+[node name="change_2d_mode" type="Node" parent="." unique_id=357346418]
+script = ExtResource("16_ag71y")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1617212171]
+transform = Transform3D(1, 0, 0, 0, 0.48040482, 0.8770469, 0, -0.8770469, 0.48040482, 0, 0, 0)
+
+[node name="RuchManager" type="Node" parent="." unique_id=328429934]
+script = ExtResource("1_4n2ge")
+
+[connection signal="pressed" from="GameManager/END_TURN_Button" to="GameManager" method="_on_end_turn_button_pressed"]

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c7djsft6h15bt"]
+
+[ext_resource type="Script" uid="uid://cyff0w1btrfpn" path="res://GameLogic/Board/Prototype/CardCastWidget/CastWidget/cast_widget.gd" id="1_mul7i"]
+
+[node name="CastWidgetScn" type="CanvasLayer" unique_id=828291208]
+script = ExtResource("1_mul7i")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=740250734]
+points = PackedVector2Array(365, 184, 699, 271)
+width = 20.0
+default_color = Color(0.6852346, 0.53277624, 0.23091525, 0.5647059)
+begin_cap_mode = 2
+end_cap_mode = 2

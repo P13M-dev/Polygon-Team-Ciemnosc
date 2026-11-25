@@ -10,6 +10,6 @@ burn_time = 3
 squere_texture = ExtResource("2_h0yuh")
 texture = ExtResource("2_4rfsd")
 sprite_offset = 32.0
-blocked_by = Array[int]([0, 1, 2])
+blocked_by = Array[int]([1, 2])
 kills = Array[int]([3])
 metadata/_custom_type_script = "uid://d3kydm7wblmmv"

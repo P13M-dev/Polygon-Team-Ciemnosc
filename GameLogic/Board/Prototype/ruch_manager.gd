@@ -8,6 +8,14 @@ enum MovementState {
 }
 
 
+#signal selected_optoin(bool)
+#var option:Array[Vector2i]
+
+#func start_selecting()
+
+#func appay(option)
+
+
 var state: MovementState = MovementState.nieaktywny
 var player: FieldCollider = null
 var player_unit: Unit = null

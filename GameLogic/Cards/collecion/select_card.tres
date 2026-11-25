@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="SelectAndSpawnCard" format=3 uid="uid://3t5efwg65khi"]
+
+[ext_resource type="Script" uid="uid://c8inogqodo075" path="res://GameLogic/Cards/card_select_and_spawn.gd" id="1_p75ir"]
+[ext_resource type="Texture2D" uid="uid://dbirwerge3ke1" path="res://Assets/Images/cards/frames/card_sacrum_v1.PNG" id="1_sturr"]
+[ext_resource type="Resource" uid="uid://ctcm8wb53verh" path="res://GameLogic/Board/Resources/TileEntities/fire_entity_resource.tres" id="2_3w54p"]
+[ext_resource type="Texture2D" uid="uid://8l8cw5b0sxad" path="res://Assets/Graphics/ciemnosc1024.png" id="2_mhd7l"]
+[ext_resource type="Resource" uid="uid://br065hkuxn23m" path="res://GameLogic/Board/Resources/TileEntities/rock_entity_resource.tres" id="3_qxg5d"]
+[ext_resource type="Resource" uid="uid://bulscwktoy7kr" path="res://GameLogic/Board/Resources/TileEntities/nature_entity_resource.tres" id="4_jybe2"]
+
+[resource]
+script = ExtResource("1_p75ir")
+image = ExtResource("2_mhd7l")
+enitity1 = ExtResource("2_3w54p")
+enitity1str = "Ogień"
+enitity2 = ExtResource("3_qxg5d")
+enitity2str = "Zieamia"
+enitity3 = ExtResource("4_jybe2")
+enitity3str = "Natura"
+name = "SElect"
+description = "aaaa"
+card_image = ExtResource("1_sturr")
+font_color = Color(1, 1, 1, 1)
+metadata/_custom_type_script = "uid://c8inogqodo075"

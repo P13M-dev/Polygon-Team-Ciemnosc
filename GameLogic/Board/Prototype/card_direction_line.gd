@@ -9,3 +9,4 @@ func _process(_delta: float) -> void:
 		points=PackedVector2Array([p1,p2])
 	else:
 		self.visible=false
+	self.visible=false #UNUSED FOR NOW TODO REMOVE

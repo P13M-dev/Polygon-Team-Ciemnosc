@@ -215,10 +215,11 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "3/3"
 
-[node name="WidgetLibrary" type="Node" parent="." unique_id=960192735]
+[node name="WidgetLibrary" type="Node" parent="." unique_id=960192735 node_paths=PackedStringArray("r")]
 script = ExtResource("13_q5ci2")
 menu = ExtResource("14_ef3u2")
 cast = ExtResource("15_ooyk5")
+r = NodePath("../RuchManager")
 
 [node name="Hand" type="ColorRect" parent="." unique_id=955355169 node_paths=PackedStringArray("mouse", "library", "rm")]
 anchors_preset = 12

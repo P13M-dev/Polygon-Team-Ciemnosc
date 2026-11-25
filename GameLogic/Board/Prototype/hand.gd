@@ -46,6 +46,7 @@ func _process(_delta: float) -> void:
 				current_widget.widget_ready(active_card.card)
 				current_widget.widget_input.connect(func(r:CardCastWidget.WidgetResult)->void:
 						print("EEEE")
+						assert(r!=null)#TODO implement
 						self.wRes.append(r)
 						self.current_widget=null
 						)

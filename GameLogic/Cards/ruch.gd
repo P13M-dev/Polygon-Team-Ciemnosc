@@ -5,8 +5,7 @@ class_name MovementCard
 
 
 func get_widget(library:WidgetLibrary) -> Array[CardCastWidget]:
-	var w:Array[CardCastWidget]=[]#CardBase.SecelectFieldWidget.new()
-	return w
+	return [library.r]
 
 func cast_on(f:FieldCollider) -> void:
 	pass
@@ -15,4 +14,7 @@ func activate() -> void:
 	print("Aktywowano tryb ruchu")
 
 func cast(f:Array[CardCastWidget.WidgetResult]) -> void:
-	pass
+	var r:RuchManager.RuchData=f[0]
+	print("casting movement")
+	print("from ",r.from.board_position_x," ",r.from.board_position_y)
+	print("to ",r.to.board_position_x," ",r.to.board_position_y)

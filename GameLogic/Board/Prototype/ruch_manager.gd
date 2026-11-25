@@ -1,4 +1,4 @@
-extends Node
+extends CardCastWidget
 class_name RuchManager
 
 enum MovementState {
@@ -7,6 +7,32 @@ enum MovementState {
 	select_field,
 }
 
+func _ready() -> void:
+	Game.ruch=self
+
+	
+func widget_ready(card:CardBase)->void:
+	state = MovementState.select_player
+	player = null
+	player_unit =null
+	print("Wybieranie gracza")
+	
+
+class RuchData extends CardCastWidget.WidgetResult:
+	var from:Tile
+	var to:Tile
+	func _init(form_:Tile,to_:Tile) -> void:
+		to=to_
+		from=form_
+
+#when player select taget eg "move" but before move and mana payment
+#result == null if cancelled:
+
+func on_play(card:CardBase,result:WidgetResult)->void:
+	var m:RuchData=result
+	var player_unit2:Unit=m.from.unit
+	m.to.unit=player_unit2
+	m.from.unit=null
 
 #signal selected_optoin(bool)
 #var option:Array[Vector2i]
@@ -21,14 +47,8 @@ var player: FieldCollider = null
 var player_unit: Unit = null
 signal wykonano_ruch(success: bool	)
 
-func _ready() -> void:
-	Game.ruch=self
 
-func activate() -> void:
-	state = MovementState.select_player
-	player = null
-	player_unit =null
-	print("Wybieranie gracza")
+
 
 func _process(_delta: float) -> void:
 	if state == MovementState.nieaktywny:
@@ -78,11 +98,12 @@ func _process(_delta: float) -> void:
 		#player.state = FieldCollider.FieldState.NONE
 		#clicked_field.state = FieldCollider.FieldState.PLAYER
 
-		var player_u:Unit=player.get_tile().unit
-		clicked_field.get_tile().unit=player_u
-		player.get_tile().unit=null
-		
+		#var player_u:Unit=player.get_tile().unit
+		#clicked_field.get_tile().unit=player_u
+		#player.get_tile().unit=null
+		emit_signal("widget_input",RuchData.new(player.get_tile(),clicked_field.get_tile()))
 		player = null
 		player_unit = null
 		state = MovementState.nieaktywny
-		emit_signal("wykonano_ruch", true)
+		#emit_signal("wykonano_ruch", true)
+		

@@ -2,7 +2,7 @@ extends Node
 
 var bm:BoardManager
 var mouse3d:Mouse3D
-var ruch:RuchManager
+var ruch:Node
 var hand:Hand
 
 func get_board()->BoardManager:

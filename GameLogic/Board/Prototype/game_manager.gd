@@ -109,4 +109,3 @@ func _on_end_turn_button_pressed() -> void:
 		anim_time=0.0
 		for c in $"../Hand".get_children():
 			c.reparent($"../Trash")
-	

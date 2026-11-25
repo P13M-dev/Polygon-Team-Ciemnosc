@@ -28,3 +28,6 @@ class UnitState:
 	func on_kill(killed: TileEntity) -> void:
 		if killed.resource.type==TileEntity.Type.FOREST:
 			turns_left += 3#przykład tego, jak mogą działać interakcje pomiędzy TileEnitami
+	
+	func on_tick(tileEnitity: TileEntity) -> void:
+		pass

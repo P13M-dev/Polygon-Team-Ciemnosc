@@ -44,7 +44,7 @@ pixel_size = 1.0
 texture = ExtResource("5_57p7g")
 
 [node name="Sprite3D2" type="Sprite3D" parent="." unique_id=456024726]
-transform = Transform3D(1, 0, 0, 0, 0.75263727, 0.65843534, 0, -0.65843534, 0.75263727, 10.295715, 54.748253, -12.516327)
+transform = Transform3D(1, 0, 0, 0, 0.75263727, 0.65843534, 0, -0.65843534, 0.75263727, 10.295715, 56.330986, -48.837967)
 pixel_size = 0.05
 billboard = 1
 texture = ExtResource("6_l8pba")

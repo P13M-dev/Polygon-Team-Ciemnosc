@@ -27,6 +27,7 @@
 [ext_resource type="Script" uid="uid://eu62ag8wf7cd" path="res://GameLogic/Cards/unit_card.gd" id="17_q5ci2"]
 [ext_resource type="Resource" uid="uid://c71ye3fnaeh6i" path="res://Resources/Units/flame_unit2.tres" id="18_qrdam"]
 [ext_resource type="Resource" uid="uid://3t5efwg65khi" path="res://GameLogic/Cards/collecion/select_card.tres" id="21_fxdx4"]
+[ext_resource type="Resource" uid="uid://br5t2fnvu53fw" path="res://GameLogic/Cards/collecion/move_with_trace.tres" id="25_ooyk5"]
 
 [sub_resource type="Resource" id="Resource_5p37r"]
 script = ExtResource("7_xh3py")
@@ -284,6 +285,14 @@ offset_right = 692.0
 offset_bottom = 183.0
 card = ExtResource("21_fxdx4")
 
+[node name="Card14" parent="Hand" unique_id=142642439 instance=ExtResource("4_2f3ga")]
+layout_mode = 0
+offset_left = 564.0
+offset_top = 4.0
+offset_right = 692.0
+offset_bottom = 183.0
+card = ExtResource("25_ooyk5")
+
 [node name="CardDirectionLine" type="Line2D" parent="." unique_id=1052478512]
 visible = false
 points = PackedVector2Array(522, 540, 707, 214)
@@ -301,5 +310,31 @@ transform = Transform3D(1, 0, 0, 0, 0.48040482, 0.8770469, 0, -0.8770469, 0.4804
 
 [node name="RuchManager" type="Node" parent="." unique_id=328429934]
 script = ExtResource("1_4n2ge")
+
+[node name="ColorRect" type="ColorRect" parent="RuchManager" unique_id=1918083849]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -63.0
+offset_right = 63.0
+offset_bottom = 100.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="RuchManager/ColorRect" unique_id=1804277383]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.5
+offset_top = -24.5
+offset_right = 41.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "MOVMENT
+MODE"
 
 [connection signal="pressed" from="GameManager/END_TURN_Button" to="GameManager" method="_on_end_turn_button_pressed"]

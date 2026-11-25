@@ -51,9 +51,10 @@ signal wykonano_ruch(success: bool	)
 
 
 func _process(_delta: float) -> void:
+	$ColorRect.visible=false
 	if state == MovementState.nieaktywny:
 		return
-
+	$ColorRect.visible=true
 	if not Input.is_action_just_pressed("mouse_click"):
 		return
 

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CastAndMoveCard" format=3 uid="uid://br5t2fnvu53fw"]
+
+[ext_resource type="Script" uid="uid://bq2wtt5lu3e1a" path="res://GameLogic/Cards/cast_and_move_card.gd" id="1_2p5f7"]
+[ext_resource type="Texture2D" uid="uid://dbirwerge3ke1" path="res://Assets/Images/cards/frames/card_sacrum_v1.PNG" id="1_mvtv4"]
+[ext_resource type="Resource" uid="uid://bulscwktoy7kr" path="res://GameLogic/Board/Resources/TileEntities/nature_entity_resource.tres" id="2_bw4rr"]
+[ext_resource type="Resource" uid="uid://br065hkuxn23m" path="res://GameLogic/Board/Resources/TileEntities/rock_entity_resource.tres" id="3_wit4n"]
+[ext_resource type="Resource" uid="uid://bptwia0u1f0ut" path="res://GameLogic/Board/Resources/TileEntities/water_entity_resource.tres" id="4_xnark"]
+[ext_resource type="Texture2D" uid="uid://cy4g3pim8bq65" path="res://Assets/Images/squares/square fire/square_fire_v1.png" id="5_p013s"]
+
+[resource]
+script = ExtResource("1_2p5f7")
+image = ExtResource("5_p013s")
+enitity1 = ExtResource("2_bw4rr")
+enitity1str = "Natura"
+enitity2 = ExtResource("3_wit4n")
+enitity2str = "Ziema"
+enitity3 = ExtResource("4_xnark")
+enitity3str = "Woda"
+name = "left behind"
+description = "move to next tile and spawn one of following"
+card_image = ExtResource("1_mvtv4")
+font_color = Color(1, 1, 1, 1)
+metadata/_custom_type_script = "uid://bq2wtt5lu3e1a"

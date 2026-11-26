@@ -1,0 +1,14 @@
+[gd_resource type="AnimatedTexture" format=3 uid="uid://cysketih3qx4v"]
+
+[ext_resource type="Texture2D" uid="uid://b6k7af58v1f6l" path="res://Assets/Images/sprites/sprites units/sprites light/sprite light warriors/light warrior water/sprite_lightwarriorwater_aim_v1.PNG" id="1_qn5fy"]
+[ext_resource type="Texture2D" uid="uid://bgdmrw05sq6dk" path="res://Assets/Images/sprites/sprites units/sprites light/sprite light warriors/light warrior water/sprite_lightwarriorwater_attack_v1.PNG" id="2_tcn2q"]
+[ext_resource type="Texture2D" uid="uid://bi3wjem6x4b8m" path="res://Assets/Images/sprites/sprites units/sprites light/sprite light warriors/light warrior water/sprite_lightwarriorwater_default_v1.PNG" id="3_vb2ql"]
+
+[resource]
+frames = 3
+frame_0/texture = ExtResource("1_qn5fy")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("2_tcn2q")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("3_vb2ql")
+frame_2/duration = 0.1

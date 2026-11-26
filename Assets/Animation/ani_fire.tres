@@ -1,0 +1,14 @@
+[gd_resource type="AnimatedTexture" format=3 uid="uid://be2qlvghw1km7"]
+
+[ext_resource type="Texture2D" uid="uid://dml7445xxodki" path="res://Assets/Images/sprites/sprites units/sprites light/sprite light warriors/light warrior fire/sprite_lightwarriorfire_aim_v1.PNG" id="1_mx8mh"]
+[ext_resource type="Texture2D" uid="uid://27vku0lmh7ah" path="res://Assets/Images/sprites/sprites units/sprites light/sprite light warriors/light warrior fire/sprite_lightwarriorfire_attack_v1.PNG" id="2_enktm"]
+[ext_resource type="Texture2D" uid="uid://dntoyo0oxmst4" path="res://Assets/Images/sprites/sprites units/sprites light/sprite light warriors/light warrior fire/sprite_lightwarriorfire_default_v1.PNG" id="3_hn2po"]
+
+[resource]
+frames = 3
+frame_0/texture = ExtResource("1_mx8mh")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("2_enktm")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("3_hn2po")
+frame_2/duration = 0.1

@@ -13,9 +13,11 @@ class TileEntityState:
 	var turns_left: int = 3
 	
 	func on_tick(t:TileEntity):
+		t.get_child(0).pixel_size*=0.8
 		turns_left-=1
 		if turns_left==0:
 			t.die()
+		
 	
 	func placed_on(tile: Tile)->void:
 		turns_left += entity.resource.burn_time

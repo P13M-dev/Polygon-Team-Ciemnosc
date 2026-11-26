@@ -12,3 +12,7 @@ func get_board()->BoardManager:
 func get_mouse_tile()->Tile:
 	assert(mouse3d!=null)
 	return mouse3d.current_field.get_parent()
+
+func _process(delta: float) -> void:
+	if Input.is_key_pressed(KEY_5):
+		DisplayServer.window_set_mode(DisplayServer.WindowMode.WINDOW_MODE_FULLSCREEN)

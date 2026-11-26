@@ -229,6 +229,14 @@ func _ready() -> void:
 				#	tile.unit.enemy = true
 				
 		
+		if true:
+			tiles[3][5].make_entity(preload("res://GameLogic/Board/Resources/TileEntities/rock_entity_resource.tres").duplicate())
+			tiles[3][6].make_entity(preload("res://GameLogic/Board/Resources/TileEntities/rock_entity_resource.tres").duplicate())
+			tiles[3][7].make_entity(preload("res://GameLogic/Board/Resources/TileEntities/rock_entity_resource.tres").duplicate())
+			tiles[7][5].make_entity(preload("res://GameLogic/Board/Resources/TileEntities/rock_entity_resource.tres").duplicate())
+			tiles[7][4].make_entity(preload("res://GameLogic/Board/Resources/TileEntities/rock_entity_resource.tres").duplicate())
+			tiles[7][3].make_entity(preload("res://GameLogic/Board/Resources/TileEntities/rock_entity_resource.tres").duplicate())
+		
 		tiles[5][5].add_unit(hero.duplicate())
 		var ps:Array[Vector2i]=[
 			Vector2i(3,0),Vector2i(6,0),Vector2i(3,9),Vector2i(6,9),

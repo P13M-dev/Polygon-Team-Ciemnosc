@@ -10,4 +10,4 @@ class_name Unit
 @export var enemy:bool=true # potem możemy zrobić jakiś enum jak chcemy neutral team
 var sprite3D: Sprite3D
 var selected:bool=false
-@export var attack_texture: Texture2D
+@export var attack_texture: AnimatedTexture

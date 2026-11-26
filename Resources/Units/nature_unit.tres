@@ -1,18 +1,8 @@
 [gd_resource type="Resource" script_class="Unit" format=3 uid="uid://cdnu3uu64rbnm"]
 
 [ext_resource type="Script" uid="uid://c6hqalv7yegrg" path="res://GameLogic/Board/Scripts/unit.gd" id="1_odd0g"]
-[ext_resource type="Texture2D" uid="uid://hb7hrp44u5by" path="res://Assets/Images/sprites/sprites units/sprites light/sprite light warriors/light warrior nature/sprite_lightwarriornature_aim_v1.PNG" id="1_sxxkj"]
-[ext_resource type="Texture2D" uid="uid://e36itcuiss1" path="res://Assets/Images/sprites/sprites units/sprites light/sprite light warriors/light warrior nature/sprite_lightwarriornature_attack_v1.PNG" id="2_4gpq6"]
+[ext_resource type="Texture2D" uid="uid://lqpxdpuuna1g" path="res://Assets/Animation/new_animated_texture.tres" id="1_vqgmk"]
 [ext_resource type="Texture2D" uid="uid://ce3ks1ec7ci5o" path="res://Assets/Images/sprites/sprites units/sprites light/sprite light warriors/light warrior nature/sprite_lightwarriornature_default_v1.PNG" id="2_odd0g"]
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_2gey6"]
-frames = 3
-frame_0/texture = ExtResource("1_sxxkj")
-frame_0/duration = 0.1
-frame_1/texture = ExtResource("2_4gpq6")
-frame_1/duration = 0.1
-frame_2/texture = ExtResource("2_odd0g")
-frame_2/duration = 0.1
 
 [resource]
 script = ExtResource("1_odd0g")
@@ -20,4 +10,4 @@ type = 3
 texture = ExtResource("2_odd0g")
 modulate = Color(1, 1, 1, 1)
 modulate2 = Color(1, 0.3900456, 0.84166056, 1)
-attack_texture = SubResource("AnimatedTexture_2gey6")
+attack_texture = ExtResource("1_vqgmk")

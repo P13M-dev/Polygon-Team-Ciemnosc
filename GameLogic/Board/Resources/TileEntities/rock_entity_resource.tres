@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://cihoydslg0gps" path="res://GameLogic/Board/Scripts/tile_effect_resource.gd" id="1_g84pq"]
 [ext_resource type="Texture2D" uid="uid://gtxw11kir7xt" path="res://Assets/Images/squares/square empty/sqr.png" id="2_g84pq"]
-[ext_resource type="Texture2D" uid="uid://18auvn48yiow" path="res://Assets/Images/sprites/sprites elemental/rock.png" id="2_k8vnr"]
+[ext_resource type="Texture2D" uid="uid://bvqtaqsnhn5ah" path="res://Assets/Images/sprites/sprites elemental/sprite rock/sprite_rock_v2.PNG" id="3_g84pq"]
 
 [resource]
 script = ExtResource("1_g84pq")
 squere_texture = ExtResource("2_g84pq")
 type = 2
-texture = ExtResource("2_k8vnr")
+texture = ExtResource("3_g84pq")
 kills = Array[int]([3])
 metadata/_custom_type_script = "uid://cihoydslg0gps"

@@ -1,6 +1,7 @@
 extends Node
 class_name BoardManager
 
+@warning_ignore("unused_signal")
 signal update_board_signal()
 
 const board_width: int = 10
@@ -23,6 +24,8 @@ func get_tile(postion:Vector2i)->Tile:
 func _enter_tree() -> void:
 	Game.bm=self
 @export var fire:TileEntityResource
+var is_player_life=true
+var is_enemy_life=true
 func update_board()->void:
 	#this is random placeholder effect 
 	#TODO replace with fire spread
@@ -32,24 +35,31 @@ func update_board()->void:
 	#			tiles[x][y].make_entity(rock)
 	for x in range(0,board_width):
 		for y in range(0,board_width):
-			var pos=Vector2i(x,y)
+			var pos:Vector2i=Vector2i(x,y)
 			var t:Tile=get_tile(pos)
 			for e in t.entities:
 				e.state.on_tick(e)
+			if t.unit!=null:
+				t.at=0.0
 	for x in range(0,board_width):
 		for y in range(0,board_width):
-			var pos=Vector2i(x,y)
+			var pos:Vector2i=Vector2i(x,y)
 			var t:Tile=get_tile(pos)
 			if t.unit!=null:
-				if t.unit.type==Elemental.Type.FIRE and t.has_entity(TileEntity.Type.PUDDLE):
+				var unit_type:Elemental.Type=t.unit.type
+				if unit_type==Elemental.Type.FIRE and t.has_entity(TileEntity.Type.PUDDLE):
+					t.unit=null
+				if unit_type==Elemental.Type.FOREST and t.has_entity(TileEntity.Type.FIRE):
+					t.unit=null
+				if unit_type==Elemental.Type.PUDDLE and t.has_entity(TileEntity.Type.FIRE):
 					t.unit=null
 	var ar:Array[Vector2i]=[]
 	for x in range(0,board_width):
 		for y in range(0,board_width):
-			var pos=Vector2i(x,y)
+			var pos:Vector2i=Vector2i(x,y)
 			var t:Tile=get_tile(pos)
 			if t.has_entity(TileEntity.Type.FIRE):
-				for n in [Vector2i(1,0),Vector2i(-1,0),Vector2i(0,-1),Vector2i(0,1)]:
+				for n:Vector2i in [Vector2i(1,0),Vector2i(-1,0),Vector2i(0,-1),Vector2i(0,1)]:
 					var np:Vector2i=pos+n
 					var t2:Tile=get_tile(np)
 					if t2!=null:
@@ -61,14 +71,40 @@ func update_board()->void:
 		var t2:Tile=get_tile(p)
 		t2.make_entity(fire)
 	
-	
-	
+
+			
 		
 				#tiles[x][y].add_effect(preload("res://GameLogic/Board/Resources/TileEffects/rock_effect.tres").duplicate())
 	#end placeholder 
 	update_unit_pathing()
 	move_enemy_units()
-
+	
+	for x in range(0,board_width):
+		for y in range(0,board_width):
+			var pos:Vector2i=Vector2i(x,y)
+			var t:Tile=get_tile(pos)
+			if t.unit!=null:
+				if t.unit.enemy:
+					for n:Vector2i in [Vector2i(1,0),Vector2i(-1,0),Vector2i(0,-1),Vector2i(0,1)]:
+						var np:Vector2i=pos+n
+						var ntile:Tile=get_tile(np)
+						if ntile!=null:
+							if ntile.unit!=null:
+								if not ntile.unit.enemy:
+									print("KILLL!!!!!")
+									ntile.unit=null
+	is_enemy_life=false
+	is_player_life=false
+	for x in range(0,board_width):
+		for y in range(0,board_width):
+			var pos:Vector2i=Vector2i(x,y)
+			var t:Tile=get_tile(pos)
+			if t.unit!=null:
+				if t.unit.enemy:
+					is_enemy_life=true
+				else:
+					is_player_life=true
+			
 func update_unit_pathing() -> void:
 	for x in board_width:
 		for y in board_width:
@@ -183,9 +219,11 @@ func _ready() -> void:
 				"""
 				if randi()%10==0:#to jest głównie do testowania czy, i demonstacji jak działa dodawanie efektów do planszy
 					if x<3 or x>7 or y<3 or y>7:
-						tile.make_entity(preload("res://GameLogic/Board/Resources/TileEntities/rock_entity_resource.tres").duplicate())
+						if false:
+							tile.make_entity(preload("res://GameLogic/Board/Resources/TileEntities/rock_entity_resource.tres").duplicate())
 				elif randi()%10==0:#tutaj są dawane tylko efekty, ale nie ma zmiany stanu pola na cokolwiek
-					tile.make_entity(preload("res://GameLogic/Board/Resources/TileEntities/water_entity_resource.tres").duplicate())
+					if false:
+						tile.make_entity(preload("res://GameLogic/Board/Resources/TileEntities/water_entity_resource.tres").duplicate())
 				#elif randi()%10==0:
 				#	tile.add_unit(preload("res://Resources/Units/flame_unit.tres").duplicate())
 				#	tile.unit.enemy = true
@@ -198,7 +236,7 @@ func _ready() -> void:
 			Vector2i(2,0),Vector2i(7,0),Vector2i(2,9),Vector2i(7,9),
 			Vector2i(0,2),Vector2i(0,7),Vector2i(9,2),Vector2i(9,7),
 			]
-		var eid=0
+		var eid:int=0
 		for e:Unit in $"../GameManager".wave.enemies:
 			eid+=1
 			var pi:Vector2i=ps[eid]

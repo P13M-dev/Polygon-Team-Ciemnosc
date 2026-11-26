@@ -33,6 +33,7 @@
 [ext_resource type="Resource" uid="uid://c71ye3fnaeh6i" path="res://Resources/Units/flame_unit2.tres" id="18_qrdam"]
 [ext_resource type="Resource" uid="uid://3t5efwg65khi" path="res://GameLogic/Cards/collecion/select_card.tres" id="21_fxdx4"]
 [ext_resource type="Resource" uid="uid://br5t2fnvu53fw" path="res://GameLogic/Cards/collecion/move_with_trace.tres" id="25_ooyk5"]
+[ext_resource type="Script" uid="uid://bysv4rvh6bwj5" path="res://GameLogic/LunchScene/game_ending.gd" id="34_mxl7e"]
 
 [sub_resource type="Resource" id="Resource_5p37r"]
 script = ExtResource("7_xh3py")
@@ -348,6 +349,9 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "MOVMENT
 MODE"
+
+[node name="GameEnding" type="Node" parent="." unique_id=7049854]
+script = ExtResource("34_mxl7e")
 
 [node name="GameOVER" type="ColorRect" parent="." unique_id=1054320351]
 visible = false

@@ -54,13 +54,18 @@ func make_entity(resource: TileEntityResource) -> void:
 func is_treversible(ignore_enemy_units:bool)->bool:
 	
 	return not has_entity(TileEntity.Type.ROCK)
-
-func _process(_delta: float) -> void:
+var at:=1.0
+func _process(delta: float) -> void:
 	if unit==null:
 		$Sprite3D2.visible=false
 	else:
 		#print("uu")
+		at+=delta
 		$Sprite3D2.visible=true
-		$Sprite3D2.texture=unit.texture
+		if unit.attack_texture!=null and at<2.0:
+			$Sprite3D2.texture=unit.attack_texture
+		else:
+			$Sprite3D2.texture=unit.texture
+		#$Sprite3D2.texture=unit.texture if (at>1.0 or unit.attack_texture==null) else unit.attack_texture
 		$Sprite3D2.modulate=unit.modulate2 if unit==Game.ruch.player_unit else unit.modulate
 		#$Sprite3D2.texture=unit.texture
